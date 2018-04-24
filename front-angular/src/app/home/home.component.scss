@@ -1,0 +1,81 @@
+#mainDiv {
+  position: relative;
+  width: 1000px;
+  margin: auto;
+}
+
+#logoDiv{
+  display: block;
+  border: 1px solid green;
+
+}
+
+#menuList{
+  margin: 2px 0 0 0;
+}
+
+.menuItem{
+  margin: 0 30px 0 30px;
+  cursor: pointer;
+  display: inline;
+  padding: 2px;
+  border: 1px solid green;
+  border-top: 2px solid white;
+}
+
+.menuItem:hover{
+  background: gray;
+}
+
+#contentDiv{
+  margin: 10px 0 0 0;
+  position: relative;
+}
+
+
+#leftDiv{
+  margin: 1px;
+  float: left;
+  display: inline-block;
+  width: 200px;
+  border: 1px solid green;
+}
+#middleDiv{
+  margin: 1px;
+  display: inline-block;
+  height: 100px;
+  width: 580px;
+  border: 1px solid green;
+}
+#rightDiv{
+  margin: 1px;
+  float: right;
+  display: inline-block;
+  width: 200px;
+  height: 100px;
+  border: 1px solid green;
+}
+
+
+.ratingItem{
+  text-align: left;
+  margin-bottom: 5px;
+}
+
+#signInUni{
+  width: 190px;
+  margin: 5px;
+}
+
+#signInUser{
+  width: 190px;
+  margin: 5px;
+}
+
+#searchInput{
+  width: 190px;
+  margin: 5px;
+}
+
+
+
