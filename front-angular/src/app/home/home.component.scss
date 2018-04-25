@@ -52,7 +52,6 @@
   float: right;
   display: inline-block;
   width: 200px;
-  height: 100px;
   border: 1px solid green;
 }
 
@@ -72,9 +71,16 @@
   margin: 5px;
 }
 
-#searchInput{
-  width: 190px;
+#quickLinksDiv{
   margin: 5px;
+  border: 1px solid green;
+}
+
+#searchDiv{
+  padding: 5px;
+  margin: 5px auto 5px auto;
+  display: block;
+  border: 1px solid green;
 }
 
 

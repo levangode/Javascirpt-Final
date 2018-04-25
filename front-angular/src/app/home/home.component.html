@@ -14,6 +14,23 @@
   </div>
 
   <div id="contentDiv">
+    <div id="searchDiv">
+      <span>University Search:</span>
+      <select id="selectCategory">
+        <option value="" disabled selected hidden>Study of interest</option>
+        <option value="Technology">Technology</option>
+        <option value="Medicine">Medicine</option>
+        <option value="Law">Law</option>
+        <option value="Art">Art</option>
+      </select>
+      <select id="selectUniversity">
+        <option value="" disabled selected hidden>Desired University</option>
+        <option value="Freeuni">Freeuni</option>
+        <option value="Agruni">Agruni</option>
+      </select>
+      <button>GO</button>
+      <button>Complex Search</button>
+    </div>
     <div id="leftDiv">
       <h2>Top 10</h2>
       <ol id="ratingList">
@@ -33,9 +50,17 @@
       <h2>Educational News</h2>
     </div>
     <div id="rightDiv">
-      <input id="searchInput" type="search" title="Search">
-      <input id="signInUni" type="button" value="Sign in as University">
-      <input id="signInUser" type="button" value="Sign in as Entrant">
+      <div id="signInDiv">
+        <input id="signInUni" type="button" value="Sign in as University">
+        <input id="signInUser" type="button" value="Sign in as Entrant">
+      </div>
+      <div id="quickLinksDiv">
+        <h2>Quick Links</h2>
+        <ul>
+          <li>Where to Study?</li>
+          <li>What to Study?</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
