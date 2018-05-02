@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class ResourceDownloader {
 
     @Async
-    @Scheduled(fixedRate = 10000)
+    @Scheduled(fixedRate = 3600000)
     public void MesGovGeDownloader(){
         try {
             List<String> command = new ArrayList<>();
@@ -31,6 +31,7 @@ public class ResourceDownloader {
             final Process process = builder.start();
             try {
                 process.waitFor(5000, TimeUnit.MILLISECONDS);
+                sayDone();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -45,5 +46,14 @@ public class ResourceDownloader {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void sayDone()
+            throws IOException {
+        String str = "Hello";
+        BufferedWriter writer = new BufferedWriter(new FileWriter("src/main/resources/notifier/notify.txt"));
+        writer.write(str);
+
+        writer.close();
     }
 }

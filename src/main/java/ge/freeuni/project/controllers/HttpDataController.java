@@ -21,6 +21,7 @@ import static org.springframework.http.MediaType.TEXT_HTML;
 public class HttpDataController extends WebMvcAutoConfiguration {
 
     @RequestMapping(value = "/mes-gov-ge", method = RequestMethod.GET)
+    @CrossOrigin(origins = "http://localhost:4200")
     public ResponseEntity<String> getContent(HttpServletResponse response){
 
         HttpHeaders responseHeaders = new HttpHeaders();
