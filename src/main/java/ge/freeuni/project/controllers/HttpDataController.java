@@ -31,8 +31,7 @@ public class HttpDataController extends WebMvcAutoConfiguration {
 
     private String getFile(String fileName) {
 
-        String text = new Scanner(getClass().getClassLoader().getResourceAsStream(fileName), "UTF-8").useDelimiter("\\A").next();
-        return text;
+        return new Scanner(getClass().getClassLoader().getResourceAsStream(fileName), "UTF-8").useDelimiter("\\A").next();
     }
 
 
