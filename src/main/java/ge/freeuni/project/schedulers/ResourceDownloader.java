@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class ResourceDownloader {
 
     @Async
-    @Scheduled(fixedRate = 3600000)
+    @Scheduled(cron = "0 0 */1 * * *")
     public void MesGovGeDownloader(){
         try {
             List<String> command = new ArrayList<>();
@@ -30,7 +30,7 @@ public class ResourceDownloader {
             builder.directory(new File("/home/Levan/IdeaProjects/University-Finder"));
             final Process process = builder.start();
             try {
-                process.waitFor(5000, TimeUnit.MILLISECONDS);
+                process.waitFor(10000, TimeUnit.MILLISECONDS);
                 sayDone();
             } catch (InterruptedException e) {
                 e.printStackTrace();
