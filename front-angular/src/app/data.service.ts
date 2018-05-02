@@ -2,13 +2,15 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject} from "rxjs/BehaviorSubject";
 import { CookieService } from "angular2-cookie/core";
 import {SocialUser} from "angular5-social-login";
+import {Observable} from "rxjs/Observable";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable()
 export class DataService {
 
-  constructor(private cookieService: CookieService) { }
+  constructor(private cookieService: CookieService, private http: HttpClient) { }
 
-  getUser(){
+  getUser(): SocialUser{
     return <SocialUser> this.cookieService.getObject("user");
   }
 
@@ -18,5 +20,9 @@ export class DataService {
 
   removeUser(){
     this.cookieService.remove("user");
+  }
+
+  getAll(): Observable<any> {
+    return this.http.get('//localhost:8080/test');
   }
 }

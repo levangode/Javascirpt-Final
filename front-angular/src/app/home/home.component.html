@@ -47,6 +47,12 @@
     </div>
     <div id="middleDiv">
       <h2>Educational News</h2>
+      <div *ngFor="let newsItem of news">
+        <p>{{newsItem.postTitle}}</p>
+        <p>{{newsItem.postDescription}}</p>
+        <p>{{newsItem.postDate}}</p>
+        <p>{{newsItem.postImg}}</p>
+      </div>
     </div>
     <div id="rightDiv">
       <app-signin></app-signin>

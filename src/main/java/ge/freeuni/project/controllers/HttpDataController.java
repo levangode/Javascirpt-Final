@@ -1,5 +1,6 @@
 package ge.freeuni.project.controllers;
 
+import ge.freeuni.project.models.MesGovGeNewsPostModel;
 import org.springframework.boot.autoconfigure.web.servlet.WebMvcAutoConfiguration;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -9,9 +10,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.util.*;
 import java.util.concurrent.TimeUnit;
 
 import static org.springframework.http.MediaType.TEXT_HTML;
@@ -36,6 +35,20 @@ public class HttpDataController extends WebMvcAutoConfiguration {
         return text;
     }
 
+
+    @RequestMapping(value = "/test", method = RequestMethod.GET)
+    @CrossOrigin(origins = "https://localhost:4200")
+    @ResponseBody
+    public ArrayList<MesGovGeNewsPostModel> getItems(){
+        ArrayList<MesGovGeNewsPostModel> res = new ArrayList<>();
+
+        res.add(new MesGovGeNewsPostModel("a", "b", "c", "d"));
+        res.add(new MesGovGeNewsPostModel("a", "b", "c", "d"));
+        res.add(new MesGovGeNewsPostModel("a", "b", "c", "d"));
+
+
+        return res;
+    }
 
 
 }
