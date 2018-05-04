@@ -48,10 +48,12 @@
     <div id="middleDiv">
       <h2>Educational News</h2>
       <div *ngFor="let newsItem of news">
-        <p>{{newsItem.postTitle}}</p>
-        <p>{{newsItem.postDescription}}</p>
-        <p>{{newsItem.postDate}}</p>
-        <p>{{newsItem.postImg}}</p>
+        <img class="newsImg" src=""/>
+        <div class="newsInfo">
+          <p class="newsDate">{{newsItem.postDate}}</p>
+          <h2 class="newsTitle">{{newsItem.postTitle}}</h2>
+          <p class="newsDescription">{{newsItem.postDescription}}</p>
+        </div>
       </div>
     </div>
     <div id="rightDiv">

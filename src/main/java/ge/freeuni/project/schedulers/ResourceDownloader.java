@@ -27,7 +27,7 @@ public class ResourceDownloader {
             command.add("--directory-prefix=src/main/resources/public");
             command.add("http://mes.gov.ge/content.php?id=75&lang=geo");
             ProcessBuilder builder = new ProcessBuilder(command);
-            builder.directory(new File("/home/Levan/IdeaProjects/University-Finder"));
+            builder.directory(new File(System.getProperty("user.dir")));
             final Process process = builder.start();
             try {
                 process.waitFor(10000, TimeUnit.MILLISECONDS);
