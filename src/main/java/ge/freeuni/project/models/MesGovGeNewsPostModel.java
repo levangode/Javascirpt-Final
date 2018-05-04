@@ -11,8 +11,10 @@ import lombok.*;
 @Setter
 public class MesGovGeNewsPostModel {
 
-    private String postTitle;
-    private String postDescription;
-    private String postDate;
-    private String postImg;
+    private String newsTitle;
+    private String newsTitleRef;
+    private String newsDate;
+    private String newsText;
+    private String newsImgSrc;
+
 }

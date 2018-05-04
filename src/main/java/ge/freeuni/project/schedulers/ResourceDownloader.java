@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class ResourceDownloader {
 
     @Async
-    @Scheduled(cron = "0 0 */1 * * *")
+    @Scheduled(cron = "* */20 * * * *")
     public void MesGovGeDownloader(){
         try {
             List<String> command = new ArrayList<>();
@@ -24,14 +24,14 @@ public class ResourceDownloader {
             command.add("-p");
             command.add("-k");
             command.add("-nH");
-            command.add("--directory-prefix=src/main/resources/public");
+            command.add("--directory-prefix=front-angular/assets");
             command.add("http://mes.gov.ge/content.php?id=75&lang=geo");
             ProcessBuilder builder = new ProcessBuilder(command);
             builder.directory(new File(System.getProperty("user.dir")));
             final Process process = builder.start();
             try {
                 process.waitFor(10000, TimeUnit.MILLISECONDS);
-                sayDone();
+                //sayDone();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

@@ -1,6 +1,7 @@
 package ge.freeuni.project.controllers;
 
 import ge.freeuni.project.models.MesGovGeNewsPostModel;
+import ge.freeuni.project.schedulers.ResourceDownloader;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -13,6 +14,9 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
 import java.util.*;
 
 import static org.springframework.http.MediaType.TEXT_HTML;
@@ -23,11 +27,13 @@ public class HttpDataController extends WebMvcAutoConfiguration {
 
     @RequestMapping(value = "/mes-gov-ge", method = RequestMethod.GET)
     @CrossOrigin(origins = "https://localhost:4200")
-    public ResponseEntity<String> getContent(HttpServletResponse response){
+    @ResponseBody
+    public List<MesGovGeNewsPostModel> getContent(HttpServletResponse response){
+
 
         HttpHeaders responseHeaders = new HttpHeaders();
         responseHeaders.setContentType(TEXT_HTML);
-        String body = getFile("public/content.php?id=75&lang=geo");
+        String body = usingBufferedReader(System.getProperty("user.dir")+"/front-angular/assets/content.php@id=75&lang=geo");
         Document doc = Jsoup.parse(body);
         Elements posts = doc.getElementsByClass("news");
         List<MesGovGeNewsPostModel> newsItems = new ArrayList<>();
@@ -35,19 +41,33 @@ public class HttpDataController extends WebMvcAutoConfiguration {
             String newsImgSrc = element.getElementsByClass( "img-center").attr("src");
             String newsTitleText = element.getElementsByClass("news-title").first().getElementsByTag("a").first().text();
             String newsTitleRef = element.getElementsByClass("news-title").first().getElementsByTag("a").first().attr("href");
-
-            newsItems.add(new MesGovGeNewsPostModel(newsTitleText, "", "", newsImgSrc));
-            System.out.println(newsImgSrc);
+            String newsDate = element.getElementsByClass("news-date").first().text();
+            String newsText = element.getElementsByClass("news-text").first().html();
+            newsItems.add(new MesGovGeNewsPostModel(newsTitleText, newsTitleRef, newsDate, newsText, newsImgSrc));
         }
 
-        return new ResponseEntity<String>( body, responseHeaders, HttpStatus.OK);
+        return newsItems;
     }
 
-    private String getFile(String fileName) {
 
-        return new Scanner(getClass().getClassLoader().getResourceAsStream(fileName), "UTF-8").useDelimiter("\\A").next();
+    private String usingBufferedReader(String filePath)
+    {
+        StringBuilder contentBuilder = new StringBuilder();
+        try (BufferedReader br = new BufferedReader(new FileReader(filePath)))
+        {
+
+            String sCurrentLine;
+            while ((sCurrentLine = br.readLine()) != null)
+            {
+                contentBuilder.append(sCurrentLine).append("\n");
+            }
+        }
+        catch (IOException e)
+        {
+            e.printStackTrace();
+        }
+        return contentBuilder.toString();
     }
-
 
     @RequestMapping(value = "/test", method = RequestMethod.GET)
     @CrossOrigin(origins = "https://localhost:4200")
@@ -56,11 +76,6 @@ public class HttpDataController extends WebMvcAutoConfiguration {
 
 
         ArrayList<MesGovGeNewsPostModel> res = new ArrayList<>();
-
-        res.add(new MesGovGeNewsPostModel("a", "b", "c", "d"));
-        res.add(new MesGovGeNewsPostModel("a", "b", "c", "d"));
-        res.add(new MesGovGeNewsPostModel("a", "b", "c", "d"));
-
 
         return res;
     }

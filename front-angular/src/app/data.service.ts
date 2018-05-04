@@ -23,6 +23,6 @@ export class DataService {
   }
 
   getAll(): Observable<any> {
-    return this.http.get('http://localhost:8080/test');
+    return this.http.get('http://localhost:8080/mes-gov-ge');
   }
 }

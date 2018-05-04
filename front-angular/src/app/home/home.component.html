@@ -47,12 +47,16 @@
     </div>
     <div id="middleDiv">
       <h2>Educational News</h2>
-      <div *ngFor="let newsItem of news">
-        <img class="newsImg" src=""/>
+      <div class="newsItem" *ngFor="let newsItem of news">
+        <div class="newsImg">
+          <img src="../../assets/{{newsItem.newsImgSrc}}"/>
+        </div>
         <div class="newsInfo">
-          <p class="newsDate">{{newsItem.postDate}}</p>
-          <h2 class="newsTitle">{{newsItem.postTitle}}</h2>
-          <p class="newsDescription">{{newsItem.postDescription}}</p>
+          <p class="newsDate">{{newsItem.newsDate}}</p>
+          <a class="newsTitle" href="{{newsItem.newsTitleRef}}">
+            {{newsItem.newsTitle}}
+          </a>
+          <p class="newsDescription" [innerHTML]="newsItem.newsText"></p>
         </div>
       </div>
     </div>

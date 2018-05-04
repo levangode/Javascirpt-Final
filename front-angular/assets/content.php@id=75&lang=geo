@@ -61,7 +61,7 @@
         <li><a target="blank" href="https://twitter.com/Educationgovge" class="twitter"><i class="fa fa-lg fa-twitter"></i></a></li>
         <li><a target="blank" href="http://mes.gov.ge/rssfeed.php?lang=geo" class="rss"><i class="fa fa-lg fa-rss"></i></a></li>
     </ul>
-  <div  class="scrollToTop"><a href="content.php?id=75&amp;lang=geo#"><i class="fa fa-angle-up"></i><br><span>Top</span></a></div>
+  <div  class="scrollToTop"><a href="content.php@id=75&amp;lang=geo#"><i class="fa fa-angle-up"></i><br><span>Top</span></a></div>
 </div>
 <div class="header-bottom">
   <div class="container">
@@ -87,7 +87,7 @@
       <div class="col-md-6 col-sm-6 col-xs-6">
         <div class="header-language">
        
-                           <ul class="nav navbar-nav navbar-right"><li><a href="http://mes.gov.ge/content.php?id=5588&amp;lang=geo"><i class="fa fa-external-link"></i>&nbsp;სასარგებლო ბმულები</a></li><li><a href="http://mes.gov.ge/content.php?id=1853&amp;lang=geo"><i class="fa fa-question"></i>&nbsp;FAQ</a></li><li><a href="http://mes.gov.ge/content.php?id=5587&amp;lang=geo"><i class="fa fa-sitemap"></i>&nbsp;საიტის რუკა</a></li>        <li role="navigation"><a href="content.php?id=75&amp;lang=geo" title="Georgian"><img  class="visible" src="assets/images/geo-on.png" /></a></li>
+                           <ul class="nav navbar-nav navbar-right"><li><a href="http://mes.gov.ge/content.php?id=5588&amp;lang=geo"><i class="fa fa-external-link"></i>&nbsp;სასარგებლო ბმულები</a></li><li><a href="http://mes.gov.ge/content.php?id=1853&amp;lang=geo"><i class="fa fa-question"></i>&nbsp;FAQ</a></li><li><a href="http://mes.gov.ge/content.php?id=5587&amp;lang=geo"><i class="fa fa-sitemap"></i>&nbsp;საიტის რუკა</a></li>        <li role="navigation"><a href="content.php@id=75&amp;lang=geo" title="Georgian"><img  class="visible" src="assets/images/geo-on.png" /></a></li>
         <li role="navigation"><a href="http://mes.gov.ge/content.php?id=75&amp;lang=eng" title="English"><img class="visible" src="assets/images/eng-on.png" /></a></li>
         </ul>
       </div>
@@ -169,10 +169,10 @@
             	<a href="http://mes.gov.ge/index.php?lang=geo">მთავარი</a>
 			</li>
 			<li>
-				<a class="dropdown-toggle" data-toggle="dropdown" href="content.php?id=75&amp;lang=geo#">სიახლეები <span class="caret"></span></a>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="content.php@id=75&amp;lang=geo#">სიახლეები <span class="caret"></span></a>
 				<ul class="dropdown-menu multi-level level-1">
                     <li>
-                    <a href="content.php?id=75&amp;lang=geo">სიახლეები</a>
+                    <a href="content.php@id=75&amp;lang=geo">სიახლეები</a>
                     </li>
                     <li>
                     <a href="http://mes.gov.ge/content.php?id=77&amp;lang=geo">კონკურსები</a>
@@ -180,7 +180,7 @@
 				</ul>
 			</li>
 			<li>
-				<a class="dropdown-toggle" data-toggle="dropdown" href="content.php?id=75&amp;lang=geo#">სამინისტრო <span class="caret"></span></a>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="content.php@id=75&amp;lang=geo#">სამინისტრო <span class="caret"></span></a>
 				<ul class="dropdown-menu multi-level level-1">
                     <li class="dropdown-submenu">
                     	<a class="dropdown-toggle"  href="http://mes.gov.ge/content.php?id=78&amp;lang=geo">სამინისტროს შესახებ</a>
@@ -217,7 +217,7 @@
             	<a  href="http://mes.gov.ge/content.php?id=104&amp;lang=geo">გალერეა</a>
 			</li>
 			<li>
-				<a class="dropdown-toggle" data-toggle="dropdown" href="content.php?id=75&amp;lang=geo#">ადამიანური რესურსების მართვა <span class="caret"></span></a>
+				<a class="dropdown-toggle" data-toggle="dropdown" href="content.php@id=75&amp;lang=geo#">ადამიანური რესურსების მართვა <span class="caret"></span></a>
 				<ul class="dropdown-menu multi-level level-1">
                     <li class="dropdown-submenu">
                     	<a class="dropdown-toggle"  href="http://mes.gov.ge/content.php?id=6158&amp;lang=geo">სამინისტროს ადამიანური რესურსი</a>
@@ -265,6 +265,60 @@
     <div class="col-md-12">
 
                          <div class="news">
+                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/MES_19_11.JPG" title="ეროვნულ ბიბლიოთეკაში ვახტანგ როდონაიას ოთახი გაიხსნა"><img class="img-center thumbox" src="uploads/News/IMG/MES_19_11.JPG"  width="" height="" alt="მიხეილ ჩხენკელი"/></a></div>
+                    <div class="col-md-8">
+                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 04/05/2018</div>
+                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8378&amp;lang=geo">ეროვნულ ბიბლიოთეკაში ვახტანგ როდონაიას ოთახი გაიხსნა</a></div>
+                      <div class="news-text">ეროვნულ ბიბლიოთეკაში, კორპუს ვახტანგ მეექვსეში, ლიტერატორის და პედაგოგის, ვატო როდონაიას ოთახი გაიხსნა. განათლებისა და მეცნიერების... <a class="readmore" href="http://mes.gov.ge/content.php?id=8378&amp;lang=geo">ვრცლად</a></div>
+                    </div>
+                    
+                  </div>
+                  <div class="news">
+                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/MES_543_6.jpg" title="ბულინგთან ბრძოლის საერთაშორისო დღე 126-ე საჯარო სკოლაში"><img class="img-center thumbox" src="uploads/News/IMG/MES_543_6.jpg"  width="" height="" alt="ბულინგთან ბრძოლის დღე"/></a></div>
+                    <div class="col-md-8">
+                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 04/05/2018</div>
+                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8377&amp;lang=geo">ბულინგთან ბრძოლის საერთაშორისო დღე 126-ე საჯარო სკოლაში</a></div>
+                      <div class="news-text">ბულინგთან ბრძოლის საერთაშორისო დღეს თბილისის 126-ე საჯარო სკოლის მოსწავლეებმა ანტიბულინგური კამპანია გამართეს. ღონისძიების ფარგლებში, დაწყებითი... <a class="readmore" href="http://mes.gov.ge/content.php?id=8377&amp;lang=geo">ვრცლად</a></div>
+                    </div>
+                    
+                  </div>
+                  <div class="news">
+                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/MES_43_0.jpg" title="მინისტრმა პროფესიული განათლების საკითხები შვეიცარიის დელეგაციასთან განიხილა"><img class="img-center thumbox" src="uploads/News/IMG/MES_43_0.jpg"  width="" height="" alt="პროფესიული განათლება"/></a></div>
+                    <div class="col-md-8">
+                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 04/05/2018</div>
+                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8376&amp;lang=geo">მინისტრმა პროფესიული განათლების საკითხები შვეიცარიის დელეგაციასთან განიხილა</a></div>
+                      <div class="news-text">საქართველოს განათლებისა და მეცნიერების მინისტრი, მიხეილ ჩხენკელი, განვითარებისა და თანამშრომლობის შვეიცარიის სააგენტოს გენერალურ დირექტორს,... <a class="readmore" href="http://mes.gov.ge/content.php?id=8376&amp;lang=geo">ვრცლად</a></div>
+                    </div>
+                    
+                  </div>
+                  <div class="news">
+                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/MES_222_1.jpg" title="ბულინგთან ბრძოლის დღე კლასიკურ გიმნაზიაში"><img class="img-center thumbox" src="uploads/News/IMG/MES_222_1.jpg"  width="" height="" alt="ბულინგთან ბრძოლის დღე"/></a></div>
+                    <div class="col-md-8">
+                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 04/05/2018</div>
+                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8375&amp;lang=geo">ბულინგთან ბრძოლის დღე კლასიკურ გიმნაზიაში</a></div>
+                      <div class="news-text">ბულინგის წინაღმდეგ ბრძოლის მსოფლიო დღე თბილისის კლასიკურ გიმნაზიაში კეთილგანწყობის, სითბოს და სიკეთის ურთიერთგაცვლით დაიწყო. სკოლის ფოიეში გულის... <a class="readmore" href="http://mes.gov.ge/content.php?id=8375&amp;lang=geo">ვრცლად</a></div>
+                    </div>
+                    
+                  </div>
+                  <div class="news">
+                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/MES_99_11.jpg" title="ფულბრაიტის სამაგისტრო პროგრამაზე განაცხადების მიღება იწყება"><img class="img-center thumbox" src="uploads/News/IMG/MES_99_11.jpg"  width="" height="" alt="მიხეილ ჩხენკელი"/></a></div>
+                    <div class="col-md-8">
+                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 02/05/2018</div>
+                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8374&amp;lang=geo">ფულბრაიტის სამაგისტრო პროგრამაზე განაცხადების მიღება იწყება</a></div>
+                      <div class="news-text">ამერიკის შეერთებული შტატების საელჩოში ფულბრაიტის სამაგისტრო პროგრამის გამოცხადების ცერემონია გაიმართა, რომელშიც მონაწილეობა საქართველოს... <a class="readmore" href="http://mes.gov.ge/content.php?id=8374&amp;lang=geo">ვრცლად</a></div>
+                    </div>
+                    
+                  </div>
+                  <div class="news">
+                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/939322.jpg" title="ქართველი მოსწავლეები ქიმიის ოლიმპიადაზე"><img class="img-center thumbox" src="uploads/News/IMG/939322.jpg"  width="" height="" alt="ზოგადი განათლება"/></a></div>
+                    <div class="col-md-8">
+                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 02/05/2018</div>
+                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8373&amp;lang=geo">ქართველი მოსწავლეები ქიმიის ოლიმპიადაზე</a></div>
+                      <div class="news-text">ი.ვეკუას სახელობის ფიზიკა-მათემატიკის 42-ე საჯარო სკოლის ინიციატივითა და საქართველოს განათლებისა და მეცნიერების სამინისტროს დაფინანსებით,... <a class="readmore" href="http://mes.gov.ge/content.php?id=8373&amp;lang=geo">ვრცლად</a></div>
+                    </div>
+                    
+                  </div>
+                  <div class="news">
                     <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/MES_91_1.jpg" title="ქართველი მოსწავლეების წარმატება მათემატიკის ოლიმპიადაზე"><img class="img-center thumbox" src="uploads/News/IMG/MES_91_1.jpg"  width="" height="" alt="მათემატიკის ოლიმპიადა"/></a></div>
                     <div class="col-md-8">
                       <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 01/05/2018</div>
@@ -1117,63 +1171,6 @@
                     </div>
                     
                   </div>
-                  <div class="news">
-                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/541.jpg" title="კონკურსი ინფორმატიკის ოლიმპიადის ჩატარების მიზნით "><img class="img-center thumbox" src="uploads/541.jpg"  width="" height="" alt="განათლების სამინისტრო"/></a></div>
-                    <div class="col-md-8">
-                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 07/03/2018</div>
-                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8201&amp;lang=geo">კონკურსი ინფორმატიკის ოლიმპიადის ჩატარების მიზნით </a></div>
-                      <div class="news-text">საქართველოს განათლებისა და მეცნიერების სამინისტრო &bdquo;წარმატებულ მოსწავლეთა წახალისების პროგრამის&ldquo; &bdquo;ეროვნული სასწავლო ოლიმპიადების... <a class="readmore" href="http://mes.gov.ge/content.php?id=8201&amp;lang=geo">ვრცლად</a></div>
-                    </div>
-                    
-                  </div>
-                  <div class="news">
-                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/541.jpg" title="სასტიპენდიო პროგრამა ევროპის „აღმოსავლეთ პარტნიორობის“ სკოლაში დაფინანსების მიზნით"><img class="img-center thumbox" src="uploads/541.jpg"  width="" height="" alt="განათლების სამინისტრო"/></a></div>
-                    <div class="col-md-8">
-                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 06/03/2018</div>
-                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8197&amp;lang=geo">სასტიპენდიო პროგრამა ევროპის „აღმოსავლეთ პარტნიორობის“ სკოლაში დაფინანსების მიზნით</a></div>
-                      <div class="news-text">
-ევროპის
-&bdquo;აღმოსავლეთ პარტნიორობის&ldquo;&nbsp;სკოლაში სწავლის დაფინანსების მიზნით, 2018-2019 სასწავლო წლისთვის სასტიპენდიო პროგრამა გამოცხადდა. სტიპენდია... <a class="readmore" href="http://mes.gov.ge/content.php?id=8197&amp;lang=geo">ვრცლად</a></div>
-                    </div>
-                    
-                  </div>
-                  <div class="news">
-                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/MES_1141.jpg" title="მიხეილ ჩხენკელმა ევროკავშირის დელეგაციას უმასპინძლა"><img class="img-center thumbox" src="uploads/News/IMG/MES_1141.jpg"  width="" height="" alt="მიხეილ ჩხენკელი"/></a></div>
-                    <div class="col-md-8">
-                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 05/03/2018</div>
-                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8196&amp;lang=geo">მიხეილ ჩხენკელმა ევროკავშირის დელეგაციას უმასპინძლა</a></div>
-                      <div class="news-text">საქართველოს განათლებისა და მეცნიერების მინისტრი მიხეილ ჩხენკელი ევროკავშირის დელეგაციას შეხვდა, რომლის შემადგენლობაშიც იყვნენ ევროპის სამეზობლო... <a class="readmore" href="http://mes.gov.ge/content.php?id=8196&amp;lang=geo">ვრცლად</a></div>
-                    </div>
-                    
-                  </div>
-                  <div class="news">
-                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/MES_181.JPG" title="სამინისტრო სასკოლო სახელმძღვანელოების საჯარო განხილვას იწყებს"><img class="img-center thumbox" src="uploads/News/IMG/MES_181.JPG"  width="" height="" alt="გრიფირება"/></a></div>
-                    <div class="col-md-8">
-                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 05/03/2018</div>
-                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8195&amp;lang=geo">სამინისტრო სასკოლო სახელმძღვანელოების საჯარო განხილვას იწყებს</a></div>
-                      <div class="news-text">
-საქართველოს განათლებისა და მეცნიერების სამინისტრო საჯარო სკოლების I-VI კლასებისათვის ახალი, თანამედროვე მოთხოვნების შესაბამისი... <a class="readmore" href="http://mes.gov.ge/content.php?id=8195&amp;lang=geo">ვრცლად</a></div>
-                    </div>
-                    
-                  </div>
-                  <div class="news">
-                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/MES_0925.JPG" title="პროფესიული პროგრამები  აგარის საჯარო სკოლაში"><img class="img-center thumbox" src="uploads/News/IMG/MES_0925.JPG"  width="" height="" alt="აგარის საჯარო სკოლა"/></a></div>
-                    <div class="col-md-8">
-                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 05/03/2018</div>
-                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8194&amp;lang=geo">პროფესიული პროგრამები  აგარის საჯარო სკოლაში</a></div>
-                      <div class="news-text">ევროკავშირის ფინანსური მხარდაჭერით, გაეროს განვითარების პროგრამის (UNDP) პროექტის ფარგლებში, საქართველოს განათლებისა და მეცნიერების სამინისტროს,... <a class="readmore" href="http://mes.gov.ge/content.php?id=8194&amp;lang=geo">ვრცლად</a></div>
-                    </div>
-                    
-                  </div>
-                  <div class="news">
-                    <div class="col-md-4 gallery"><a class="lightbox" href="uploads/News/IMG/IMG_4992.HfgrG_6JI2.jpg" title="სან დიეგოს სახელმწიფო უნივერსიტეტის (SDSU) ელექტრული ინჟინერიის თანამედროვე ლაბორატორიების პრეზენტაცია თსუ-ში"><img class="img-center thumbox" src="uploads/News/IMG/IMG_4992.HfgrG_6JI2.jpg"  width="" height="" alt=""/></a></div>
-                    <div class="col-md-8">
-                      <div class="news-date"><i class="fa fa-calendar calendar-icon"></i> 05/03/2018</div>
-                      <div class="news-title"><a href="http://mes.gov.ge/content.php?id=8199&amp;lang=geo">სან დიეგოს სახელმწიფო უნივერსიტეტის (SDSU) ელექტრული ინჟინერიის თანამედროვე ლაბორატორიების პრეზენტაცია თსუ-ში</a></div>
-                      <div class="news-text">უახლესი ტექნოლოგიებით აღჭურვილი ელექტრული ინჟინერიის ორი ახალი ლაბორატორია გაიხსნა ივანე ჯავახიშვილის სახელობის თბილისის სახელმწიფო... <a class="readmore" href="http://mes.gov.ge/content.php?id=8199&amp;lang=geo">ვრცლად</a></div>
-                    </div>
-                    
-                  </div>
             <div class="news_box">
                 <div class="news_title" style="text-align: center;" id="tablePaging"> 
                   <ul class="pagination">
@@ -1201,7 +1198,7 @@
 <ul class="sidebar-menu">
 
       <li class="primer">
-              <a  href="content.php?id=75&amp;lang=geo">სიახლეები</a>
+              <a  href="content.php@id=75&amp;lang=geo">სიახლეები</a>
       </li>
       <li class="primer">
               <a  href="http://mes.gov.ge/content.php?id=77&amp;lang=geo">კონკურსები</a>
@@ -1217,37 +1214,37 @@
                  <li>
                     <div class="media">
                       <div class="media-left">
-                        <a class="news_img" href="http://mes.gov.ge/content.php?id=8371&amp;lang=geo">
-                          <img class="media-object" src="uploads/News/IMG/MES_91_1.jpg" alt="მათემატიკის ოლიმპიადა">
+                        <a class="news_img" href="http://mes.gov.ge/content.php?id=8378&amp;lang=geo">
+                          <img class="media-object" src="uploads/News/IMG/MES_19_11.JPG" alt="მიხეილ ჩხენკელი">
                         </a>
                       </div>
                       <div class="media-body">
-                       <a href="http://mes.gov.ge/content.php?id=8371&amp;lang=geo">ქართველი მოსწავლეების წარმატება მათემატიკის... <a class="readmore" href="http://mes.gov.ge/content.php?id=8371&amp;lang=geo"></a></a>
-                       <span class="feed_date">01.05.2018</span>
+                       <a href="http://mes.gov.ge/content.php?id=8378&amp;lang=geo">ეროვნულ ბიბლიოთეკაში ვახტანგ როდონაიას ოთახი... <a class="readmore" href="http://mes.gov.ge/content.php?id=8378&amp;lang=geo"></a></a>
+                       <span class="feed_date">04.05.2018</span>
                       </div>
                     </div>
                   </li> <li>
                     <div class="media">
                       <div class="media-left">
-                        <a class="news_img" href="http://mes.gov.ge/content.php?id=8370&amp;lang=geo">
-                          <img class="media-object" src="uploads/News/IMG/MES_99_22.jpg" alt="მიხეილ ჩხენკელი">
+                        <a class="news_img" href="http://mes.gov.ge/content.php?id=8377&amp;lang=geo">
+                          <img class="media-object" src="uploads/News/IMG/MES_543_6.jpg" alt="ბულინგთან ბრძოლის დღე">
                         </a>
                       </div>
                       <div class="media-body">
-                       <a href="http://mes.gov.ge/content.php?id=8370&amp;lang=geo">თბილისის ღია უნივერსიტეტში სამართლისა და... <a class="readmore" href="http://mes.gov.ge/content.php?id=8370&amp;lang=geo"></a></a>
-                       <span class="feed_date">01.05.2018</span>
+                       <a href="http://mes.gov.ge/content.php?id=8377&amp;lang=geo">ბულინგთან ბრძოლის საერთაშორისო დღე 126-ე საჯარო... <a class="readmore" href="http://mes.gov.ge/content.php?id=8377&amp;lang=geo"></a></a>
+                       <span class="feed_date">04.05.2018</span>
                       </div>
                     </div>
                   </li> <li>
                     <div class="media">
                       <div class="media-left">
-                        <a class="news_img" href="http://mes.gov.ge/content.php?id=8368&amp;lang=geo">
-                          <img class="media-object" src="uploads/News/IMG/MES_83_32.jpg" alt="მიხეილ ჩხენკელი">
+                        <a class="news_img" href="http://mes.gov.ge/content.php?id=8376&amp;lang=geo">
+                          <img class="media-object" src="uploads/News/IMG/MES_43_0.jpg" alt="პროფესიული განათლება">
                         </a>
                       </div>
                       <div class="media-body">
-                       <a href="http://mes.gov.ge/content.php?id=8368&amp;lang=geo">მიხეილ ჩხენკელი კავკასიის, თურქეთისა და... <a class="readmore" href="http://mes.gov.ge/content.php?id=8368&amp;lang=geo"></a></a>
-                       <span class="feed_date">30.04.2018</span>
+                       <a href="http://mes.gov.ge/content.php?id=8376&amp;lang=geo">მინისტრმა პროფესიული განათლების საკითხები... <a class="readmore" href="http://mes.gov.ge/content.php?id=8376&amp;lang=geo"></a></a>
+                       <span class="feed_date">04.05.2018</span>
                       </div>
                     </div>
                   </li>          </ul>
@@ -1283,7 +1280,7 @@
 <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#news-filter" href="content.php?id=75&amp;lang=geo#collapse_2018" class="closeup collapsed">
+              <a data-toggle="collapse" data-parent="#news-filter" href="content.php@id=75&amp;lang=geo#collapse_2018" class="closeup collapsed">
               <i class="fa fa-tags"></i> &nbsp;2018 წელი              </a>
             </h4>
           </div>
@@ -1310,7 +1307,7 @@
 <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#news-filter" href="content.php?id=75&amp;lang=geo#collapse_2017" class="closeup collapsed">
+              <a data-toggle="collapse" data-parent="#news-filter" href="content.php@id=75&amp;lang=geo#collapse_2017" class="closeup collapsed">
               <i class="fa fa-tags"></i> &nbsp;2017 წელი              </a>
             </h4>
           </div>
@@ -1337,7 +1334,7 @@
 <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#news-filter" href="content.php?id=75&amp;lang=geo#collapse_2016" class="closeup collapsed">
+              <a data-toggle="collapse" data-parent="#news-filter" href="content.php@id=75&amp;lang=geo#collapse_2016" class="closeup collapsed">
               <i class="fa fa-tags"></i> &nbsp;2016 წელი              </a>
             </h4>
           </div>
@@ -1364,7 +1361,7 @@
 <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#news-filter" href="content.php?id=75&amp;lang=geo#collapse_2015" class="closeup collapsed">
+              <a data-toggle="collapse" data-parent="#news-filter" href="content.php@id=75&amp;lang=geo#collapse_2015" class="closeup collapsed">
               <i class="fa fa-tags"></i> &nbsp;2015 წელი              </a>
             </h4>
           </div>
@@ -1391,7 +1388,7 @@
 <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#news-filter" href="content.php?id=75&amp;lang=geo#collapse_2014" class="closeup collapsed">
+              <a data-toggle="collapse" data-parent="#news-filter" href="content.php@id=75&amp;lang=geo#collapse_2014" class="closeup collapsed">
               <i class="fa fa-tags"></i> &nbsp;2014 წელი              </a>
             </h4>
           </div>
@@ -1418,7 +1415,7 @@
 <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#news-filter" href="content.php?id=75&amp;lang=geo#collapse_2013" class="closeup collapsed">
+              <a data-toggle="collapse" data-parent="#news-filter" href="content.php@id=75&amp;lang=geo#collapse_2013" class="closeup collapsed">
               <i class="fa fa-tags"></i> &nbsp;2013 წელი              </a>
             </h4>
           </div>
@@ -1445,7 +1442,7 @@
 <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#news-filter" href="content.php?id=75&amp;lang=geo#collapse_2012" class="closeup collapsed">
+              <a data-toggle="collapse" data-parent="#news-filter" href="content.php@id=75&amp;lang=geo#collapse_2012" class="closeup collapsed">
               <i class="fa fa-tags"></i> &nbsp;2012 წელი              </a>
             </h4>
           </div>
@@ -1472,7 +1469,7 @@
 <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#news-filter" href="content.php?id=75&amp;lang=geo#collapse_2011" class="closeup collapsed">
+              <a data-toggle="collapse" data-parent="#news-filter" href="content.php@id=75&amp;lang=geo#collapse_2011" class="closeup collapsed">
               <i class="fa fa-tags"></i> &nbsp;2011 წელი              </a>
             </h4>
           </div>
@@ -1499,7 +1496,7 @@
 <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#news-filter" href="content.php?id=75&amp;lang=geo#collapse_2010" class="closeup collapsed">
+              <a data-toggle="collapse" data-parent="#news-filter" href="content.php@id=75&amp;lang=geo#collapse_2010" class="closeup collapsed">
               <i class="fa fa-tags"></i> &nbsp;2010 წელი              </a>
             </h4>
           </div>
@@ -1526,7 +1523,7 @@
 <div class="panel panel-default">
           <div class="panel-heading">
             <h4 class="panel-title">
-              <a data-toggle="collapse" data-parent="#news-filter" href="content.php?id=75&amp;lang=geo#collapse_2009" class="closeup collapsed">
+              <a data-toggle="collapse" data-parent="#news-filter" href="content.php@id=75&amp;lang=geo#collapse_2009" class="closeup collapsed">
               <i class="fa fa-tags"></i> &nbsp;2009 წელი              </a>
             </h4>
           </div>
