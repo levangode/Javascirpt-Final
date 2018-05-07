@@ -1,6 +1,8 @@
 package ge.freeuni.project.schedulers;
 
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.scheduling.annotation.Async;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
@@ -15,9 +17,11 @@ import java.util.concurrent.TimeUnit;
 @EnableScheduling
 public class ResourceDownloader {
 
+    private static final Logger log = LoggerFactory.getLogger(ResourceDownloader.class);
+
     @Async
     @Scheduled(fixedDelay = 600000)
-    public void MesGovGeDownloader(){
+    public void MesGovGeDownloader() {
         try {
             List<String> command = new ArrayList<>();
             command.add("wget");
@@ -33,7 +37,7 @@ public class ResourceDownloader {
                 process.waitFor(10000, TimeUnit.MILLISECONDS);
                 //sayDone();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                log.error("sleep interrupted");
             }
             InputStream is = process.getErrorStream();
             InputStreamReader isr = new InputStreamReader(is);
@@ -44,7 +48,7 @@ public class ResourceDownloader {
             }
             System.out.println("Program terminated!");
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("wget failed", e);
         }
     }
 
