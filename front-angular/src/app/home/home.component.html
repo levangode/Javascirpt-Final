@@ -1,28 +1,28 @@
-<div id="mainDiv">
-  <div id="logoDiv">
+<div id="main-div">
+  <div id="logo-div">
     <p>It's your duty to choose your future correctly</p>
   </div>
 
-  <div id="menuDiv">
-    <ul id="menuList">
-      <li class="menuItem">Ratings</li>
-      <li class="menuItem">Full List</li>
-      <li class="menuItem">Events</li>
-      <li class="menuItem">Gallery</li>
-      <li class="menuItem">FAQ</li>
+  <div id="menu-div">
+    <ul id="menu-list">
+      <li class="menu-item">Ratings</li>
+      <li class="menu-item">Full List</li>
+      <li class="menu-item">Events</li>
+      <li class="menu-item">Gallery</li>
+      <li class="menu-item">FAQ</li>
     </ul>
   </div>
-  <div id="contentDiv">
-    <div id="searchDiv">
+  <div id="content-div">
+    <div id="search-div">
       <span>University Search:</span>
-      <select id="selectCategory">
+      <select id="select-category">
         <option value="" disabled selected hidden>Study of interest</option>
         <option value="Technology">Technology</option>
         <option value="Medicine">Medicine</option>
         <option value="Law">Law</option>
         <option value="Art">Art</option>
       </select>
-      <select id="selectUniversity">
+      <select id="select-university">
         <option value="" disabled selected hidden>Desired University</option>
         <option value="Freeuni">Freeuni</option>
         <option value="Agruni">Agruni</option>
@@ -30,39 +30,39 @@
       <button>GO</button>
       <button>Complex Search</button>
     </div>
-    <div id="leftDiv">
+    <div id="left-div">
       <h2>Top 10</h2>
-      <ol id="ratingList">
-        <li class="ratingItem">Free University</li>
-        <li class="ratingItem">Agrarian University</li>
-        <li class="ratingItem">Tbilisi State University</li>
-        <li class="ratingItem">Georgian Technical University</li>
-        <li class="ratingItem">Georgian University</li>
-        <li class="ratingItem">Georgian American University</li>
-        <li class="ratingItem">Tbilisi State Medical University</li>
-        <li class="ratingItem">Black Sea University</li>
-        <li class="ratingItem">New Vision</li>
-        <li class="ratingItem">Sulkhan Kvernadze</li>
+      <ol id="rating-list">
+        <li class="rating-item">Free University</li>
+        <li class="rating-item">Agrarian University</li>
+        <li class="rating-item">Tbilisi State University</li>
+        <li class="rating-item">Georgian Technical University</li>
+        <li class="rating-item">Georgian University</li>
+        <li class="rating-item">Georgian American University</li>
+        <li class="rating-item">Tbilisi State Medical University</li>
+        <li class="rating-item">Black Sea University</li>
+        <li class="rating-item">New Vision</li>
+        <li class="rating-item">Sulkhan Kvernadze</li>
       </ol>
     </div>
-    <div id="middleDiv">
+    <div id="middle-div">
       <h2>Educational News</h2>
-      <div class="newsItem" *ngFor="let newsItem of news">
-        <div class="newsImg">
+      <div class="news-item" *ngFor="let newsItem of news">
+        <div class="news-img">
           <img src="../../assets/{{newsItem.newsImgSrc}}"/>
         </div>
-        <div class="newsInfo">
-          <p class="newsDate">{{newsItem.newsDate}}</p>
-          <a class="newsTitle" href="{{newsItem.newsTitleRef}}">
+        <div class="news-info">
+          <p class="news-date">{{newsItem.newsDate}}</p>
+          <a class="news-title" href="{{newsItem.newsTitleRef}}">
             {{newsItem.newsTitle}}
           </a>
           <p class="newsDescription" [innerHTML]="newsItem.newsText"></p>
         </div>
       </div>
     </div>
-    <div id="rightDiv">
+    <div id="right-div">
       <app-signin></app-signin>
-      <div id="quickLinksDiv">
+      <div id="quick-links-div">
         <h2>Quick Links</h2>
         <ul>
           <li>Where to Study?</li>
