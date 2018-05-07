@@ -13,6 +13,7 @@ import {
   FacebookLoginProvider
 } from "angular5-social-login";
 import {SigninComponent} from "./signin/signin.component";
+import { UserPageComponent } from './user-page/user-page.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -30,7 +31,8 @@ export function getAuthServiceConfigs() {
   declarations: [
     AppComponent,
     HomeComponent,
-    SigninComponent
+    SigninComponent,
+    UserPageComponent
   ],
   imports: [
     HttpClientModule,
