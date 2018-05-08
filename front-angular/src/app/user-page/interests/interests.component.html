@@ -1,13 +1,24 @@
 <div id="content-div">
-  <h2>დაამატეთ თქვენი ინტერესები და საიტი დაგეხმარებათ შერჩევაში</h2>
+  <div class="container">
+    <div class="col">
+      <p>დაამატე ინტერესი</p>
+    </div>
 
-  <div></div>
-  <ul>
-    <li>ქიმია</li>
-    <li>ბიოლოგია</li>
-    <li>მათემატიკა</li>
-    <li>ისტორია</li>
-    <li>მართვა</li>
-    <li>კომპიუტერი</li>
-  </ul>
+    <div class="col">
+      <p>ჩემი ინტერესები</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col">
+      <ul class="interests-list">
+        <li class="interest" *ngFor="let interest of getInterests()" (click)="addInterest(interest)">{{interest}}</li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="interests-list">
+        <li class="interest" *ngFor="let interest of getMyInterests()" (click)="removeInterest(interest)">{{interest}}</li>
+      </ul>
+    </div>
+  </div>
 </div>
