@@ -69,4 +69,7 @@ export class SigninComponent implements OnInit {
     this.user = this._dataService.getUser();
   }
 
+  goToProfile() {
+    this.router.navigate(['/user']);
+  }
 }
