@@ -1,0 +1,53 @@
+#main-div{
+  width: 1000px;
+  background-color: green;
+}
+
+.main-header{
+  width: 100%;
+  height: 130px;
+  background-color: blue;
+}
+
+#header-top{
+  width: 100%;
+  height: 90px;
+}
+
+.header-bottom-left{
+  float: left;
+  height: 90px;
+  background-color: yellow;
+}
+
+.header-img{
+  width: 390px;
+  height: 90px;
+}
+
+.header-bottom-right{
+  float: right;
+  width: 350px;
+  height: 90px;
+  text-align: right;
+  background-color: red;
+}
+
+.links{
+  margin: 50px 0 0;
+}
+
+#menu-div ul{
+  margin: 0;
+}
+.menu-list{
+  padding-left: 70px;
+}
+
+.menu-list li{
+  font-size: 90%;
+  float: left;
+  display: block;
+  padding: 5px;
+  background-color: #eff7ff;
+}
