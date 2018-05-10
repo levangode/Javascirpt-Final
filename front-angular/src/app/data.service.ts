@@ -42,4 +42,9 @@ export class DataService {
     return this.http.post("http://localhost:8080/remove-interest/"+userId, JSON.stringify(interest),
       {headers:{'Content-Type': 'application/json'}});
   }
+
+  saveUser(userData: SocialUser) {
+    return this.http.post("http://localhost:8080/save-user/", JSON.stringify(userData),
+      {headers:{'Content-Type': 'application/json'}})
+  }
 }

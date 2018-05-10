@@ -32,7 +32,7 @@ public class HttpDataController extends WebMvcAutoConfiguration {
     public List<MesGovGeNewsPostModel> getContent(HttpServletResponse response) {
         List<MesGovGeNewsPostModel> newsItems = new ArrayList<>();
         try {
-            String body = usingBufferedReader(System.getProperty("user.dir") + "/front-angular/src/assets/content.php@id=75&lang=geo");
+            String body = usingBufferedReader(System.getProperty("user.dir") + "/front-angular/src/assets/content.php?id=75&lang=geo");
             Document doc = Jsoup.parse(body);
             Elements posts = doc.getElementsByClass("news");
 

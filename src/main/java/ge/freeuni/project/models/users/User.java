@@ -15,6 +15,9 @@ import java.util.Set;
 @EqualsAndHashCode
 public class User {
     private Long id;
+    private String fbId;
+    private String fbImage;
+    private String email;
     private String name;
     private Set<UserInterest> interestList;
 
@@ -29,6 +32,14 @@ public class User {
     public User(String name, Set<UserInterest> interestList) {
         this.name = name;
         this.interestList = interestList;
+    }
+
+    public User(String fbId, String fbImage, String email, String name) {
+        this.fbId = fbId;
+        this.fbImage = fbImage;
+        this.email = email;
+        this.name = name;
+        interestList = new HashSet<>();
     }
 
     @Id
@@ -62,5 +73,29 @@ public class User {
 
     public void addInterest(UserInterest interest){
         this.interestList.add(interest);
+    }
+
+    public String getFbId() {
+        return fbId;
+    }
+
+    public void setFbId(String fbId) {
+        this.fbId = fbId;
+    }
+
+    public String getFbImage() {
+        return fbImage;
+    }
+
+    public void setFbImage(String fbImage) {
+        this.fbImage = fbImage;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }

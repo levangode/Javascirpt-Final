@@ -9,13 +9,14 @@ import {DataService} from "../../data.service";
 export class InterestsComponent implements OnInit {
 
   interests: Array<any>;
-  userId: string = "asd123";
+  userId: string;
   myInterests: Array<any> = [];
 
   constructor(private dataService: DataService) {
   }
 
   ngOnInit() {
+    this.userId = this.dataService.getUser().id;
     this.dataService.getAllInterests().subscribe(value => {
       this.interests = value;
       this.dataService.getUserInterests(this.userId).subscribe(value => {

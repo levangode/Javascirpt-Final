@@ -34,7 +34,5 @@ public class ProjectApplication implements CommandLineRunner {
         interestRepository.save(new UserInterest("ქიმია"));
         interestRepository.save(new UserInterest("ფიზიკა"));
 
-        User u = new User("ლევანი");//userRepository.findAll().get(0);
-        userRepository.save(u);
     }
 }

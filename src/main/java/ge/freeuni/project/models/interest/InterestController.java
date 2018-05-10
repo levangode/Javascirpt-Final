@@ -22,7 +22,7 @@ public class InterestController {
     @PostMapping("/add-interest/{userId}")
     @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
     public void addInterest(@PathVariable String userId, @RequestBody UserInterest interest){
-        Optional<User> userOptional = this.userRepository.findById(1L);
+        Optional<User> userOptional = this.userRepository.findByFbId(userId);
         if(userOptional.isPresent()){
             userOptional.get().addInterest(interest);
             this.userRepository.save(userOptional.get());
@@ -32,7 +32,7 @@ public class InterestController {
     @PostMapping("/remove-interest/{userId}")
     @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
     public void removeInterest(@PathVariable String userId, @RequestBody UserInterest interest){
-        Optional<User> userOptional = this.userRepository.findById(1L);
+        Optional<User> userOptional = this.userRepository.findByFbId(userId);
         if(userOptional.isPresent()){
             userOptional.get().getInterestList().remove(interest);
             this.userRepository.save(userOptional.get());
@@ -43,7 +43,7 @@ public class InterestController {
     @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
     @ResponseBody
     public Set<UserInterest> getInterests(@PathVariable String userId){
-        Optional<User> userOptional = this.userRepository.findById(1L);
+        Optional<User> userOptional = this.userRepository.findByFbId(userId);
         if(userOptional.isPresent()){
             return userOptional.get().getInterestList();
         } else {
