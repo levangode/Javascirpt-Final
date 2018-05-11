@@ -30,9 +30,9 @@ public class ProjectApplication implements CommandLineRunner {
     @Override
     @Transactional()
     public void run(String... args) throws Exception {
-        interestRepository.save(new UserInterest("ბიოლოგია"));
-        interestRepository.save(new UserInterest("ქიმია"));
-        interestRepository.save(new UserInterest("ფიზიკა"));
+//        interestRepository.save(new UserInterest("ბიოლოგია"));
+//        interestRepository.save(new UserInterest("ქიმია"));
+//        interestRepository.save(new UserInterest("ფიზიკა"));
 
     }
 }

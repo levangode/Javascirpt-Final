@@ -9,16 +9,17 @@
     <div id="menu-div">
       <ul id="user-menu-list">
         <li (click)="changeItem('favourites')" class="user-menu-item" [ngClass]="{'item-active': isFavourites()}">
-          Favourites
+          ფავორიტები
         </li>
-        <li (click)="changeItem('friends')" class="user-menu-item" [ngClass]="{'item-active': isFriends()}">Friends</li>
+        <li (click)="changeItem('friends')" class="user-menu-item" [ngClass]="{'item-active': isFriends()}">მეგობრები</li>
         <li (click)="changeItem('interests')" class="user-menu-item" [ngClass]="{'item-active': isInterests()}">
-          Interests
+          ინტერესები
         </li>
         <li (click)="changeItem('achievements')" class="user-menu-item" [ngClass]="{'item-active': isAchievements()}">
-          Achievements
+          მიღწევები
         </li>
-        <li (click)="changeItem('profile')" class="user-menu-item" [ngClass]="{'item-active': isProfile()}">Profile</li>
+        <li (click)="changeItem('profile')" class="user-menu-item" [ngClass]="{'item-active': isProfile()}">პროფილი</li>
+        <li routerLink="" class="user-menu-item">მთავარი</li>
       </ul>
     </div>
   </div>
