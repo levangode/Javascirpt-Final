@@ -1,0 +1,25 @@
+<div id="content-div">
+  <h2>დაამატეთ თქვენი ინტერესები და საიტი დაგეხმარებათ არჩევნის გაკეთებაში</h2>
+  <div class="container">
+    <div class="col">
+      <p>დაამატე ინტერესი</p>
+    </div>
+
+    <div class="col">
+      <p>ჩემი ინტერესები</p>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="col">
+      <ul class="interests-list">
+        <li class="interest" *ngFor="let interest of interests" (click)="addInterest(interest)">{{interest.name}}</li>
+      </ul>
+    </div>
+    <div class="col">
+      <ul class="interests-list">
+        <li class="interest" *ngFor="let interest of myInterests" (click)="removeInterest(interest)">{{interest.name}}</li>
+      </ul>
+    </div>
+  </div>
+</div>

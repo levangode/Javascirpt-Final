@@ -27,12 +27,12 @@ public class HttpDataController extends WebMvcAutoConfiguration {
     private static final Logger log = LoggerFactory.getLogger(HttpDataController.class);
 
     @RequestMapping(value = "/mes-gov-ge", method = RequestMethod.GET)
-    @CrossOrigin(origins = "https://localhost:4200")
+    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
     @ResponseBody
     public List<MesGovGeNewsPostModel> getContent(HttpServletResponse response) {
         List<MesGovGeNewsPostModel> newsItems = new ArrayList<>();
         try {
-            String body = usingBufferedReader(System.getProperty("user.dir") + "/front-angular/src/assets/content.php@id=75&lang=geo");
+            String body = usingBufferedReader(System.getProperty("user.dir") + "/front-angular/src/assets/content.php?id=75&lang=geo");
             Document doc = Jsoup.parse(body);
             Elements posts = doc.getElementsByClass("news");
 

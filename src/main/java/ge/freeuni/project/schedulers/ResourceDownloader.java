@@ -20,7 +20,7 @@ public class ResourceDownloader {
     private static final Logger log = LoggerFactory.getLogger(ResourceDownloader.class);
 
     @Async
-    @Scheduled(fixedDelay = 600000)
+    //@Scheduled(fixedDelay = 600000)
     public void MesGovGeDownloader() {
         try {
             List<String> command = new ArrayList<>();

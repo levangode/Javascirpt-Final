@@ -1,0 +1,40 @@
+
+
+#banner-div{
+  position: relative;
+}
+
+#profile-photo{
+  z-index: 100;
+  position: absolute;
+  bottom: -50px;
+  left: 150px;
+}
+
+
+
+#user-menu-list{
+  padding-left: 250px;
+}
+
+.user-menu-item{
+  user-select: none;
+  cursor: pointer;
+  padding: 10px 3px 10px 3px;
+  margin: 3px;
+  display: inline;
+  border: 2px solid black;
+}
+
+.user-menu-item:hover{
+  background-color: yellow;
+}
+
+.item-active{
+  background-color: green;
+}
+
+#top-div{
+  margin-bottom: 25px;
+}
+
