@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../data.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-university-registration-page',
@@ -14,9 +16,20 @@ export class UniversityRegistrationPageComponent implements OnInit {
   email: string = "";
 
 
-  constructor() { }
+  constructor(private dataService: DataService, private router: Router) { }
 
   ngOnInit() {
   }
 
+  addUniversity() {
+    let uni = {
+      "name": this.name,
+      "address": this.address,
+      "phone": this.phone,
+      "webAddress": this.webAddress,
+      "email": this.email
+    };
+    this.dataService.addUniversity(uni).subscribe();
+    this.router.navigate(['']);
+  }
 }

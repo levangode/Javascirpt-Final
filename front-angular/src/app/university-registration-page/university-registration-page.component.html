@@ -1,10 +1,10 @@
 <div id="content-div">
-  <form>
-    <input class="inp" type="text" placeholder="სახელი" [(ngModel)]="name">
-    <input class="inp" type="text" placeholder="მისამართი" [(ngModel)]="address">
-    <input class="inp" type="tel" placeholder="ტელეფონი" [(ngModel)]="phone">
-    <input class="inp" type="url" placeholder="საიტი" [(ngModel)]="webAddress">
-    <input class="inp" type="email" placeholder="ელ.ფოსტა" [(ngModel)]="email">
-    <input type="submit">
+  <form onsubmit="">
+    <input class="inp" name="a" type="text" required placeholder="სახელი" [(ngModel)]="name">
+    <input class="inp" name="b" type="text" placeholder="მისამართი" [(ngModel)]="address">
+    <input class="inp" name="c" type="tel" placeholder="ტელეფონი" [(ngModel)]="phone">
+    <input class="inp" name="d" type="url" placeholder="საიტი" [(ngModel)]="webAddress">
+    <input class="inp" name="e" type="email" placeholder="ელ.ფოსტა" [(ngModel)]="email">
+    <input type="submit" value="დასრულება" (click)="addUniversity()">
   </form>
 </div>

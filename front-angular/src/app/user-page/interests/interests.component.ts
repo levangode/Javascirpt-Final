@@ -41,7 +41,6 @@ export class InterestsComponent implements OnInit {
   }
 
   addInterest(interest: any) {
-    console.log(interest);
     this.myInterests.push(interest);
     let index = this.interests.indexOf(interest, 0);
     if (index > -1) {

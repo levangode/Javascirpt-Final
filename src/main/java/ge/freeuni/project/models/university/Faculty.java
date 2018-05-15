@@ -1,10 +1,21 @@
 package ge.freeuni.project.models.university;
 
 
-import javax.persistence.Entity;
+import ge.freeuni.project.models.BaseEntity;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
+
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Set;
 
 @Entity
+@ToString
+@EqualsAndHashCode
 public class Faculty {
+
+    private Long id;
     private String program;
     private String qualification;
     private Boolean acredited;
@@ -13,9 +24,34 @@ public class Faculty {
     private Integer credits;
     private Long annualFee;
     private Long numPlaces;
-
+    private Set<University> universities;
 
     public Faculty() {
+    }
+
+
+    public Faculty(String program, String qualification, Boolean acredited, String language, Boolean financing, Integer credits, Long annualFee, Long numPlaces) {
+        this.program = program;
+        this.qualification = qualification;
+        this.acredited = acredited;
+        this.language = language;
+        this.financing = financing;
+        this.credits = credits;
+        this.annualFee = annualFee;
+        this.numPlaces = numPlaces;
+        universities = new HashSet<>();
+    }
+
+    public Faculty(String program, String qualification, Boolean acredited, String language, Boolean financing, Integer credits, Long annualFee, Long numPlaces, Set<University> universities) {
+        this.program = program;
+        this.qualification = qualification;
+        this.acredited = acredited;
+        this.language = language;
+        this.financing = financing;
+        this.credits = credits;
+        this.annualFee = annualFee;
+        this.numPlaces = numPlaces;
+        this.universities = universities;
     }
 
     public String getProgram() {
@@ -80,5 +116,26 @@ public class Faculty {
 
     public void setNumPlaces(Long numPlaces) {
         this.numPlaces = numPlaces;
+    }
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(joinColumns = {@JoinColumn(name = "faculty_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "university_id", referencedColumnName = "id")})
+    public Set<University> getUniversities() {
+        return universities;
+    }
+
+    public void setUniversities(Set<University> universities) {
+        this.universities = universities;
     }
 }
