@@ -34,7 +34,7 @@ export function getAuthServiceConfigs() {
     AppComponent,
     HomeComponent,
     SigninComponent,
-    UniversityPageComponent
+    UniversityPageComponent,
     SigninComponent,
     UserPageComponent,
     InterestsComponent
