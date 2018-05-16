@@ -25,12 +25,14 @@ h2 {
   display: inline-block;
   width: 200px;
   border: 1px solid green;
+  border-radius: 10px;
 }
 #middle-div{
   margin: 1px;
   display: inline-block;
   width: 580px;
   border: 1px solid green;
+  border-radius: 10px;
 }
 #right-div{
   margin: 1px;
@@ -38,12 +40,9 @@ h2 {
   display: inline-block;
   width: 200px;
   border: 1px solid green;
+  border-radius: 10px;
 }
 
-.rating-item{
-  text-align: left;
-  margin-bottom: 5px;
-}
 
 .news-img{
   display: table-cell;

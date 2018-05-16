@@ -1,31 +1,9 @@
 
 
-#logo-div{
-  display: block;
-  border: 1px solid green;
-
-}
-
-#menu-list{
-  margin: 2px 0 0 0;
-}
-
-.menu-item{
-  margin: 0 5px 0 5px;
-  cursor: pointer;
-  display: inline;
-  padding: 2px;
-  border: 1px solid green;
-  border-top: 2px solid white;
-}
-
-.menu-item:hover{
-  background: gray;
-}
-
 #quick-links-div{
   margin: 5px;
   border: 1px solid green;
+  border-radius: 10px;
 }
 
 #search-div{
@@ -33,12 +11,17 @@
   margin: 5px auto 5px auto;
   display: block;
   border: 1px solid green;
+  border-radius: 10px;
 }
 
 #news-header{
   margin: 10px;
 }
 
+.rating-item{
+  text-align: left;
+  margin-bottom: 5px;
+}
 
 
 

@@ -30,6 +30,6 @@ export class UniversityRegistrationPageComponent implements OnInit {
       "email": this.email
     };
     this.dataService.addUniversity(uni).subscribe();
-    this.router.navigate(['']);
+    this.router.navigate(['/']);
   }
 }

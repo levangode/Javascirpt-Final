@@ -1,8 +1,9 @@
 .university-list-item{
   margin: 2px;
   display: inline-block;
-  height: 300px;
-  width: 200px;
+  height: 250px;
+  width: 180px;
+  border-radius: 10px;
   border: 1px solid green;
   text-align: center;
 }
@@ -15,5 +16,6 @@
 }
 
 #university-items{
+  margin-top: 20px;
 }
 
