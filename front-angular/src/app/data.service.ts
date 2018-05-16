@@ -54,4 +54,8 @@ export class DataService {
     return this.http.post("http://localhost:8080/save-university", JSON.stringify(uni),
       {headers: {'Content-Type': 'application/json'}})
   }
+
+  getUniversities(): Observable<any> {
+    return this.http.get("http://localhost:8080/get-universities");
+  }
 }
