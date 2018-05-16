@@ -1,6 +1,7 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 
+import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from './app-routing.module';
 import {CookieService} from "angular2-cookie/core";
 import {AppComponent} from './app.component';
@@ -16,6 +17,7 @@ import {SigninComponent} from "./signin/signin.component";
 import { UniversityPageComponent } from './university-page/university-page.component';
 import { UserPageComponent } from './user-page/user-page.component';
 import { InterestsComponent } from './user-page/interests/interests.component';
+import { UniversityRegistrationPageComponent } from './university-registration-page/university-registration-page.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -37,13 +39,15 @@ export function getAuthServiceConfigs() {
     UniversityPageComponent,
     SigninComponent,
     UserPageComponent,
-    InterestsComponent
+    InterestsComponent,
+    UniversityRegistrationPageComponent
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
-    SocialLoginModule
+    SocialLoginModule,
+    FormsModule
   ],
   providers: [
     DataService,
