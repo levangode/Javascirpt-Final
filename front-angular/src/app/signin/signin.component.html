@@ -1,5 +1,5 @@
 <div id="signInDiv" *ngIf="!isLoggedIn()">
-  <button id="registerUni">რეგისტრაცია უნივერსიტეტისთვის</button>
+  <button id="registerUni" routerLink="/uni-register">რეგისტრაცია უნივერსიტეტისთვის</button>
   <button id="signInUni">ავტორიზაცია უნივერსიტეტისთვის</button>
   <button (click)="socialSignIn('facebook')" id="signInUser">ავტორიზაცია აბიტურიენტისთვის</button>
 </div>
