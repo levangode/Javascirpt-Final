@@ -7,7 +7,7 @@
 <div *ngIf="isLoggedIn()">
   <img id="userImage" src="{{getUser().image}}">
   <p id="userName">{{getUser().name}}</p>
-  <button (click)="goToProfile()">ჩემი პროფილი</button>
-  <button (click)="signOut()">გამოსვლა</button>
+  <button class="user-button" (click)="goToProfile()">ჩემი პროფილი</button>
+  <button class="user-button" (click)="signOut()">გამოსვლა</button>
 </div>
 
