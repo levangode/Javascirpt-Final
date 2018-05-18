@@ -1,4 +1,5 @@
-.university-list-item{
+.university-list-item {
+  cursor: pointer;
   margin: 2px;
   display: inline-block;
   height: 250px;
@@ -6,16 +7,32 @@
   border-radius: 10px;
   border: 1px solid green;
   text-align: center;
+
+  z-index: 3;
+
 }
 
-#university-item-list{
+.university-list-item a {
+  text-decoration: none;
+  color: blue;
+}
+
+#university-item-list {
   margin: auto;
   display: inline-block;
   padding: 0;
   text-align: center;
 }
 
-#university-items{
+#university-items {
   margin-top: 20px;
+}
+
+.grow {
+  transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+  transform: scale(1.1);
 }
 

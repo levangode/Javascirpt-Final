@@ -2,11 +2,13 @@
   <app-menu-header></app-menu-header>
   <div id="university-items">
     <ul id="university-item-list">
-      <li class="university-list-item" *ngFor="let university of getUniversities()"><h3>{{university.name}}</h3><p>16 კურსი</p><p>12000 ადგილი</p><p>რეიტინგით #2</p><p>თბილისი</p></li>
+      <li  class="university-list-item grow" *ngFor="let university of getUniversities()" routerLink="/university-page/{{university.id}}"><h3>{{university.name}}</h3>
+        <p>16 კურსი</p>
+        <p>12000 ადგილი</p>
+        <p>რეიტინგით #2</p>
+      </li>
     </ul>
   </div>
-
-
 
 
 </div>
