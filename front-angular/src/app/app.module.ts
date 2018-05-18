@@ -20,6 +20,7 @@ import { InterestsComponent } from './user-page/interests/interests.component';
 import { UniversityRegistrationPageComponent } from './university-registration-page/university-registration-page.component';
 import { UniversityListComponent } from './university-list/university-list.component';
 import { MenuHeaderComponent } from './menu-header/menu-header.component';
+import { RatingsComponent } from './ratings/ratings.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -44,7 +45,8 @@ export function getAuthServiceConfigs() {
     InterestsComponent,
     UniversityRegistrationPageComponent,
     UniversityListComponent,
-    MenuHeaderComponent
+    MenuHeaderComponent,
+    RatingsComponent
   ],
   imports: [
     HttpClientModule,
