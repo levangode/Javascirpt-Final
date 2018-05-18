@@ -1,7 +1,9 @@
-package ge.freeuni.project.models.users;
+package ge.freeuni.project.controllers;
 
 
-import ge.freeuni.project.models.users.UserRepository;
+import ge.freeuni.project.domain.UserRepository;
+import ge.freeuni.project.models.User;
+import ge.freeuni.project.models.UserData;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

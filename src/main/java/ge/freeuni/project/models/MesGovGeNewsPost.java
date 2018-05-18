@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 @Getter
 @Setter
-public class MesGovGeNewsPostModel {
+public class MesGovGeNewsPost {
 
     private String newsTitle;
     private String newsTitleRef;

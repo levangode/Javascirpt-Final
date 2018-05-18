@@ -1,5 +1,6 @@
-package ge.freeuni.project.models.users;
+package ge.freeuni.project.domain;
 
+import ge.freeuni.project.models.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

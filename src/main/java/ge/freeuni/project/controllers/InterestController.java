@@ -1,8 +1,10 @@
-package ge.freeuni.project.models.interest;
+package ge.freeuni.project.controllers;
 
 
-import ge.freeuni.project.models.users.User;
-import ge.freeuni.project.models.users.UserRepository;
+import ge.freeuni.project.domain.InterestRepository;
+import ge.freeuni.project.models.UserInterest;
+import ge.freeuni.project.models.User;
+import ge.freeuni.project.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

@@ -1,13 +1,11 @@
-package ge.freeuni.project.models.university;
+package ge.freeuni.project.models;
 
-import ge.freeuni.project.models.BaseEntity;
+import ge.freeuni.project.models.Faculty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
 

@@ -1,4 +1,4 @@
-package ge.freeuni.project.models.users;
+package ge.freeuni.project.models;
 
 
 import lombok.*;

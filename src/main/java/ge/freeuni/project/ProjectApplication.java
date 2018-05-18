@@ -1,17 +1,13 @@
 package ge.freeuni.project;
 
-import ge.freeuni.project.models.interest.InterestRepository;
-import ge.freeuni.project.models.interest.UserInterest;
-import ge.freeuni.project.models.users.User;
-import ge.freeuni.project.models.users.UserRepository;
+import ge.freeuni.project.domain.InterestRepository;
+import ge.freeuni.project.domain.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.transaction.Transactional;
-import java.util.HashSet;
-import java.util.Set;
 
 @SpringBootApplication
 public class ProjectApplication implements CommandLineRunner {

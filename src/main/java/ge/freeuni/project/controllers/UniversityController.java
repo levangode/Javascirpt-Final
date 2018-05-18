@@ -1,8 +1,8 @@
-package ge.freeuni.project.models.university;
+package ge.freeuni.project.controllers;
 
 
-import ge.freeuni.project.models.users.User;
-import ge.freeuni.project.models.users.UserData;
+import ge.freeuni.project.domain.UniversityRepository;
+import ge.freeuni.project.models.University;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
