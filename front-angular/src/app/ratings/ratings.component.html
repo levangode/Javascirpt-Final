@@ -1,11 +1,47 @@
 <div id="main-div">
   <app-menu-header></app-menu-header>
   <div id="ratings-div">
-    <iframe src="https://e.infogram.com/d5c1a22d-46d9-4775-bdb1-d3c3084fa939?src=embed" title="" width="550"
-            height="790" scrolling="no" frameborder="0" style="border:none;" allowfullscreen="allowfullscreen"></iframe>
-
-
+    <div id="menu-div">
+      <ul id="user-menu-list">
+        <li (click)="changeItem('byEntrancePoints')" class="user-menu-item grow" [ngClass]="{'item-active': isByPoints()}">
+          საკონკურსო ქულის მიხედვით
+        </li>
+        <li (click)="changeItem('byStudentCount')" class="user-menu-item grow"
+            [ngClass]="{'item-active': isByStudentCount()}">
+          ჩარიცხვების მიხედვით
+        </li>
+        <li (click)="changeItem('byTopStudents')" class="user-menu-item grow"
+            [ngClass]="{'item-active': isByTopStudents()}">
+          ტოპ 100 აბიტურიენტი
+        </li>
+      </ul>
+    </div>
   </div>
 
+  <div *ngIf="isByPoints()">
+    <p>2017 წლის მონაცემები</p>
+    <iframe src="https://e.infogram.com/d5c1a22d-46d9-4775-bdb1-d3c3084fa939?src=embed"
+            title="უნივერსიტეტების რეიტინგები 2017" width="700"
+            height="700" scrolling="no" frameborder="0" style="border:none;" allowfullscreen="allowfullscreen"></iframe>
+
+    <p>2016 წლის მონაცემები</p>
+    <iframe src="https://e.infogram.com/c4d451c4-78c8-4f88-b829-e428549550fc?src=embed"
+            title="უნივერსიტეტების რეიტინგები 2016" width="700" height="700" scrolling="no" frameborder="0"
+            style="border:none;" allowfullscreen="allowfullscreen"></iframe>
+  </div>
+
+  <div *ngIf="isByStudentCount()">
+    <p>2016 წლის მონაცემები</p>
+    <iframe src="https://e.infogram.com/d276cc85-904b-4c9e-bbc8-1388f6708f0a?src=embed"
+            title="Copy: უნივერსიტეტების რეიტინგები 2016" width="550" height="779" scrolling="no" frameborder="0"
+            style="border:none;" allowfullscreen="allowfullscreen"></iframe>
+  </div>
+
+  <div *ngIf="isByTopStudents()">
+    <p>2017 წლის მონაცემები</p>
+    <iframe src="https://e.infogram.com/e6336896-21b3-4c34-a0b5-6ae3b243958f?src=embed"
+            title="Top 100 2017" width="700" height="700" scrolling="no"
+            frameborder="0" style="border:none;" allowfullscreen="allowfullscreen"></iframe>
+  </div>
 
 </div>
