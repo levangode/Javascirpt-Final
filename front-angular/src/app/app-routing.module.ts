@@ -6,6 +6,7 @@ import {UniversityPageComponent} from "./university-page/university-page.compone
 import {UniversityRegistrationPageComponent} from "./university-registration-page/university-registration-page.component";
 import {UniversityListComponent} from "./university-list/university-list.component";
 import {RatingsComponent} from "./ratings/ratings.component";
+import {UniversityLoginComponent} from "./university-login/university-login.component";
 
 const routes: Routes = [
   {
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'ratings',
     component: RatingsComponent
+  },
+  {
+    path: 'university-login',
+    component: UniversityLoginComponent
   }
 ];
 
