@@ -21,6 +21,11 @@ import { UniversityRegistrationPageComponent } from './university-registration-p
 import { UniversityListComponent } from './university-list/university-list.component';
 import { MenuHeaderComponent } from './menu-header/menu-header.component';
 import { RatingsComponent } from './ratings/ratings.component';
+import { UniAboutComponent } from './university-page/uni-about/uni-about.component';
+import { UniNewsComponent } from './university-page/uni-news/uni-news.component';
+import { UniEventsComponent } from './university-page/uni-events/uni-events.component';
+import { UniFacultiesComponent } from './university-page/uni-faculties/uni-faculties.component';
+import { UniFaqComponent } from './university-page/uni-faq/uni-faq.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -46,7 +51,12 @@ export function getAuthServiceConfigs() {
     UniversityRegistrationPageComponent,
     UniversityListComponent,
     MenuHeaderComponent,
-    RatingsComponent
+    RatingsComponent,
+    UniAboutComponent,
+    UniNewsComponent,
+    UniEventsComponent,
+    UniFacultiesComponent,
+    UniFaqComponent,
   ],
   imports: [
     HttpClientModule,

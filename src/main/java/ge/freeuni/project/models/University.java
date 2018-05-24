@@ -1,6 +1,5 @@
 package ge.freeuni.project.models;
 
-import ge.freeuni.project.models.Faculty;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
@@ -22,6 +21,7 @@ public class University {
     private String webAddress;
     private String email;
     private Set<Faculty> facultyList;
+    private String about;
 
     public University() {
     }
