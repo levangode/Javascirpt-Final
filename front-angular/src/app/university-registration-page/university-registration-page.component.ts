@@ -14,6 +14,9 @@ export class UniversityRegistrationPageComponent implements OnInit {
   phone: string = "";
   webAddress: string = "";
   email: string = "";
+  username: string = "";
+  password: string = "";
+  verificationCode: string = "";
 
 
   constructor(private dataService: DataService, private router: Router) { }

@@ -21,6 +21,7 @@ import { UniversityRegistrationPageComponent } from './university-registration-p
 import { UniversityListComponent } from './university-list/university-list.component';
 import { MenuHeaderComponent } from './menu-header/menu-header.component';
 import { RatingsComponent } from './ratings/ratings.component';
+import { UniversityLoginComponent } from './university-login/university-login.component';
 import { UniAboutComponent } from './university-page/uni-about/uni-about.component';
 import { UniNewsComponent } from './university-page/uni-news/uni-news.component';
 import { UniEventsComponent } from './university-page/uni-events/uni-events.component';
@@ -52,6 +53,7 @@ export function getAuthServiceConfigs() {
     UniversityListComponent,
     MenuHeaderComponent,
     RatingsComponent,
+    UniversityLoginComponent,
     UniAboutComponent,
     UniNewsComponent,
     UniEventsComponent,
