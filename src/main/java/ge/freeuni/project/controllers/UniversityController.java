@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 public class UniversityController {
@@ -28,6 +29,13 @@ public class UniversityController {
     @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
     public List<University> getUniversities(){
         return new ArrayList<>(this.repository.findAll());
+    }
+
+    @GetMapping("/get-university/{id}")
+    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    public University getUniversityById(@PathVariable("id") Long id){
+        Optional<University> universityOptional = this.repository.findById(id);
+        return universityOptional.orElse(null);
     }
 
 }

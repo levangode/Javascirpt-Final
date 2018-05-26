@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../../data.service";
+import {UniversityService} from "../university.service";
 
 @Component({
   selector: 'app-uni-about',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UniAboutComponent implements OnInit {
 
-  constructor() { }
+
+  about: string = "";
+  constructor(private dataService: DataService, private universityService: UniversityService) {
+
+  }
 
   ngOnInit() {
+    this.about = this.universityService.getCurrentUniversity().about;
+    console.log(this.universityService.getCurrentUniversity());
   }
 
 }

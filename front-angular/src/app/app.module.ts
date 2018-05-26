@@ -27,6 +27,7 @@ import { UniNewsComponent } from './university-page/uni-news/uni-news.component'
 import { UniEventsComponent } from './university-page/uni-events/uni-events.component';
 import { UniFacultiesComponent } from './university-page/uni-faculties/uni-faculties.component';
 import { UniFaqComponent } from './university-page/uni-faq/uni-faq.component';
+import {UniversityService} from "./university-page/university.service";
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -69,6 +70,7 @@ export function getAuthServiceConfigs() {
   ],
   providers: [
     DataService,
+    UniversityService,
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs

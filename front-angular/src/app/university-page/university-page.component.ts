@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../data.service";
+import {ActivatedRoute} from "@angular/router";
+import {UniversityService} from "./university.service";
 
 @Component({
   selector: 'app-university-page',
@@ -7,11 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UniversityPageComponent implements OnInit {
 
-
+  id: any;
   currentComponent: string = "news";
-  constructor() { }
+  constructor(private route: ActivatedRoute, private universityService: UniversityService) {
+
+  }
 
   ngOnInit() {
+    this.route.params.subscribe(res => this.id = res.id);
+    this.universityService.initUniversity(this.id);
   }
 
   changeItem(favourites: string) {

@@ -26,22 +26,24 @@ public class University {
     public University() {
     }
 
-    public University(String name, String address, String phone, String webAddress, String email) {
+    public University(String name, String address, String phone, String webAddress, String email, String about) {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.webAddress = webAddress;
         this.email = email;
+        this.about = about;
         facultyList = new HashSet<>();
     }
 
-    public University(String name, String address, String phone, String webAddress, String email, Set<Faculty> facultyList) {
+    public University(String name, String address, String phone, String webAddress, String email, Set<Faculty> facultyList, String about) {
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.webAddress = webAddress;
         this.email = email;
         this.facultyList = facultyList;
+        this.about = about;
     }
 
     public String getName() {
@@ -93,6 +95,14 @@ public class University {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getAbout() {
+        return about;
+    }
+
+    public void setAbout(String about) {
+        this.about = about;
     }
 
     @Id

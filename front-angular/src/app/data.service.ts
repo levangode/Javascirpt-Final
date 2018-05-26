@@ -58,4 +58,9 @@ export class DataService {
   getUniversities(): Observable<any> {
     return this.http.get("http://localhost:8080/get-universities");
   }
+
+
+  getUniversity(id: any): Observable<any>{
+    return this.http.get("http://localhost:8080/get-university/"+id);
+  }
 }
