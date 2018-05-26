@@ -16,8 +16,14 @@ export class UniAboutComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.about = this.universityService.getCurrentUniversity().about;
-    console.log(this.universityService.getCurrentUniversity());
+    this.universityService.getCurrentUniversitySubject().subscribe(value => {
+      this.about = this.universityService.getCurrentUniversity().about;
+      console.log(this.about);
+    });
+    if(this.universityService.getCurrentUniversitySubject().isStopped){
+      this.about = this.universityService.getCurrentUniversity().about;
+      console.log(this.about);
+    }
   }
 
 }

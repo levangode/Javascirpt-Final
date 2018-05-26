@@ -15,34 +15,42 @@ public class University {
 
     private Long id;
     @Column(unique = true)
+    private Long universityNumber;
     private String name;
     private String address;
     private String phone;
     private String webAddress;
     private String email;
     private Set<Faculty> facultyList;
+    private Set<UniversityNews> universityNews;
     private String about;
 
     public University() {
+        facultyList = new HashSet<>();
+        universityNews = new HashSet<>();
     }
 
-    public University(String name, String address, String phone, String webAddress, String email, String about) {
+    public University(Long universityNumber, String name, String address, String phone, String webAddress, String email, Set<UniversityNews> universityNews, String about) {
+        this.universityNumber = universityNumber;
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.webAddress = webAddress;
         this.email = email;
+        this.universityNews = universityNews;
         this.about = about;
         facultyList = new HashSet<>();
     }
 
-    public University(String name, String address, String phone, String webAddress, String email, Set<Faculty> facultyList, String about) {
+    public University(Long universityNumber, String name, String address, String phone, String webAddress, String email, Set<Faculty> facultyList, Set<UniversityNews> universityNews, String about) {
+        this.universityNumber = universityNumber;
         this.name = name;
         this.address = address;
         this.phone = phone;
         this.webAddress = webAddress;
         this.email = email;
         this.facultyList = facultyList;
+        this.universityNews = universityNews;
         this.about = about;
     }
 
@@ -59,6 +67,17 @@ public class University {
             inverseJoinColumns = {@JoinColumn(name = "faculty_id", referencedColumnName = "id")})
     public Set<Faculty> getFacultyList() {
         return facultyList;
+    }
+
+    @ManyToMany(cascade = CascadeType.ALL)
+    @JoinTable(joinColumns = {@JoinColumn(name = "university_id", referencedColumnName = "id")},
+            inverseJoinColumns = {@JoinColumn(name = "news_id", referencedColumnName = "id")})
+    public Set<UniversityNews> getUniversityNews() {
+        return universityNews;
+    }
+
+    public void setUniversityNews(Set<UniversityNews> universityNews) {
+        this.universityNews = universityNews;
     }
 
     public void setFacultyList(Set<Faculty> facultyList) {
@@ -105,6 +124,14 @@ public class University {
         this.about = about;
     }
 
+    public Long getUniversityNumber() {
+        return universityNumber;
+    }
+
+    public void setUniversityNumber(Long universityNumber) {
+        this.universityNumber = universityNumber;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     public Long getId() {
@@ -113,5 +140,13 @@ public class University {
 
     public void setId(Long id) {
         this.id = id;
+    }
+
+    public void addFaculty(Faculty faculty) {
+        this.facultyList.add(faculty);
+    }
+
+    public void addNews(UniversityNews news) {
+        this.universityNews.add(news);
     }
 }

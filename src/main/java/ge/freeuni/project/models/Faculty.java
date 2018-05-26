@@ -14,24 +14,29 @@ import java.util.Set;
 public class Faculty {
 
     private Long id;
-    private String program;
+    private Long facultyNumber;
+    private String programName;
     private String qualification;
-    private Boolean acredited;
+    private String accredited;
     private String language;
-    private Boolean financing;
+    private String financing;
     private Integer credits;
     private Long annualFee;
     private Long numPlaces;
+    /** Json object: name, quotient, places-quota, barrier, restriction */
+    private String subjects;
+    private String priorities;
     private Set<University> universities;
 
     public Faculty() {
     }
 
 
-    public Faculty(String program, String qualification, Boolean acredited, String language, Boolean financing, Integer credits, Long annualFee, Long numPlaces) {
-        this.program = program;
+    public Faculty(Long facultyNumber, String programName, String qualification, String accredited, String language, String financing, Integer credits, Long annualFee, Long numPlaces) {
+        this.facultyNumber = facultyNumber;
+        this.programName = programName;
         this.qualification = qualification;
-        this.acredited = acredited;
+        this.accredited = accredited;
         this.language = language;
         this.financing = financing;
         this.credits = credits;
@@ -40,10 +45,11 @@ public class Faculty {
         universities = new HashSet<>();
     }
 
-    public Faculty(String program, String qualification, Boolean acredited, String language, Boolean financing, Integer credits, Long annualFee, Long numPlaces, Set<University> universities) {
-        this.program = program;
+    public Faculty(Long facultyNumber, String programName, String qualification, String accredited, String language, String financing, Integer credits, Long annualFee, Long numPlaces, Set<University> universities) {
+        this.facultyNumber = facultyNumber;
+        this.programName = programName;
         this.qualification = qualification;
-        this.acredited = acredited;
+        this.accredited = accredited;
         this.language = language;
         this.financing = financing;
         this.credits = credits;
@@ -52,12 +58,12 @@ public class Faculty {
         this.universities = universities;
     }
 
-    public String getProgram() {
-        return program;
+    public String getProgramName() {
+        return programName;
     }
 
-    public void setProgram(String program) {
-        this.program = program;
+    public void setProgramName(String programName) {
+        this.programName = programName;
     }
 
     public String getQualification() {
@@ -68,12 +74,12 @@ public class Faculty {
         this.qualification = qualification;
     }
 
-    public Boolean getAcredited() {
-        return acredited;
+    public String getAccredited() {
+        return accredited;
     }
 
-    public void setAcredited(Boolean acredited) {
-        this.acredited = acredited;
+    public void setAccredited(String accredited) {
+        this.accredited = accredited;
     }
 
     public String getLanguage() {
@@ -84,11 +90,11 @@ public class Faculty {
         this.language = language;
     }
 
-    public Boolean getFinancing() {
+    public String getFinancing() {
         return financing;
     }
 
-    public void setFinancing(Boolean financing) {
+    public void setFinancing(String financing) {
         this.financing = financing;
     }
 
@@ -114,6 +120,14 @@ public class Faculty {
 
     public void setNumPlaces(Long numPlaces) {
         this.numPlaces = numPlaces;
+    }
+
+    public Long getFacultyNumber() {
+        return facultyNumber;
+    }
+
+    public void setFacultyNumber(Long facultyNumber) {
+        this.facultyNumber = facultyNumber;
     }
 
     @Id

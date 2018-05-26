@@ -4,6 +4,7 @@ import ge.freeuni.project.domain.InterestRepository;
 import ge.freeuni.project.domain.UniversityRepository;
 import ge.freeuni.project.domain.UserRepository;
 import ge.freeuni.project.models.University;
+import ge.freeuni.project.models.UniversityNews;
 import ge.freeuni.project.models.UserInterest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -11,6 +12,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import javax.transaction.Transactional;
+import java.util.Date;
 
 @SpringBootApplication
 public class ProjectApplication implements CommandLineRunner {
@@ -49,6 +51,7 @@ public class ProjectApplication implements CommandLineRunner {
         uni.setName("თბილისის თავისუფალი უნივერსიტეტი");
         uni.setPhone("593252073");
         uni.setWebAddress("http://freeuni.edu.ge");
+        uni.addNews(new UniversityNews("პირველი სიახლე", "სიახლის აღწერილობა", new Date(), "https://i.ytimg.com/vi/HcZhSsj_8ds/maxresdefault.jpg"));
         universityRepository.save(uni);
     }
 }
