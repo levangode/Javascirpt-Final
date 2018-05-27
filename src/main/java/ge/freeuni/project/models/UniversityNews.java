@@ -5,49 +5,28 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.Date;
-import java.util.Set;
 
 @Entity
 @ToString
 @EqualsAndHashCode
 public class UniversityNews {
-
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
     private String description;
     private Date date;
     private String img;
-    private Set<University> universities;
 
     public UniversityNews() {
     }
 
-    public UniversityNews(String title, String description, Date date, String img) {
-        this.title = title;
-        this.description = description;
-        this.date = date;
-        this.img = img;
-    }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     public Long getId() {
         return id;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    @ManyToMany(cascade = CascadeType.ALL)
-    @JoinTable(joinColumns = {@JoinColumn(name = "news_id", referencedColumnName = "id")},
-            inverseJoinColumns = {@JoinColumn(name = "university_id", referencedColumnName = "id")})
-    public Set<University> getUniversities() {
-        return universities;
-    }
-
-    public void setUniversities(Set<University> universities) {
-        this.universities = universities;
     }
 
     public String getTitle() {

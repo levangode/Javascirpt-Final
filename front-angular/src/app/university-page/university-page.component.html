@@ -65,7 +65,7 @@
         <li class="menu-item" (click)="changeItem('news')" [ngClass]="{'item-active': isNews()}">სიახლეები</li>
         <li class="menu-item" (click)="changeItem('about')" [ngClass]="{'item-active': isAbout()}">ჩვენ შესახებ</li>
         <li class="menu-item" (click)="changeItem('faculties')" [ngClass]="{'item-active': isFaculties()}">ფაკულტეტები</li>
-        <li class="menu-item" (click)="changeItem('events')" [ngClass]="{'item-active': isEvnets()}">აქტივობები</li>
+        <li class="menu-item" (click)="changeItem('events')" [ngClass]="{'item-active': isEvents()}">აქტივობები</li>
         <li class="menu-item" (click)="changeItem('FAQ')" [ngClass]="{'item-active': isFAQ()}">ხშირად დასმული კითხვები</li>
       </ul>
     </div>
@@ -81,7 +81,7 @@
   <div *ngIf="isFaculties()">
     <app-uni-faculties></app-uni-faculties>
   </div>
-  <div *ngIf="isEvnets()">
+  <div *ngIf="isEvents()">
     <app-uni-events></app-uni-events>
   </div>
   <div *ngIf="isFAQ()">

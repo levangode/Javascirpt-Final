@@ -41,7 +41,7 @@ export class UniversityPageComponent implements OnInit {
 
   }
 
-  isEvnets() {
+  isEvents() {
 
     return this.currentComponent === "events";
   }
