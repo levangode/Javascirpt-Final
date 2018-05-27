@@ -50,10 +50,10 @@ public class ProjectApplication implements CommandLineRunner {
         uni.setPhone("593252073");
         uni.setWebAddress("http://freeuni.edu.ge");
 
+        UniversityFaculty faculty = new UniversityFaculty();
         Set<FacultySubject> facultySubjects = new HashSet<>();
         facultySubjects.add(new FacultySubject("ქართული", "4", "35", "40%+1", ""));
         facultySubjects.add(new FacultySubject("უცხო ენა", "2", "20", "40%+1", "ინგლისური"));
-        UniversityFaculty faculty = new UniversityFaculty();
         faculty.setAccredited("აკრედიტებული");
         faculty.setAnnualFee(2250L);
         faculty.setCredits(240);
@@ -65,6 +65,24 @@ public class ProjectApplication implements CommandLineRunner {
         faculty.setQualification("კომპიუტინგის ბაკალავრი");
         faculty.setFacultySubjects(facultySubjects);
         uni.addFaculty(faculty);
+
+        UniversityFaculty faculty1 = new UniversityFaculty();
+        Set<FacultySubject> facultySubjects1 = new HashSet<>();
+        facultySubjects1.add(new FacultySubject("ქართული", "4", "35", "40%+1", ""));
+        facultySubjects1.add(new FacultySubject("უცხო ენა", "2", "20", "40%+1", "ინგლისური"));
+        facultySubjects1.add(new FacultySubject("მათემატიკა", "6", "45", "40%+1", ""));
+        facultySubjects1.add(new FacultySubject("გეოგრაფია", "1", "10", "40%+1", ""));
+        faculty1.setAccredited("აკრედიტებული");
+        faculty1.setAnnualFee(2250L);
+        faculty1.setCredits(240);
+        faculty1.setFacultyNumber(1121313L);
+        faculty1.setFinancing("დაფინანსებული");
+        faculty1.setLanguage("ქართული");
+        faculty1.setNumPlaces(250L);
+        faculty1.setProgramName("მართვა და საზოგადოებრივი მეცნიერებები");
+        faculty1.setQualification("სოციოლოგიის ბაკალავრი");
+        faculty1.setFacultySubjects(facultySubjects1);
+        uni.addFaculty(faculty1);
 
         UniversityNews news = new UniversityNews();
         news.setDate(new Date());
