@@ -91,6 +91,15 @@ public class ProjectApplication implements CommandLineRunner {
         news.setImg("https://i.ytimg.com/vi/HcZhSsj_8ds/maxresdefault.jpg");
         uni.addNews(news);
 
+        UniversityEvent event = new UniversityEvent();
+        event.setAddress("კახა ბენდუქიძის კამპუსი");
+        event.setDate(new Date());
+        event.setTitle("გაცნობითი პროგრამები");
+        event.setDescription("გაცნობით პროგრამაზე აბიტურიენტებს და მოსწავლეებს საშუალება ექნებათ, დაათვალიერონ უნივერსიტეტი," +
+                "გაიგონ მეტი სასურველი სასწავლო პროგრამების შესახებ.");
+        event.setImg("http://www.freeuni.edu.ge/sites/default/files/Gacnobiti.png");
+        uni.addEvent(event);
+
         universityRepository.save(uni);
     }
 }

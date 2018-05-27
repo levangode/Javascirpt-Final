@@ -4,7 +4,9 @@ import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 
@@ -25,16 +27,21 @@ public class University {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "UNI_FACULTY")
     @JoinColumn(name = "id")
-    private Set<UniversityFaculty> universityFaculties;
+    private List<UniversityFaculty> universityFaculties;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "UNI_NEWS")
     @JoinColumn(name = "id")
-    private Set<UniversityNews> universityNews;
+    private List<UniversityNews> universityNews;
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(name = "UNI_EVENTS")
+    @JoinColumn(name = "id")
+    private List<UniversityEvent> universityEvents;
     private String about;
 
     public University() {
-        universityFaculties = new HashSet<>();
-        universityNews = new HashSet<>();
+        universityFaculties = new ArrayList<>();
+        universityNews = new ArrayList<>();
+        universityEvents = new ArrayList<>();
     }
 
     public Long getId() {
@@ -93,19 +100,19 @@ public class University {
         this.email = email;
     }
 
-    public Set<UniversityFaculty> getUniversityFaculties() {
+    public List<UniversityFaculty> getUniversityFaculties() {
         return universityFaculties;
     }
 
-    public void setUniversityFaculties(Set<UniversityFaculty> universityFaculties) {
+    public void setUniversityFaculties(List<UniversityFaculty> universityFaculties) {
         this.universityFaculties = universityFaculties;
     }
 
-    public Set<UniversityNews> getUniversityNews() {
+    public List<UniversityNews> getUniversityNews() {
         return universityNews;
     }
 
-    public void setUniversityNews(Set<UniversityNews> universityNews) {
+    public void setUniversityNews(List<UniversityNews> universityNews) {
         this.universityNews = universityNews;
     }
 
@@ -117,10 +124,22 @@ public class University {
         this.about = about;
     }
 
+    public List<UniversityEvent> getUniversityEvents() {
+        return universityEvents;
+    }
+
+    public void setUniversityEvents(List<UniversityEvent> universityEvents) {
+        this.universityEvents = universityEvents;
+    }
     public void addNews(UniversityNews news){
         this.universityNews.add(news);
     }
+
     public void addFaculty(UniversityFaculty faculty){
         this.universityFaculties.add(faculty);
+    }
+
+    public void addEvent(UniversityEvent event){
+        this.universityEvents.add(event);
     }
 }
