@@ -49,6 +49,7 @@ public class ProjectApplication implements CommandLineRunner {
         uni.setName("თბილისის თავისუფალი უნივერსიტეტი");
         uni.setPhone("593252073");
         uni.setWebAddress("http://freeuni.edu.ge");
+        uni.setLogo("https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FreeUniLogo.png/220px-FreeUniLogo.png");
 
         UniversityFaculty faculty = new UniversityFaculty();
         Set<FacultySubject> facultySubjects = new HashSet<>();
@@ -98,6 +99,7 @@ public class ProjectApplication implements CommandLineRunner {
         event.setDescription("გაცნობით პროგრამაზე აბიტურიენტებს და მოსწავლეებს საშუალება ექნებათ, დაათვალიერონ უნივერსიტეტი," +
                 "გაიგონ მეტი სასურველი სასწავლო პროგრამების შესახებ.");
         event.setImg("http://www.freeuni.edu.ge/sites/default/files/Gacnobiti.png");
+        event.setLink("https://google.com");
         uni.addEvent(event);
 
         universityRepository.save(uni);

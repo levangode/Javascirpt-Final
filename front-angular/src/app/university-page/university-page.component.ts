@@ -12,6 +12,8 @@ export class UniversityPageComponent implements OnInit {
 
   id: any;
   currentComponent: string = "news";
+  university: any;
+
   constructor(private route: ActivatedRoute, private universityService: UniversityService) {
 
   }
@@ -19,6 +21,15 @@ export class UniversityPageComponent implements OnInit {
   ngOnInit() {
     this.route.params.subscribe(res => this.id = res.id);
     this.universityService.initUniversity(this.id);
+
+    this.universityService.getCurrentUniversitySubject().subscribe(value => {
+      this.university = this.universityService.getCurrentUniversity();
+      console.log(this.university);
+    });
+    if(this.universityService.getCurrentUniversitySubject().isStopped){
+      this.university = this.universityService.getCurrentUniversity();
+      console.log(this.university);
+    }
   }
 
   changeItem(favourites: string) {

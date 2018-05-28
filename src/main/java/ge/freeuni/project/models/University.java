@@ -23,6 +23,7 @@ public class University {
     private String address;
     private String phone;
     private String webAddress;
+    private String logo;
     private String email;
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "UNI_FACULTY")
@@ -141,5 +142,13 @@ public class University {
 
     public void addEvent(UniversityEvent event){
         this.universityEvents.add(event);
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 }
