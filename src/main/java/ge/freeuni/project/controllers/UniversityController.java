@@ -1,10 +1,15 @@
 package ge.freeuni.project.controllers;
 
 
+import ge.freeuni.project.domain.EventRepository;
 import ge.freeuni.project.domain.UniversityRepository;
 import ge.freeuni.project.models.University;
+import ge.freeuni.project.models.UniversityEvent;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -13,6 +18,7 @@ import java.util.Optional;
 public class UniversityController {
 
     private UniversityRepository repository;
+
 
     public UniversityController(UniversityRepository repository){
         this.repository = repository;
@@ -38,4 +44,9 @@ public class UniversityController {
         return universityOptional.orElse(null);
     }
 
+    @GetMapping("/get-events")
+    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    public List<UniversityEvent> getAllEvents(){
+        return null;
+    }
 }
