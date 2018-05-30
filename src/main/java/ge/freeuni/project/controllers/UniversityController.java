@@ -52,4 +52,11 @@ public class UniversityController {
     public List<UniversityEvent> getAllEvents(){
         return new ArrayList<>(eventRepository.findAll());
     }
+
+    @GetMapping("/places-count/{id}")
+    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    public University getUniversityPlaces(@PathVariable("id") Long id){
+        Optional<University> universityOptional = this.repository.findById(id);
+        return universityOptional.orElse(null);
+    }
 }
