@@ -18,10 +18,13 @@ import java.util.Optional;
 public class UniversityController {
 
     private UniversityRepository repository;
+    private final EventRepository eventRepository;
 
 
-    public UniversityController(UniversityRepository repository){
+    @Autowired
+    public UniversityController(UniversityRepository repository, EventRepository eventRepository){
         this.repository = repository;
+        this.eventRepository = eventRepository;
     }
 
     @PostMapping("/save-university")
@@ -47,6 +50,6 @@ public class UniversityController {
     @GetMapping("/get-events")
     @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
     public List<UniversityEvent> getAllEvents(){
-        return null;
+        return new ArrayList<>(eventRepository.findAll());
     }
 }

@@ -7,6 +7,7 @@ import {UniversityRegistrationPageComponent} from "./university-registration-pag
 import {UniversityListComponent} from "./university-list/university-list.component";
 import {RatingsComponent} from "./ratings/ratings.component";
 import {UniversityLoginComponent} from "./university-login/university-login.component";
+import {EventsPageComponent} from "./events-page/events-page.component";
 
 const routes: Routes = [
   {
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path: 'university-login',
     component: UniversityLoginComponent
+  },
+  {
+    path: 'events',
+    component: EventsPageComponent
   }
 ];
 

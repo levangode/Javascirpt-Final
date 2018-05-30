@@ -1,0 +1,15 @@
+<div id="main-div">
+  <app-menu-header></app-menu-header>
+  <div id="events">
+    <ul id="event-list">
+      <li  class="event-list-item grow" *ngFor="let event of getEvents()">
+        <p>{{event.title}}</p>
+        <p>{{event.date}}</p>
+        <p>{{event.address}}</p>
+        <p>{{event.description}}</p>
+      </li>
+    </ul>
+  </div>
+
+
+</div>

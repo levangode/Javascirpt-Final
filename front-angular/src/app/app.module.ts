@@ -28,6 +28,7 @@ import { UniEventsComponent } from './university-page/uni-events/uni-events.comp
 import { UniFacultiesComponent } from './university-page/uni-faculties/uni-faculties.component';
 import { UniFaqComponent } from './university-page/uni-faq/uni-faq.component';
 import {UniversityService} from "./university-page/university.service";
+import { EventsPageComponent } from './events-page/events-page.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -60,6 +61,7 @@ export function getAuthServiceConfigs() {
     UniEventsComponent,
     UniFacultiesComponent,
     UniFaqComponent,
+    EventsPageComponent,
   ],
   imports: [
     HttpClientModule,
