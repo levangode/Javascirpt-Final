@@ -4,8 +4,8 @@
     <ul id="university-item-list">
       <li  class="university-list-item grow" *ngFor="let university of getUniversities()" routerLink="/university-page/{{university.id}}">
         <h3>{{university.name}}</h3>
-        <p>{{university.faculties.length}} კურსი</p>
-        <p>ადგილი</p>
+        <p>{{getNumFaculties(university)}} კურსი</p>
+        <p>{{getNumPlaces(university)}} ადგილი</p>
         <p>რეიტინგით #2</p>
       </li>
     </ul>

@@ -21,10 +21,16 @@ export class UniversityListComponent implements OnInit {
   }
 
   getNumPlaces(university: any){
-    let faculties: Array<any> = university.faculties;
+    let faculties: Array<any> = university.universityFaculties;
     let count = 0;
-    faculties.forEach(value => count+=value.numPlaces);
+    for(let fac of faculties){
+      count+=fac.numPlaces;
+    }
     return count;
+  }
+
+  getNumFaculties(university: any){
+    return (<Array<any>>university.universityFaculties).length;
   }
 
 }
