@@ -3,10 +3,19 @@
   <div id="events">
     <ul id="event-list">
       <li  class="event-list-item grow" *ngFor="let event of getEvents()">
-        <p>{{event.title}}</p>
-        <p>{{event.date}}</p>
-        <p>{{event.address}}</p>
-        <p>{{event.description}}</p>
+        <div class="event-img">
+          <img src="{{event.img}}"/>
+        </div>
+        <div class="event-info">
+          <p class="event-date">{{event.date | date}}</p>
+          <a class="event-title" href="{{event.link}}">
+            {{event.title}}
+          </a>
+          <p class="event-description">{{event.description}}</p>
+        </div>
+
+
+
       </li>
     </ul>
   </div>
