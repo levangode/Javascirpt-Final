@@ -39,10 +39,21 @@ public class University {
     private List<UniversityEvent> universityEvents;
     private String about;
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(name = "UNI_FAQ")
+    @JoinColumn(name = "id")
+    private List<FaqElement> faqElements;
+
     public University() {
         universityFaculties = new ArrayList<>();
         universityNews = new ArrayList<>();
         universityEvents = new ArrayList<>();
+        faqElements = new ArrayList<>();
+    }
+
+    public List<FaqElement> getFaqElements() { return faqElements; }
+    public void addFaqElement(FaqElement faqElement) {
+        this.faqElements.add(faqElement);
     }
 
     public Long getId() {
