@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {DataService} from "../data.service";
+import {DataService} from "../_services/data.service";
 import {SocialUser} from "angular5-social-login";
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs/Observable";

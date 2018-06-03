@@ -8,7 +8,7 @@ import {UniversityListComponent} from "./university-list/university-list.compone
 import {RatingsComponent} from "./ratings/ratings.component";
 import {UniversityLoginComponent} from "./university-login/university-login.component";
 import {EventsPageComponent} from "./events-page/events-page.component";
-import {UserAuthGuardGuard} from "./user-auth-guard.guard";
+import {UserAuthGuardGuard} from "./_guards/user-auth-guard.guard";
 
 const routes: Routes = [
   {
@@ -43,7 +43,9 @@ const routes: Routes = [
   {
     path: 'events',
     component: EventsPageComponent
-  }
+  },
+
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({

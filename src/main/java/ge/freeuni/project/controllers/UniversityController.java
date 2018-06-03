@@ -27,7 +27,7 @@ public class UniversityController {
         this.eventRepository = eventRepository;
     }
 
-    @PostMapping("/save-university")
+    @PostMapping("/universities")
     @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
     public void saveUser(@RequestBody University university){
         this.repository.save(university);

@@ -1,14 +1,55 @@
-<div id="content-div">
-  <form ngNativeValidate>
-    <input class="inp" name="name" type="text" placeholder="სახელი" [(ngModel)]="name" required>
-    <input class="inp" name="address" type="text" placeholder="მისამართი" [(ngModel)]="address" required>
-    <input class="inp" name="phone" type="tel" placeholder="ტელეფონი" [(ngModel)]="phone" required>
-    <input class="inp" name="webAddress" type="url" placeholder="საიტი" [(ngModel)]="webAddress" required>
-    <input class="inp" name="email" type="email" placeholder="ელ.ფოსტა" [(ngModel)]="email" required>
-    <input class="inp" name="username" type="text" placeholder="მომხმარებლის სახელი" [(ngModel)]="username" required>
-    <input class="inp" name="password" type="password" placeholder="პაროლი" [(ngModel)]="password" required>
-    <input class="inp" name="verificationCode" type="text" placeholder="აქტივაციის კოდი" [(ngModel)]="verificationCode" required>
-    <input type="submit" value="დასრულება" (click)="addUniversity()">
-    <input type="submit" value="გაუქმება" routerLink="/">
-  </form>
+<!-- bootstrap css -->
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+      integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<div id="main-div">
+  <div id="content-div">
+    <div class="col-md-6 col-md-offset-3">
+      <h2>რეგისტრაცია</h2>
+      <form name="form" (ngSubmit)="f.form.valid && register()" #f="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="name">უნივერსიტეტის დასახელება</label>
+          <input type="text" class="form-control" name="name" id="name" [(ngModel)]="model.name" #name="ngModel"
+                 required/>
+          <div *ngIf="f.submitted && !name.valid" class="help-block">აუცილებელია დასახელების შეყვანა</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="address">მისამართი</label>
+          <input type="text" class="form-control" name="address" id="address" [(ngModel)]="model.address"
+                 #address="ngModel" required/>
+          <div *ngIf="f.submitted && !address.valid" class="help-block">მისამართის შეყვანა აუცილებელია</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="email">მისამართი</label>
+          <input type="email" class="form-control" name="email" id="email" [(ngModel)]="model.email"
+                 #email="ngModel" required/>
+          <div *ngIf="f.submitted && !email.valid" class="help-block">ელ.ფოსტის შეყვანა აუცილებელია</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="phone">ტელეფონი</label>
+          <input type="number" class="form-control" name="phone" id="phone" [(ngModel)]="model.phone"
+                 #phone="ngModel" required/>
+          <div *ngIf="f.submitted && !phone.valid" class="help-block">ტელეფონის შეყვანა აუცილებელია</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !username.valid }">
+          <label for="username">მომხმარებლის სახელი</label>
+          <input type="text" class="form-control" name="username" id="username" [(ngModel)]="model.username"
+                 #username="ngModel" required/>
+          <div *ngIf="f.submitted && !username.valid" class="help-block">მომხმარებლის სახელის შეყვანა აუცილებელია</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !password.valid }">
+          <label for="password">პაროლი</label>
+          <input type="password" class="form-control" name="password" id="password" [(ngModel)]="model.password"
+                 #password="ngModel" required/>
+          <div *ngIf="f.submitted && !password.valid" class="help-block">პაროლის შეყვანა აუცილებელია</div>
+        </div>
+        <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">რეგისტრაცია</button>
+          <img *ngIf="loading"
+               src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+          <a [routerLink]="['/university-login']" class="btn btn-link">დაბრუნება</a>
+        </div>
+      </form>
+    </div>
+  </div>
 </div>

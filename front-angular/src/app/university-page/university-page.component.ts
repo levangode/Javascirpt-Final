@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../data.service";
+import {DataService} from "../_services/data.service";
 import {ActivatedRoute} from "@angular/router";
-import {UniversityService} from "./university.service";
+import {UniversityService} from "../_services/university.service";
 
 @Component({
   selector: 'app-university-page',

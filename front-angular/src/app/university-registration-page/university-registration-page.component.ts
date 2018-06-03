@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../data.service";
+import {DataService} from "../_services/data.service";
 import {Router} from "@angular/router";
+import {UniversityService} from "../_services/university.service";
+import {AlertService} from "../_services/alert.service";
 
 @Component({
   selector: 'app-university-registration-page',
@@ -9,30 +11,29 @@ import {Router} from "@angular/router";
 })
 export class UniversityRegistrationPageComponent implements OnInit {
 
-  name: string = "";
-  address: string = "";
-  phone: string = "";
-  webAddress: string = "";
-  email: string = "";
-  username: string = "";
-  password: string = "";
-  verificationCode: string = "";
+  model: any = {};
+  loading = false;
 
+  constructor(
+    private router: Router,
+    private universityService: UniversityService,
+    private alertService: AlertService) { }
 
-  constructor(private dataService: DataService, private router: Router) { }
+  ngOnInit(){
 
-  ngOnInit() {
   }
-
-  addUniversity() {
-    let uni = {
-      "name": this.name,
-      "address": this.address,
-      "phone": this.phone,
-      "webAddress": this.webAddress,
-      "email": this.email
-    };
-    this.dataService.addUniversity(uni).subscribe();
-    this.router.navigate(['/']);
+  register() {
+    this.loading = true;
+    this.universityService.create(this.model)
+      .subscribe(
+        data => {
+          // set success message and pass true paramater to persist the message after redirecting to the login page
+          this.alertService.success('Registration successful', true);
+          this.router.navigate(['/university-login']);
+        },
+        error => {
+          this.alertService.error(error);
+          this.loading = false;
+        });
   }
 }

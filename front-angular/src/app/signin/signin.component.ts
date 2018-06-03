@@ -4,7 +4,7 @@ import {
   FacebookLoginProvider, SocialUser,
 } from 'angular5-social-login';
 import {HttpClient} from "@angular/common/http";
-import {DataService} from "../data.service";
+import {DataService} from "../_services/data.service";
 import {Router} from "@angular/router";
 
 @Component({

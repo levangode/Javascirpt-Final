@@ -6,7 +6,7 @@ import {AppRoutingModule} from './app-routing.module';
 import {CookieService} from "angular2-cookie/core";
 import {AppComponent} from './app.component';
 import {HomeComponent} from './home/home.component';
-import {DataService} from "./data.service";
+import {DataService} from "./_services/data.service";
 import {HttpClientModule} from "@angular/common/http";
 import {
   SocialLoginModule,
@@ -27,9 +27,12 @@ import { UniNewsComponent } from './university-page/uni-news/uni-news.component'
 import { UniEventsComponent } from './university-page/uni-events/uni-events.component';
 import { UniFacultiesComponent } from './university-page/uni-faculties/uni-faculties.component';
 import { UniFaqComponent } from './university-page/uni-faq/uni-faq.component';
-import {UniversityService} from "./university-page/university.service";
+import {UniversityService} from "./_services/university.service";
 import { EventsPageComponent } from './events-page/events-page.component';
-import {UserAuthGuardGuard} from "./user-auth-guard.guard";
+import {UserAuthGuardGuard} from "./_guards/user-auth-guard.guard";
+import { AlertComponent } from './alert/alert.component';
+import {UniAuthenticationService} from "./_services/uni-authentication.service";
+import {AlertService} from "./_services/alert.service";
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -63,6 +66,7 @@ export function getAuthServiceConfigs() {
     UniFacultiesComponent,
     UniFaqComponent,
     EventsPageComponent,
+    AlertComponent,
   ],
   imports: [
     HttpClientModule,
@@ -73,6 +77,8 @@ export function getAuthServiceConfigs() {
   ],
   providers: [
     DataService,
+    UniAuthenticationService,
+    AlertService,
     UniversityService,
     {
       provide: AuthServiceConfig,
