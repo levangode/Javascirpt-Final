@@ -67,4 +67,8 @@ export class DataService {
   getEvents(): Observable<any> {
     return this.http.get("http://localhost:8080/get-events");
   }
+
+  isValidUniCredentials(username: string, password: string) {
+    return false;
+  }
 }

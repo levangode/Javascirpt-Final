@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from "../data.service";
 
 @Component({
   selector: 'app-university-login',
@@ -10,14 +11,16 @@ export class UniversityLoginComponent implements OnInit {
 
   username: string = "";
   password: string = "";
-  constructor() { }
+  constructor(private dataService: DataService) { }
 
   ngOnInit() {
   }
 
   loginUser(){
-    console.log(this.username);
-    console.log(this.password);
+    if(this.dataService.isValidUniCredentials(this.username, this.password)){
+      //change route to uni panel
+    }
+    return false;
   }
 
 }

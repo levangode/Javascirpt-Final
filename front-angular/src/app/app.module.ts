@@ -29,6 +29,7 @@ import { UniFacultiesComponent } from './university-page/uni-faculties/uni-facul
 import { UniFaqComponent } from './university-page/uni-faq/uni-faq.component';
 import {UniversityService} from "./university-page/university.service";
 import { EventsPageComponent } from './events-page/events-page.component';
+import {UserAuthGuardGuard} from "./user-auth-guard.guard";
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -77,7 +78,8 @@ export function getAuthServiceConfigs() {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
     },
-    CookieService
+    CookieService,
+    UserAuthGuardGuard
   ],
   bootstrap: [AppComponent]
 })
