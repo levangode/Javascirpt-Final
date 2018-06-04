@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {DataService} from "../_services/data.service";
 import {Router} from "@angular/router";
 import {UniversityService} from "../_services/university.service";
 import {AlertService} from "../_services/alert.service";
@@ -28,11 +27,11 @@ export class UniversityRegistrationPageComponent implements OnInit {
       .subscribe(
         data => {
           // set success message and pass true paramater to persist the message after redirecting to the login page
-          this.alertService.success('Registration successful', true);
+          this.alertService.success('რეგისტრაცია წარმატებით დასრულდა', true);
           this.router.navigate(['/university-login']);
         },
         error => {
-          this.alertService.error(error);
+          this.alertService.error("მომხმარებლის სახელი უკვე გამოყენებულია");
           this.loading = false;
         });
   }

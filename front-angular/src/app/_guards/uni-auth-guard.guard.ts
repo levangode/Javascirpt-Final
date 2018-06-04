@@ -19,6 +19,6 @@ export class UniAuthGuardGuard implements CanActivate {
     }
 
     this.router.navigate(['/university-login'], {queryParams: {returnUrl: state.url}});
-    return true;
+    return false;
   }
 }

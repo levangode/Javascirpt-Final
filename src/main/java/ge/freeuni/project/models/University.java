@@ -39,10 +39,30 @@ public class University {
     private List<UniversityEvent> universityEvents;
     private String about;
 
+    private String username;
+    private String password;
+
+
     public University() {
         universityFaculties = new ArrayList<>();
         universityNews = new ArrayList<>();
         universityEvents = new ArrayList<>();
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public Long getId() {

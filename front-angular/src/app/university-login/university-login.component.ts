@@ -36,7 +36,7 @@ export class UniversityLoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          this.alertService.error(error);
+          this.alertService.error("მომხმარებლის სახელი ან პაროლი არასწორია");
           this.loading = false;
         });
   }

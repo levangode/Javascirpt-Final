@@ -33,6 +33,8 @@ import {UserAuthGuardGuard} from "./_guards/user-auth-guard.guard";
 import { AlertComponent } from './alert/alert.component';
 import {UniAuthenticationService} from "./_services/uni-authentication.service";
 import {AlertService} from "./_services/alert.service";
+import { UniversityControlPanelComponent } from './university-control-panel/university-control-panel.component';
+import {UniAuthGuardGuard} from "./_guards/uni-auth-guard.guard";
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -67,6 +69,7 @@ export function getAuthServiceConfigs() {
     UniFaqComponent,
     EventsPageComponent,
     AlertComponent,
+    UniversityControlPanelComponent,
   ],
   imports: [
     HttpClientModule,
@@ -80,6 +83,7 @@ export function getAuthServiceConfigs() {
     UniAuthenticationService,
     AlertService,
     UniversityService,
+    UniAuthGuardGuard,
     {
       provide: AuthServiceConfig,
       useFactory: getAuthServiceConfigs
