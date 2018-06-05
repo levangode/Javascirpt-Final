@@ -5,5 +5,5 @@ export class UserAuthenticationService {
 
   constructor() { }
 
-  loginFacebook()
+
 }

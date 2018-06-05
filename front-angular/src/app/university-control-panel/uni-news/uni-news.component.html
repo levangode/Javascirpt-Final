@@ -1,0 +1,43 @@
+<div id="content-div">
+
+  <div id="left-div">
+    <h2>ტოპ სიახლეები</h2>
+    <ol id="important-news">
+      <li class="important-item">სიახლე</li>
+      <li class="important-item">სიახლე</li>
+      <li class="important-item">სიახლე</li>
+      <li class="important-item">სიახლე</li>
+      <li class="important-item">სიახლე</li>
+      <li class="important-item">სიახლე</li>
+    </ol>
+  </div>
+
+  <div id="middle-div">
+    <h2>Educational News</h2>
+    <div *ngFor="let newsItem of this.news" class="news-item">
+      <div class="news-img">
+        <img src="{{newsItem.img}}">
+      </div>
+      <div class="news-info">
+        <p class="news-date">{{newsItem.date | date}}</p>
+        <a class="news-title" href="http://mes.gov.ge/content.php?id=8396&lang=geo">
+          {{newsItem.title}}
+        </a>
+        <p class="newsDescription">{{newsItem.description}}</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="right-div">
+    <h2>ტოპ აქტივობები</h2>
+    <ol id="top-events">
+      <li class="important-item">აქტივობა</li>
+      <li class="important-item">აქტივობა</li>
+      <li class="important-item">აქტივობა</li>
+      <li class="important-item">აქტივობა</li>
+      <li class="important-item">აქტივობა</li>
+      <li class="important-item">აქტივობა</li>
+    </ol>
+  </div>
+
+</div>

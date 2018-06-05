@@ -13,7 +13,7 @@ export class UniversityPageComponent implements OnInit {
   id: any;
   currentComponent: string = "news";
   university: any;
-
+  logo = "";
   constructor(private route: ActivatedRoute, private universityService: UniversityService) {
 
   }
@@ -24,10 +24,12 @@ export class UniversityPageComponent implements OnInit {
 
     this.universityService.getCurrentUniversitySubject().subscribe(value => {
       this.university = this.universityService.getCurrentUniversity();
+      this.logo = this.university.logo;
       console.log(this.university);
     });
     if(this.universityService.getCurrentUniversitySubject().isStopped){
       this.university = this.universityService.getCurrentUniversity();
+      this.logo = this.university.logo;
       console.log(this.university);
     }
   }

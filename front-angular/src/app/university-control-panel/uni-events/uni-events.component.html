@@ -1,0 +1,23 @@
+<div id="content-div">
+  <h3>უნივერსიტეტის აქტივობები</h3>
+
+  <a *ngFor="let eventItem of this.events" href="{{eventItem.link}}">
+    <div class="event-item">
+      <div>
+        <img class="event-image" src="{{eventItem.img}}">
+        <div>
+          <table class="event-info-table">
+            <tr>
+              <th class="event-date">{{eventItem.date | date}}</th>
+              <th colspan="2">Title</th>
+            </tr>
+            <tr>
+              <td>Description</td>
+              <td>Address</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+  </a>
+</div>
