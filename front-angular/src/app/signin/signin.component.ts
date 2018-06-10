@@ -6,6 +6,7 @@ import {
 import {HttpClient} from "@angular/common/http";
 import {DataService} from "../_services/data.service";
 import {Router} from "@angular/router";
+import {UniAuthenticationService} from "../_services/uni-authentication.service";
 
 @Component({
   selector: 'app-signin',
@@ -16,7 +17,7 @@ export class SigninComponent implements OnInit {
   private user: SocialUser;
 
   constructor(private socialAuthService: AuthService, private http: HttpClient, private dataService: DataService,
-              private router: Router, private _dataService: DataService) {
+              private router: Router, private _dataService: DataService, private uniAuth: UniAuthenticationService) {
   }
 
   sendToRestApiMethod(token: string): void {
@@ -55,8 +56,16 @@ export class SigninComponent implements OnInit {
     window.location.reload(true);
   }
 
-  public isLoggedIn(){
+  public isLoggedInUser(){
     return this.user !== undefined;
+  }
+
+  public isLoggedInUni(){
+    return this.uniAuth.isLoggedIn();
+  }
+
+  public signOutUni() {
+    this.uniAuth.logout();
   }
 
   public getUser(){

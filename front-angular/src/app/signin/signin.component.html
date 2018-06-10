@@ -1,12 +1,17 @@
-<div id="signInDiv" *ngIf="!isLoggedIn()">
+<div id="signInDiv" *ngIf="!isLoggedInUser() && !isLoggedInUni()">
   <button routerLink="university-login" id="signInUni">ავტორიზაცია უნივერსიტეტისთვის</button>
   <button (click)="socialSignIn('facebook')" id="signInUser">ავტორიზაცია აბიტურიენტისთვის</button>
 </div>
 
-<div *ngIf="isLoggedIn()">
+<div *ngIf="isLoggedInUser()">
   <img id="userImage" src="{{getUser().image}}">
   <p id="userName">{{getUser().name}}</p>
   <button class="user-button" (click)="goToProfile()">ჩემი პროფილი</button>
   <button class="user-button" (click)="signOut()">გამოსვლა</button>
+</div>
+
+<div *ngIf="isLoggedInUni()">
+  <button class="user-button" routerLink="/university-control-panel">სამართავი პანელი</button>
+  <button class="user-button" (click)="signOutUni()">გამოსვლა</button>
 </div>
 

@@ -2,11 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import {UniversityService} from "../../_services/university.service";
 
 @Component({
-  selector: 'app-uni-events',
-  templateUrl: './uni-events.component.html',
-  styleUrls: ['./uni-events.component.scss']
+  selector: 'app-events-control',
+  templateUrl: './events-control.component.html',
+  styleUrls: ['./events-control.component.scss']
 })
-export class UniEventsComponent implements OnInit {
+export class EventsControlComponent implements OnInit {
+
   events: Array<any>;
   constructor(private universityService: UniversityService) { }
 

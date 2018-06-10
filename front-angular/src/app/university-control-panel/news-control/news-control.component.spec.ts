@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UniFacultiesComponent } from './uni-faculties.component';
+import { NewsControlComponent } from './news-control.component';
 
-describe('UniFacultiesComponent', () => {
-  let component: UniFacultiesComponent;
-  let fixture: ComponentFixture<UniFacultiesComponent>;
+describe('NewsControlComponent', () => {
+  let component: NewsControlComponent;
+  let fixture: ComponentFixture<NewsControlComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UniFacultiesComponent ]
+      declarations: [ NewsControlComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UniFacultiesComponent);
+    fixture = TestBed.createComponent(NewsControlComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

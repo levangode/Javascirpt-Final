@@ -51,12 +51,18 @@ public class UniversityController {
 
     @PostMapping("/universities")
     @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
-    public ResponseEntity saveUser(@RequestBody University university){
+    public ResponseEntity saveUniversity(@RequestBody University university){
         if(repository.findUniversityByUsername(university.getUsername()).size() > 0){
             return new ResponseEntity(HttpStatus.BAD_REQUEST);
         }
         this.repository.save(university);
         return new ResponseEntity(HttpStatus.OK);
+    }
+
+    @PutMapping("/universities")
+    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    public void updateUniversity(@RequestBody University university){
+        repository.save(university);
     }
 
     @GetMapping("/get-universities")
@@ -84,4 +90,5 @@ public class UniversityController {
         Optional<University> universityOptional = this.repository.findById(id);
         return universityOptional.orElse(null);
     }
+
 }

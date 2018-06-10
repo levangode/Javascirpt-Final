@@ -16,6 +16,7 @@ export class UniversityService {
   }
 
   initUniversity(id: any){
+    this.universitySubject = new Subject<any>();
     this.dataService.getUniversity(id).subscribe(value => {
       this.university = value;
       this.universitySubject.next(value);
@@ -39,12 +40,17 @@ export class UniversityService {
     return this.http.post('http://localhost:8080/universities', university);
   }
 
-  update(user: any) {
-    return this.http.put('/api/users/' + user.id, user);
+  update(university: any) {
+    return this.http.put('http://localhost:8080/universities', university);
   }
 
   delete(id: number) {
     return this.http.delete('/api/users/' + id);
+  }
+
+  updateNews(news: Array<any>){
+    this.university.news = news;
+    return this.update(this.university);
   }
 
 }

@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import {UniversityService} from "../../_services/university.service";
 
 @Component({
-  selector: 'app-uni-faculties',
-  templateUrl: './uni-faculties.component.html',
-  styleUrls: ['./uni-faculties.component.scss']
+  selector: 'app-faculties-control',
+  templateUrl: './faculties-control.component.html',
+  styleUrls: ['./faculties-control.component.scss']
 })
-export class UniFacultiesComponent implements OnInit {
+export class FacultiesControlComponent implements OnInit {
 
   faculties: Array<any>;
 

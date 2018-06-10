@@ -21,7 +21,7 @@ export class UniversityControlPanelComponent implements OnInit {
   ngOnInit() {
     let currentUniversity = JSON.parse(localStorage.getItem('currentUniversity'));
     this.id = +currentUniversity.id;
-    console.log(this.id);
+    this.university = undefined;
     this.universityService.initUniversity(this.id);
 
     this.universityService.getCurrentUniversitySubject().subscribe(value => {

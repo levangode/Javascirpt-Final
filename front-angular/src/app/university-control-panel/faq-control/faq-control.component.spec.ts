@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { UniFaqComponent } from './uni-faq.component';
+import { FaqControlComponent } from './faq-control.component';
 
-describe('UniFaqComponent', () => {
-  let component: UniFaqComponent;
-  let fixture: ComponentFixture<UniFaqComponent>;
+describe('FaqControlComponent', () => {
+  let component: FaqControlComponent;
+  let fixture: ComponentFixture<FaqControlComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ UniFaqComponent ]
+      declarations: [ FaqControlComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(UniFaqComponent);
+    fixture = TestBed.createComponent(FaqControlComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

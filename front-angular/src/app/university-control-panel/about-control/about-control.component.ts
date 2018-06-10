@@ -3,12 +3,11 @@ import {DataService} from "../../_services/data.service";
 import {UniversityService} from "../../_services/university.service";
 
 @Component({
-  selector: 'app-uni-about',
-  templateUrl: './uni-about.component.html',
-  styleUrls: ['./uni-about.component.scss']
+  selector: 'app-about-control',
+  templateUrl: './about-control.component.html',
+  styleUrls: ['./about-control.component.scss']
 })
-export class UniAboutComponent implements OnInit {
-
+export class AboutControlComponent implements OnInit {
 
   about: string = "";
   constructor(private dataService: DataService, private universityService: UniversityService) {

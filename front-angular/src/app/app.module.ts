@@ -1,6 +1,6 @@
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
-
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
 import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from './app-routing.module';
 import {CookieService} from "angular2-cookie/core";
@@ -35,6 +35,11 @@ import {UniAuthenticationService} from "./_services/uni-authentication.service";
 import {AlertService} from "./_services/alert.service";
 import { UniversityControlPanelComponent } from './university-control-panel/university-control-panel.component';
 import {UniAuthGuardGuard} from "./_guards/uni-auth-guard.guard";
+import { NewsControlComponent } from './university-control-panel/news-control/news-control.component';
+import { FaqControlComponent } from './university-control-panel/faq-control/faq-control.component';
+import { FacultiesControlComponent } from './university-control-panel/faculties-control/faculties-control.component';
+import { EventsControlComponent } from './university-control-panel/events-control/events-control.component';
+import { AboutControlComponent } from './university-control-panel/about-control/about-control.component';
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -70,13 +75,19 @@ export function getAuthServiceConfigs() {
     EventsPageComponent,
     AlertComponent,
     UniversityControlPanelComponent,
+    NewsControlComponent,
+    FaqControlComponent,
+    FacultiesControlComponent,
+    EventsControlComponent,
+    AboutControlComponent,
   ],
   imports: [
     HttpClientModule,
     BrowserModule,
     AppRoutingModule,
     SocialLoginModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule
   ],
   providers: [
     DataService,

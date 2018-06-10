@@ -23,4 +23,12 @@ export class UniAuthenticationService {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUniversity');
   }
+
+  isLoggedIn(){
+    if(localStorage.getItem('currentUniversity')){
+      return true;
+    } else {
+      return false;
+    }
+  }
 }
