@@ -1,23 +1,46 @@
 <div id="content-div">
-  <h3>უნივერსიტეტის აქტივობები</h3>
-
-  <a *ngFor="let eventItem of this.events" href="{{eventItem.link}}">
-    <div class="event-item">
-      <div>
-        <img class="event-image" src="{{eventItem.img}}">
+  <div id="middle-div" [@news]="events.length" [@creation]="showCreatePanel">
+    <h3>უნივერსიტეტის აქტივობები</h3>
+    <button id="add-event-button" class="btn btn-primary" (click)="changeState()">აქტივობის დამატება</button>
+    <div id="create-event" *ngIf="showCreatePanel">
+      <form name="form" (ngSubmit)="f.form.valid && createEvent()" #f="ngForm" novalidate>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !title.valid }">
+          <label for="title">სიახლის სათაური</label>
+          <input type="text" class="form-control" name="title" id="title" [(ngModel)]="model.title"
+                 #title="ngModel" required/>
+          <div *ngIf="f.submitted && !title.valid" class="help-block">სათაურის შეყვანა აუცილებელია</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !description.valid }">
+          <label for="description">სიახლის აღწერილობა</label>
+          <textarea type="text" id="description" class="form-control" name="description" [(ngModel)]="model.description"
+                    #description="ngModel" required></textarea>
+        </div>
+        <div class="form-group">
+          <button [disabled]="loading" class="btn btn-primary">დამატება</button>
+          <img *ngIf="loading"
+               src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+          <button (click)="changeState()" class="btn btn-link">გაუქმება</button>
+        </div>
+      </form>
+    </div>
+    <a *ngFor="let eventItem of this.events" href="{{eventItem.link}}">
+      <div class="event-item">
         <div>
-          <table class="event-info-table">
-            <tr>
-              <th class="event-date">{{eventItem.date | date}}</th>
-              <th colspan="2">Title</th>
-            </tr>
-            <tr>
-              <td>Description</td>
-              <td>Address</td>
-            </tr>
-          </table>
+          <img class="event-image" src="{{eventItem.img}}">
+          <div>
+            <table class="event-info-table">
+              <tr>
+                <th class="event-date">{{eventItem.date | date}}</th>
+                <th colspan="2">Title</th>
+              </tr>
+              <tr>
+                <td>Description</td>
+                <td>Address</td>
+              </tr>
+            </table>
+          </div>
         </div>
       </div>
-    </div>
-  </a>
+    </a>
+  </div>
 </div>

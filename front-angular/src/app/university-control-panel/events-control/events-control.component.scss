@@ -27,3 +27,27 @@ a{
   text-decoration: none;
   color: black;
 }
+
+#create-event{
+  background: grey;
+  position: absolute;
+  right: 15px;
+  left: 15px;
+  margin: 10px;
+  border: solid 1px green;
+  z-index: 200;
+}
+
+#create-news textarea{
+
+  resize: vertical;
+}
+
+#middle-div{
+  position: relative;
+}
+
+#add-event-button{
+  margin: 5px;
+}
+
