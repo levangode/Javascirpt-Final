@@ -48,15 +48,18 @@ export class NewsControlComponent implements OnInit {
   showCreatePanel = false;
 
   constructor(private universityService: UniversityService) {
+    this.news = [];
   }
 
   ngOnInit() {
+
     this.universityService.getCurrentUniversitySubject().subscribe(value => {
       this.news = this.universityService.getCurrentUniversity().universityNews;
     });
     if (this.universityService.getCurrentUniversitySubject().isStopped) {
       this.news = this.universityService.getCurrentUniversity().universityNews;
     }
+
   }
 
   createNews() {
@@ -65,11 +68,24 @@ export class NewsControlComponent implements OnInit {
     this.news.unshift(this.model);
     this.universityService.updateNews(this.news).subscribe(value => {
       this.loading = false;
+      this.changeState();
     });
   }
 
   changeState() {
     this.showCreatePanel = !this.showCreatePanel;
     this.model = {};
+  }
+
+  deleteNews(newsItem) {
+    var index = this.news.indexOf(newsItem, 0);
+    if (index > -1) {
+      const cloned = Object.assign([], this.news);
+      cloned.splice(index, 1);
+      this.universityService.updateNews(cloned).subscribe(value => {
+        this.news.splice(index, 1);
+      });
+
+    }
   }
 }

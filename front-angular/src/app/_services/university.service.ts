@@ -41,6 +41,7 @@ export class UniversityService {
   }
 
   update(university: any) {
+    console.log(this.university);
     return this.http.put('http://localhost:8080/universities', university);
   }
 
@@ -49,7 +50,7 @@ export class UniversityService {
   }
 
   updateNews(news: Array<any>){
-    this.university.news = news;
+    this.university.universityNews = news;
     return this.update(this.university);
   }
 

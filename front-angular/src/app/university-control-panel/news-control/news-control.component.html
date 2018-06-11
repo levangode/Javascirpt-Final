@@ -24,6 +24,8 @@
       </form>
     </div>
     <div *ngFor="let newsItem of this.news" class="news-item">
+      <div><span id="delete-news" (click)="deleteNews(newsItem)" class="btn btn-primary">წაშლა</span></div>
+      <div class="news-item">
       <div class="news-img">
         <img src="{{newsItem.img}}">
       </div>
@@ -33,6 +35,7 @@
           {{newsItem.title}}
         </a>
         <p class="newsDescription">{{newsItem.description}}</p>
+      </div>
       </div>
     </div>
   </div>
