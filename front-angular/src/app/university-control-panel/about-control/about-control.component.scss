@@ -1,6 +1,11 @@
 #about-div{
   width: 60%;
-  margin: auto;
   border: 2px solid green;
-  border-radius: 20px
+  border-radius: 20px;
+  margin: 15px auto;
+}
+
+#edit-about{
+  width: 60%;
+  resize: vertical;
 }
