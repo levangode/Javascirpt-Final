@@ -1,19 +1,36 @@
 <div id="content-div">
-  <div id="middle-div" [@news]="events.length" [@creation]="showCreatePanel">
+  <div id="middle-div" [@events]="events.length" [@creation]="showCreatePanel">
     <h3>უნივერსიტეტის აქტივობები</h3>
     <button id="add-event-button" class="btn btn-primary" (click)="changeState()">აქტივობის დამატება</button>
     <div id="create-event" *ngIf="showCreatePanel">
       <form name="form" (ngSubmit)="f.form.valid && createEvent()" #f="ngForm" novalidate>
         <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !title.valid }">
-          <label for="title">სიახლის სათაური</label>
+          <label for="title">აქტივობის სათაური</label>
           <input type="text" class="form-control" name="title" id="title" [(ngModel)]="model.title"
                  #title="ngModel" required/>
           <div *ngIf="f.submitted && !title.valid" class="help-block">სათაურის შეყვანა აუცილებელია</div>
         </div>
-        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !description.valid }">
-          <label for="description">სიახლის აღწერილობა</label>
+        <div class="form-group">
+          <label for="description">აქტივობის აღწერილობა</label>
           <textarea type="text" id="description" class="form-control" name="description" [(ngModel)]="model.description"
-                    #description="ngModel" required></textarea>
+                    #description="ngModel"></textarea>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !date.valid }">
+          <label for="date">აქტივობის თარიღი</label>
+          <input type="date" class="form-control" name="date" id="date" [(ngModel)]="model.date"
+                 #date="ngModel" required/>
+          <div *ngIf="f.submitted && !date.valid" class="help-block">თარიღის მითითება აუცილებელია</div>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !link.valid }">
+          <label for="link">გარე ბმული</label>
+          <input type="url" class="form-control" name="link" id="link" [(ngModel)]="model.link"
+                 #link="ngModel"/>
+        </div>
+        <div class="form-group" [ngClass]="{ 'has-error': f.submitted && !address.valid }">
+          <label for="address">მისამართი</label>
+          <input type="text" class="form-control" name="address" id="address" [(ngModel)]="model.address"
+                 #address="ngModel" required/>
+          <div *ngIf="f.submitted && !address.valid" class="help-block">მისამართის მითითება აუცილებელია</div>
         </div>
         <div class="form-group">
           <button [disabled]="loading" class="btn btn-primary">დამატება</button>
@@ -23,7 +40,7 @@
         </div>
       </form>
     </div>
-    <a *ngFor="let eventItem of this.events" href="{{eventItem.link}}">
+    <div *ngFor="let eventItem of this.events"  style="cursor: pointer" (click)="goExternal(eventItem.link)">
       <div class="event-item">
         <div>
           <img class="event-image" src="{{eventItem.img}}">
@@ -31,16 +48,16 @@
             <table class="event-info-table">
               <tr>
                 <th class="event-date">{{eventItem.date | date}}</th>
-                <th colspan="2">Title</th>
+                <th colspan="2">{{eventItem.title}}</th>
               </tr>
               <tr>
-                <td>Description</td>
-                <td>Address</td>
+                <td>{{eventItem.description}}</td>
+                <td>{{eventItem.address}}</td>
               </tr>
             </table>
           </div>
         </div>
       </div>
-    </a>
+    </div>
   </div>
 </div>

@@ -7,7 +7,7 @@ import {animate, keyframes, query, stagger, style, transition, trigger} from "@a
   templateUrl: './events-control.component.html',
   styleUrls: ['./events-control.component.scss'],
   animations: [
-    trigger('news', [
+    trigger('events', [
       transition('* => *', [
         query(':enter', style({opacity: 0}), {optional: true}),
         query(':enter', stagger('300ms', [
@@ -68,7 +68,16 @@ export class EventsControlComponent implements OnInit {
   }
 
   createEvent(){
-
+    this.loading = true;
+    this.events.unshift(this.model);
+    console.log(this.events);
+    this.universityService.updateEvents(this.events).subscribe(value => {
+      this.loading = false;
+      this.changeState();
+    });
   }
 
+  goExternal(link) {
+    window.location.href=link;
+  }
 }

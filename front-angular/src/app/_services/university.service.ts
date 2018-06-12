@@ -58,4 +58,9 @@ export class UniversityService {
     return this.update(this.university);
   }
 
+  updateEvents(events: Array<any>) {
+    this.university.universityEvents = events;
+    console.log(this.university);
+    return this.update(this.university);
+  }
 }
