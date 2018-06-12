@@ -10,6 +10,10 @@ export class FacultiesControlComponent implements OnInit {
 
   faculties: Array<any>;
 
+  model: any = {};
+  loading = false;
+  showCreatePanel = false;
+
   constructor(private universityService: UniversityService) { }
 
   ngOnInit() {
@@ -23,4 +27,12 @@ export class FacultiesControlComponent implements OnInit {
     }
   }
 
+  changeState() {
+    this.showCreatePanel = !this.showCreatePanel;
+    this.model = {};
+  }
+
+  createFaculty() {
+    return false;
+  }
 }
