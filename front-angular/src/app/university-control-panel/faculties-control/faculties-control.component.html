@@ -2,191 +2,124 @@
 
 
   <h3>უნივერსიტეტის ფაკულტეტები</h3>
-  <button id="add-event-button" class="btn btn-primary" (click)="changeState()">ფაკულტეტის დამატება</button>
-  <div id="create-event" *ngIf="showCreatePanel">
-    <!--<form name="form" (ngSubmit)="f.form.valid && createFaculty()" #f="ngForm" novalidate>-->
-      <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !programName.valid }">-->
-        <!--<label for="programName">პროგრამის დასახელება</label>-->
-        <!--<input type="text" class="form-control" name="programName" id="programName" [(ngModel)]="model.programName"-->
-               <!--#programName="ngModel" required/>-->
-        <!--<div *ngIf="f.submitted && !programName.valid" class="help-block">დასახელების შეყვანა აუცილებელია</div>-->
-      <!--</div>-->
-
-      <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !qualification.valid }">-->
-        <!--<label for="qualification">კვალიფიკაცია</label>-->
-        <!--<input type="text" class="form-control" name="qualification" id="qualification" [(ngModel)]="model.qualification"-->
-               <!--#qualification="ngModel" required/>-->
-        <!--<div *ngIf="f.submitted && !qualification.valid" class="help-block">კვალიფიკაციის შეყვანა აუცილებელია</div>-->
-      <!--</div>-->
-
-      <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !accredited.valid }">-->
-        <!--<label for="accredited">აკრედიტაცია</label>-->
-        <!--<input type="text" class="form-control" name="accredited" id="accredited" [(ngModel)]="model.accredited"-->
-               <!--#accredited="ngModel" required/>-->
-        <!--<div *ngIf="f.submitted && !accredited.valid" class="help-block">მიუთითეთ აკრედიტაციის სტატუსი</div>-->
-      <!--</div>-->
-
-      <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !language.valid }">-->
-        <!--<label for="language">ენა</label>-->
-        <!--<input type="text" class="form-control" name="language" id="language" [(ngModel)]="model.language"-->
-               <!--#language="ngModel" required/>-->
-        <!--<div *ngIf="f.submitted && !language.valid" class="help-block">მიუთითეთ პროგრამის ენა</div>-->
-      <!--</div>-->
-
-      <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !financing.valid }">-->
-        <!--<label for="financing">დაფინანსება</label>-->
-        <!--<input type="text" class="form-control" name="financing" id="financing" [(ngModel)]="model.financing"-->
-               <!--#financing="ngModel" required/>-->
-        <!--<div *ngIf="f.submitted && !financing.valid" class="help-block">მიუთითეთ დაფინანსება</div>-->
-      <!--</div>-->
-
-      <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !facultyNumber.valid }">-->
-        <!--<label for="facultyNumber">პროგრამის ნომერი</label>-->
-        <!--<input type="text" class="form-control" name="facultyNumber" id="facultyNumber" [(ngModel)]="model.facultyNumber"-->
-               <!--#facultyNumber="ngModel" required/>-->
-        <!--<div *ngIf="f.submitted && !facultyNumber.valid" class="help-block">მიუთითეთ პროგრამის ნომერი</div>-->
-      <!--</div>-->
-
-      <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !annualFee.credits }">-->
-        <!--<label for="credits">კრედიტების რაოდენობა</label>-->
-        <!--<input type="text" class="form-control" name="credits" id="credits" [(ngModel)]="model.credits"-->
-               <!--#credits="ngModel" required/>-->
-        <!--<div *ngIf="f.submitted && !credits.valid" class="help-block">მიუთითეთ კრედიტების რაოდენობა</div>-->
-      <!--</div>-->
-
-      <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !annualFee.valid }">-->
-        <!--<label for="annualFee">წლიური გადასახადი ლარში</label>-->
-        <!--<input type="text" class="form-control" name="annualFee" id="annualFee" [(ngModel)]="model.annualFee"-->
-               <!--#annualFee="ngModel" required/>-->
-        <!--<div *ngIf="f.submitted && !annualFee.valid" class="help-block">მიუთითეთ გადასახადი</div>-->
-      <!--</div>-->
-
-      <!--<div class="form-group" [ngClass]="{ 'has-error': f.submitted && !numPlaces.valid }">-->
-        <!--<label for="numPlaces">ადგილების რაოდენობა</label>-->
-        <!--<input type="text" class="form-control" name="numPlaces" id="numPlaces" [(ngModel)]="model.numPlaces"-->
-               <!--#numPlaces="ngModel" required/>-->
-        <!--<div *ngIf="f.submitted && !annualnumPlacesFee.valid" class="help-block">მიუთითეთ ადგილების რაოდენობა</div>-->
-      <!--</div>-->
-
-      <!--<div class="form-group">-->
-        <!--<button [disabled]="loading" class="btn btn-primary">დამატება</button>-->
-        <!--<img *ngIf="loading"-->
-             <!--src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>-->
-        <!--<button (click)="changeState()" class="btn btn-link">გაუქმება</button>-->
-      <!--</div>-->
-    <!--</form>-->
-
-    <div class="faculty-item grow" >
-      <table class="faculty-general">
-        <caption>
-          <table class="caption-table">
-            <tr>
-              <th>პროგრამა:</th>
-              <th><input type="text"/></th>
-              <th><input type="text"/></th>
-              <th>კვალიფიკაცია:<input type="text"/></th>
-            </tr>
-          </table>
-        </caption>
-        <tr>
-          <th>აკრედიტებული</th>
-          <th>სწავლების ენა</th>
-          <th>დაფინანსება</th>
-          <th>კრედიტების რაოდენობა</th>
-          <th>წლიური გადასახადი</th>
-          <th>ადგილების რაოდენობა</th>
-        </tr>
-        <tr>
-          <td><input type="text"/></td>
-          <td><input type="text"/></td>
-          <td><input type="text"/></td>
-          <td><input type="text"/></td>
-          <td><input type="text"/></td>
-          <td><input type="text"/></td>
-        </tr>
-      </table>
-      <table class="subjects-table">
-        <caption>საგნები</caption>
-        <tr>
-          <th colspan="2"></th>
-          <th><input type="text"/></th>
-        </tr>
-        <tr>
-          <td colspan="2">კოეფიციენტები</td>
-          <td><input type="text"/></td>
-        </tr>
-        <tr>
-          <td colspan="2">ადგილების ქვოტა</td>
-          <td><input type="text"/></td>
-        </tr>
-        <tr>
-          <td colspan="2">ზღვარი</td>
-          <td><input type="text"/></td>
-        </tr>
-        <tr>
-          <td colspan="2">შეზღუდვები</td>
-          <td><input type="text"/></td>
-        </tr>
-      </table>
-    </div>
+  <button id="add-faculty-button" class="btn btn-primary" (click)="changeState()">ფაკულტეტის დამატება</button>
+  <div id="create-faculty" *ngIf="showCreatePanel">
+    <form name="form" (ngSubmit)="f.form.valid && createFaculty()" #f="ngForm" novalidate>
+      <div class="faculty-item grow">
+        <table class="faculty-general">
+          <caption>
+            <table class="caption-table">
+              <tr>
+                <th>პროგრამის ნომერი: <input type="number" name="facultyNumber" [(ngModel)]="model.facultyNumber"></th>
+                <th>პროგრამის სახელი: <input type="text" name="programName" [(ngModel)]="model.programName"></th>
+                <th>კვალიფიკაცია: <input type="text" name="qualification" [(ngModel)]="model.qualification"></th>
+              </tr>
+            </table>
+          </caption>
+          <tr>
+            <th>აკრედიტებული</th>
+            <th>სწავლების ენა</th>
+            <th>დაფინანსება</th>
+            <th>კრედიტების რაოდენობა</th>
+            <th>წლიური გადასახადი</th>
+            <th>ადგილების რაოდენობა</th>
+          </tr>
+          <tr>
+            <td><input type="text" name="accredited" [(ngModel)]="model.accredited"></td>
+            <td><input type="text" name="language" [(ngModel)]="model.language"></td>
+            <td><input type="text" name="financing" [(ngModel)]="model.financing"></td>
+            <td><input type="number" name="credits" [(ngModel)]="model.credits"></td>
+            <td><input type="number" name="annualFee" [(ngModel)]="model.annualFee"></td>
+            <td><input type="number" name="numPlaces" [(ngModel)]="model.numPlaces"></td>
+          </tr>
+        </table>
+        <table class="subjects-table">
+          <caption>საგნები</caption>
+          <tr>
+            <th colspan="2"></th>
+            <th *ngFor="let subject of subjects">{{subject}}</th>
+          </tr>
+          <tr>
+            <td colspan="2">კოეფიციენტები</td>
+            <td *ngFor="let subject of subjects"><input type="text" name="quotient" [(ngModel)]="subjectsInfo[subject].quotient"></td>
+          </tr>
+          <tr>
+            <td colspan="2">ადგილების ქვოტა</td>
+            <td *ngFor="let subject of subjects"><input type="text" name="numPlaces" [(ngModel)]="subjectsInfo[subject].numPlaces"></td>
+          </tr>
+          <tr>
+            <td colspan="2">ზღვარი</td>
+            <td *ngFor="let subject of subjects"><input type="text" name="barrier" [(ngModel)]="subjectsInfo[subject].barrier"></td>
+          </tr>
+          <tr>
+            <td colspan="2">შეზღუდვები</td>
+            <td *ngFor="let subject of subjects"><input type="text" name="restriction" [(ngModel)]="subjectsInfo[subject].restriction"></td>
+          </tr>
+        </table>
+      </div>
+      <div class="form-group">
+        <button [disabled]="loading" class="btn btn-primary">დამატება</button>
+        <img *ngIf="loading"
+             src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA=="/>
+        <button (click)="changeState()" class="btn btn-link">გაუქმება</button>
+      </div>
+    </form>
 
 
-
-  </div>
-
-  <div id="faculties-div">
-    <div class="faculty-item grow" *ngFor="let faculty of this.faculties">
-      <table class="faculty-general">
-        <caption>
-          <table class="caption-table">
-            <tr>
-              <th>პროგრამა:</th>
-              <th>{{faculty.facultyNumber}}</th>
-              <th>{{faculty.programName}}</th>
-              <th>კვალიფიკაცია: {{faculty.qualification}}</th>
-            </tr>
-          </table>
-        </caption>
-        <tr>
-          <th>აკრედიტებული</th>
-          <th>სწავლების ენა</th>
-          <th>დაფინანსება</th>
-          <th>კრედიტების რაოდენობა</th>
-          <th>წლიური გადასახადი</th>
-          <th>ადგილების რაოდენობა</th>
-        </tr>
-        <tr>
-          <td>{{faculty.accredited}}</td>
-          <td>{{faculty.language}}</td>
-          <td>{{faculty.financing}}</td>
-          <td>{{faculty.credits}}</td>
-          <td>{{faculty.annualFee}}</td>
-          <td>{{faculty.numPlaces}}</td>
-        </tr>
-      </table>
-      <table class="subjects-table">
-        <caption>საგნები</caption>
-        <tr>
-          <th colspan="2"></th>
-          <th *ngFor="let subject of faculty.facultySubjects">{{subject.name}}</th>
-        </tr>
-        <tr>
-          <td colspan="2">კოეფიციენტები</td>
-          <td *ngFor="let subject of faculty.facultySubjects">{{subject.quotient}}</td>
-        </tr>
-        <tr>
-          <td colspan="2">ადგილების ქვოტა</td>
-          <td *ngFor="let subject of faculty.facultySubjects">{{subject.numPlaces}}</td>
-        </tr>
-        <tr>
-          <td colspan="2">ზღვარი</td>
-          <td *ngFor="let subject of faculty.facultySubjects">{{subject.barrier}}</td>
-        </tr>
-        <tr>
-          <td colspan="2">შეზღუდვები</td>
-          <td *ngFor="let subject of faculty.facultySubjects">{{subject.restriction}}</td>
-        </tr>
-      </table>
+    <div id="faculties-div">
+      <div class="faculty-item grow" *ngFor="let faculty of this.faculties">
+        <table class="faculty-general">
+          <caption>
+            <table class="caption-table">
+              <tr>
+                <th>პროგრამა:</th>
+                <th>{{faculty.facultyNumber}}</th>
+                <th>{{faculty.programName}}</th>
+                <th>კვალიფიკაცია: {{faculty.qualification}}</th>
+              </tr>
+            </table>
+          </caption>
+          <tr>
+            <th>აკრედიტებული</th>
+            <th>სწავლების ენა</th>
+            <th>დაფინანსება</th>
+            <th>კრედიტების რაოდენობა</th>
+            <th>წლიური გადასახადი</th>
+            <th>ადგილების რაოდენობა</th>
+          </tr>
+          <tr>
+            <td>{{faculty.accredited}}</td>
+            <td>{{faculty.language}}</td>
+            <td>{{faculty.financing}}</td>
+            <td>{{faculty.credits}}</td>
+            <td>{{faculty.annualFee}}</td>
+            <td>{{faculty.numPlaces}}</td>
+          </tr>
+        </table>
+        <table class="subjects-table">
+          <caption>საგნები</caption>
+          <tr>
+            <th colspan="2"></th>
+            <th *ngFor="let subject of faculty.facultySubjects">{{subject.name}}</th>
+          </tr>
+          <tr>
+            <td colspan="2">კოეფიციენტები</td>
+            <td *ngFor="let subject of faculty.facultySubjects">{{subject.quotient}}</td>
+          </tr>
+          <tr>
+            <td colspan="2">ადგილების ქვოტა</td>
+            <td *ngFor="let subject of faculty.facultySubjects">{{subject.numPlaces}}</td>
+          </tr>
+          <tr>
+            <td colspan="2">ზღვარი</td>
+            <td *ngFor="let subject of faculty.facultySubjects">{{subject.barrier}}</td>
+          </tr>
+          <tr>
+            <td colspan="2">შეზღუდვები</td>
+            <td *ngFor="let subject of faculty.facultySubjects">{{subject.restriction}}</td>
+          </tr>
+        </table>
+      </div>
     </div>
   </div>
 </div>

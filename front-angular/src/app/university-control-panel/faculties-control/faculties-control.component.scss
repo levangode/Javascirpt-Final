@@ -11,6 +11,9 @@
   table-layout: fixed;
   width: 100%;
 }
+.subjects-table input{
+  width: 100%;
+}
 
 .subjects-table th{
   word-wrap: break-word;
@@ -31,10 +34,15 @@
   width: 100%;
 }
 
+.faculty-general input{
+  width: 100%;
+}
+
 .faculty-general th{
   word-wrap: break-word;
   font-size: 14px;
 }
+
 .faculty-general td{
   word-wrap: break-word;
   font-size: 13px;
@@ -48,6 +56,7 @@
 }
 
 table, th, td {
+  text-align: center;
   border: 1px solid black;
   border-collapse: collapse;
 }
