@@ -2,12 +2,12 @@
   margin: 10px;
 }
 
-.container{
+.my-container{
   display: grid;
   grid-template-columns: 50% auto;
 }
 
-.col{
+.my-col{
   margin: 5px;
   border-radius: 10px;
   border: 1px solid green;
