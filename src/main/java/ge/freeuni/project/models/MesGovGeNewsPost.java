@@ -1,7 +1,6 @@
 package ge.freeuni.project.models;
 
 
-import lombok.*;
 
 
 public class MesGovGeNewsPost {
