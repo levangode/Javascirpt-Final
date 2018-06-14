@@ -4,8 +4,8 @@
       <img src="{{this.logo}}" class="header-img"
            title=""/>
     </div>
-    <div>
-      <input type="checkbox" id="checkbox" title="დაამატე რჩეულებში"/>
+    <div *ngIf="isUser()">
+      <input type="checkbox" id="checkbox" [checked]="isChecked()"  title="დაამატე რჩეულებში" (change)="addFavourite($event)"/>
       <label for="checkbox">
         <svg id="heart-svg" viewBox="467 392 58 57" xmlns="http://www.w3.org/2000/svg">
           <g id="Group" fill="none" fill-rule="evenodd" transform="translate(467 392)">

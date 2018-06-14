@@ -17,6 +17,9 @@ public class User {
     private String email;
     private String name;
     private Set<UserInterest> interestList;
+    private Set<University> favouriteUniversities;
+
+
 
     public User() {
     }
@@ -54,6 +57,22 @@ public class User {
             inverseJoinColumns = {@JoinColumn(name = "interest_id", referencedColumnName = "id")})
     public Set<UserInterest> getInterestList() {
         return interestList;
+    }
+
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(name = "USER_FAV_UNI")
+    @JoinColumn(name = "id")
+    public Set<University> getFavouriteUniversities() {
+        return favouriteUniversities;
+    }
+
+    public void setFavouriteUniversities(Set<University> favouriteUniversities) {
+        this.favouriteUniversities = favouriteUniversities;
+    }
+
+    public void addFavourite(University university){
+        this.favouriteUniversities.add(university);
     }
 
     public void setId(Long id) {

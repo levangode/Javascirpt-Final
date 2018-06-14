@@ -66,12 +66,15 @@ export class UniversityService {
 
   updateFaculties(faculties: Array<any>) {
     this.university.universityFaculties = faculties;
-    console.log(this.university);
     return this.update(this.university);
   }
 
   updateFaq(faq: Array<any>) {
     this.university.universityFaq = faq;
     return this.update(this.university);
+  }
+
+  addFavourite(uniId: any, userId: string) {
+    this.http.post("http://localhost:8080/addFavourite",{"uniId":uniId, "userId":userId}).subscribe();
   }
 }

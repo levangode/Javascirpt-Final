@@ -30,6 +30,10 @@ export class DataService {
     return this.http.get("http://localhost:8080/interests");
   }
 
+  getAllFavourites(): Observable<any>{  //TODO
+    return this.http.get("http://localhost:8080/favourites");
+  }
+
   addInterest(interest: object, userId) {
     return this.http.post("http://localhost:8080/add-interest/" + userId, JSON.stringify(interest),
       {headers: {'Content-Type': 'application/json'}});

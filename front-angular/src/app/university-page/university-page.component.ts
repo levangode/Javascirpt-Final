@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {DataService} from "../_services/data.service";
-import {ActivatedRoute} from "@angular/router";
+import {ActivatedRoute, Data} from "@angular/router";
 import {UniversityService} from "../_services/university.service";
 
 @Component({
@@ -14,7 +14,7 @@ export class UniversityPageComponent implements OnInit {
   currentComponent: string = "news";
   university: any;
   logo = "";
-  constructor(private route: ActivatedRoute, private universityService: UniversityService) {
+  constructor(private route: ActivatedRoute, private universityService: UniversityService, private dataService: DataService) {
 
   }
 
@@ -25,17 +25,19 @@ export class UniversityPageComponent implements OnInit {
     this.universityService.getCurrentUniversitySubject().subscribe(value => {
       this.university = this.universityService.getCurrentUniversity();
       this.logo = this.university.logo;
-      console.log(this.university);
     });
     if(this.universityService.getCurrentUniversitySubject().isStopped){
       this.university = this.universityService.getCurrentUniversity();
       this.logo = this.university.logo;
-      console.log(this.university);
     }
   }
 
   changeItem(favourites: string) {
     this.currentComponent = favourites;
+  }
+
+  isUser(){
+    return this.dataService.getUser() !== undefined;
   }
 
 
@@ -62,5 +64,19 @@ export class UniversityPageComponent implements OnInit {
   isFAQ() {
 
     return this.currentComponent === "FAQ";
+  }
+
+  addFavourite(e) {
+    if(e.target.checked){
+      this.universityService.addFavourite(this.university.id, this.dataService.getUser().id);
+      console.log("check");
+    } else {
+      console.log("uncheck")
+    }
+
+  }
+
+  isChecked() {
+    return true; //if(user has favourited this uni)
   }
 }
