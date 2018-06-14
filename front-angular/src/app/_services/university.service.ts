@@ -69,4 +69,9 @@ export class UniversityService {
     console.log(this.university);
     return this.update(this.university);
   }
+
+  updateFaq(faq: Array<any>) {
+    this.university.universityFaq = faq;
+    return this.update(this.university);
+  }
 }

@@ -1,0 +1,43 @@
+.question-list ul{
+  list-style-type: none;
+  float: left;
+  text-align: justify;
+}
+
+.question-list li{
+  padding-top: 20px;
+  display: block;
+}
+
+.question-post p{
+  margin: 3px 0px 0px 0px;
+}
+
+#create-faq{
+  background: grey;
+  position: absolute;
+  right: 15px;
+  left: 15px;
+  margin: 10px;
+  border: solid 1px green;
+  z-index: 200;
+}
+
+#create-faq textarea{
+
+  resize: vertical;
+}
+
+#middle-div{
+  position: relative;
+}
+
+#add-faq-button{
+  margin: 5px;
+}
+
+#delete-faq{
+  margin-top: 5px;
+  margin-right: 5px;
+  float: right;
+}

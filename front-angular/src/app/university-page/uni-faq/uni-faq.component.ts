@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UniversityService} from "../university.service";
+import {UniversityService} from "../../_services/university.service";
 
 @Component({
   selector: 'app-uni-faq',

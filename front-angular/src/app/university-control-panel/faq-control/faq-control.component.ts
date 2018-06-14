@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {animate, keyframes, query, stagger, style, transition, trigger} from "@angular/animations";
+import {UniversityService} from "../../_services/university.service";
 
 @Component({
   selector: 'app-faq-control',
@@ -41,16 +42,24 @@ import {animate, keyframes, query, stagger, style, transition, trigger} from "@a
 })
 export class FaqControlComponent implements OnInit {
 
-  model: any = {};
   faq: Array<any> = [];
+  model: any = {};
   loading = false;
   showCreatePanel = false;
 
-
-  constructor() { }
+  constructor(private universityService: UniversityService) {
+    this.faq = [];
+  }
 
   ngOnInit() {
+    this.universityService.getCurrentUniversitySubject().subscribe(value => {
+      this.faq = this.universityService.getCurrentUniversity().universityFaq;
+    });
+    if(this.universityService.getCurrentUniversitySubject().isStopped){
+      this.faq = this.universityService.getCurrentUniversity().universityFaq;
+    }
   }
+
 
   changeState() {
     this.showCreatePanel = !this.showCreatePanel;
@@ -58,6 +67,25 @@ export class FaqControlComponent implements OnInit {
   }
 
   createFaq() {
-    return false;
+    console.log(this.faq);
+    this.model.date = Date.now().toString();
+    this.loading = true;
+    this.faq.unshift(this.model);
+    this.universityService.updateFaq(this.faq).subscribe(value => {
+      this.loading = false;
+      this.changeState();
+    });
+  }
+
+  deleteFaq(faqElement) {
+    var index = this.faq.indexOf(faqElement, 0);
+    if (index > -1) {
+      const cloned = Object.assign([], this.faq);
+      cloned.splice(index, 1);
+      this.universityService.updateFaq(cloned).subscribe(value => {
+        this.faq.splice(index, 1);
+      });
+
+    }
   }
 }

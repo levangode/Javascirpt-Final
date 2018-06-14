@@ -5,9 +5,7 @@ import lombok.ToString;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 @Entity
@@ -46,18 +44,18 @@ public class University {
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "UNI_FAQ")
     @JoinColumn(name = "id")
-    private List<FaqElement> faqElements;
+    private List<FaqElement> universityFaq;
 
     public University() {
         universityFaculties = new ArrayList<>();
         universityNews = new ArrayList<>();
         universityEvents = new ArrayList<>();
-        faqElements = new ArrayList<>();
+        universityFaq = new ArrayList<>();
     }
 
-    public List<FaqElement> getFaqElements() { return faqElements; }
+    public List<FaqElement> getUniversityFaq() { return universityFaq; }
     public void addFaqElement(FaqElement faqElement) {
-        this.faqElements.add(faqElement);
+        this.universityFaq.add(faqElement);
     }
 
     public String getUsername() {
