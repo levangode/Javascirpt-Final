@@ -51,6 +51,19 @@ public class ProjectApplication implements CommandLineRunner {
         uni.setWebAddress("http://freeuni.edu.ge");
         uni.setLogo("https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FreeUniLogo.png/220px-FreeUniLogo.png");
 
+        //add FAQ for university
+        FaqElement faqElement1 = new FaqElement("Question 1?", "Answer 1");
+        FaqElement faqElement2 = new FaqElement("Question 2?", "Answer 2");
+        FaqElement faqElement3 = new FaqElement("Question 3?", "Answer 3");
+        FaqElement faqElement4 = new FaqElement("Question 4?", "Answer 4");
+        FaqElement faqElement5 = new FaqElement("Question 5?", "Answer 5");
+        uni.addFaqElement(faqElement1);
+        uni.addFaqElement(faqElement2);
+        uni.addFaqElement(faqElement3);
+        uni.addFaqElement(faqElement4);
+        uni.addFaqElement(faqElement5);
+
+
         UniversityFaculty faculty = new UniversityFaculty();
         Set<FacultySubject> facultySubjects = new HashSet<>();
         facultySubjects.add(new FacultySubject("ქართული", "4", "35", "40%+1", ""));
