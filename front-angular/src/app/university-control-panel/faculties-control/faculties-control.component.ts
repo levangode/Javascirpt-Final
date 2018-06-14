@@ -40,6 +40,16 @@ export class FacultiesControlComponent implements OnInit {
     this.showCreatePanel = !this.showCreatePanel;
     this.subjectsInfo = {};
     this.model = {};
+    // this.model.facultyNumber = 0;
+    // this.model.programName = "";
+    // this.model.qualification = "";
+    // this.model.accredited = "";
+    // this.model.language = "";
+    // this.model.financing = "";
+    // this.model.credits = 0;
+    // this.model.annualFee = 0;
+    // this.model.numPlaces = 0;
+    // this.model.priorities = "";
     this.subjects.forEach(value => {
       this.subjectsInfo[value] = {};
     });
@@ -47,7 +57,18 @@ export class FacultiesControlComponent implements OnInit {
   }
 
   createFaculty() {
-    console.log(this.subjectsInfo);
-    return false;
+    let tmp = [];
+    this.subjects.forEach(value => {
+        if(this.subjectsInfo[value].quotient !== undefined){
+          this.subjectsInfo[value].name = value;
+          tmp.push(this.subjectsInfo[value]);
+        }
+    });
+    this.model.facultySubjects = tmp;
+    this.faculties.unshift(this.model);
+    this.universityService.updateFaculties(this.faculties).subscribe(value => {
+      this.loading = false;
+      this.changeState();
+    });
   }
 }

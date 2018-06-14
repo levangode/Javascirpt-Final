@@ -60,6 +60,12 @@ export class UniversityService {
 
   updateEvents(events: Array<any>) {
     this.university.universityEvents = events;
+
+    return this.update(this.university);
+  }
+
+  updateFaculties(faculties: Array<any>) {
+    this.university.universityFaculties = faculties;
     console.log(this.university);
     return this.update(this.university);
   }
