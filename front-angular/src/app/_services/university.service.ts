@@ -32,10 +32,6 @@ export class UniversityService {
     return this.university;
   }
 
-  getById(id: number) {
-    return this.http.get('/api/users/' + id);
-  }
-
   create(university: any) {
     return this.http.post('http://localhost:8080/universities', university);
   }
@@ -44,9 +40,6 @@ export class UniversityService {
     return this.http.put('http://localhost:8080/universities', university);
   }
 
-  delete(id: number) {
-    return this.http.delete('/api/users/' + id);
-  }
 
   updateNews(news: Array<any>){
     this.university.universityNews = news;
@@ -76,5 +69,9 @@ export class UniversityService {
 
   addFavourite(uniId: any, userId: string) {
     this.http.post("http://localhost:8080/addFavourite",{"uniId":uniId, "userId":userId}).subscribe();
+  }
+
+  removeFavourite(uniId: any, userId: string) {
+    this.http.post("http://localhost:8080/deleteFavourite", {"uniId":uniId, "userId":userId}).subscribe();
   }
 }

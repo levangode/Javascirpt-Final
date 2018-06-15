@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {DataService} from "../_services/data.service";
 import {ActivatedRoute, Data} from "@angular/router";
 import {UniversityService} from "../_services/university.service";
+import {UserService} from "../_services/user.service";
 
 @Component({
   selector: 'app-university-page',
@@ -13,8 +14,10 @@ export class UniversityPageComponent implements OnInit {
   id: any;
   currentComponent: string = "news";
   university: any;
+  user: any;
   logo = "";
-  constructor(private route: ActivatedRoute, private universityService: UniversityService, private dataService: DataService) {
+  constructor(private route: ActivatedRoute, private universityService: UniversityService, private dataService: DataService,
+              private userService: UserService) {
 
   }
 
@@ -69,11 +72,9 @@ export class UniversityPageComponent implements OnInit {
   addFavourite(e) {
     if(e.target.checked){
       this.universityService.addFavourite(this.university.id, this.dataService.getUser().id);
-      console.log("check");
     } else {
-      console.log("uncheck")
+      this.universityService.removeFavourite(this.university.id, this.dataService.getUser().id);
     }
-
   }
 
   isChecked() {

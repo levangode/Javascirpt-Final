@@ -54,4 +54,16 @@ public class UserController {
             repository.save(user);
         }
     }
+
+    @PostMapping("/deleteFavourite")
+    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    public void deleteFavourite(@RequestBody FavouriteRequest favouriteRequest){
+        Optional<University> uniOptional = this.uniRepository.findById(favouriteRequest.getUniId());
+        Optional<User> userOptional = this.repository.findByFbId(favouriteRequest.getUserId());
+        if(uniOptional.isPresent() && userOptional.isPresent()){
+            User user = userOptional.get();
+            user.addFavourite(uniOptional.get());
+            repository.save(user);
+        }
+    }
 }

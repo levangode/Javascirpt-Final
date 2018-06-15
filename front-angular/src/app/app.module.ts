@@ -40,6 +40,7 @@ import { FaqControlComponent } from './university-control-panel/faq-control/faq-
 import { FacultiesControlComponent } from './university-control-panel/faculties-control/faculties-control.component';
 import { EventsControlComponent } from './university-control-panel/events-control/events-control.component';
 import { AboutControlComponent } from './university-control-panel/about-control/about-control.component';
+import {UserService} from "./_services/user.service";
 
 export function getAuthServiceConfigs() {
   let config = new AuthServiceConfig(
@@ -94,6 +95,7 @@ export function getAuthServiceConfigs() {
     UniAuthenticationService,
     AlertService,
     UniversityService,
+    UserService,
     UniAuthGuardGuard,
     {
       provide: AuthServiceConfig,

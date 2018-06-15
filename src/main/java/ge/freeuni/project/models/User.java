@@ -75,6 +75,10 @@ public class User {
         this.favouriteUniversities.add(university);
     }
 
+    public void removeFavourite(University university){
+        this.favouriteUniversities.remove(university);
+    }
+
     public void setId(Long id) {
         this.id = id;
     }
