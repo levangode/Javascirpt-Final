@@ -72,6 +72,10 @@ export class DataService {
     return this.http.get("http://localhost:8080/get-events");
   }
 
+  getUserInfo(){
+    return this.http.get("http://localhost:8080/get-user")
+  }
+
   isValidUniCredentials(username: string, password: string) {
     return false;
   }

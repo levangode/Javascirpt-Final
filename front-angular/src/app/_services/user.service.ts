@@ -14,7 +14,7 @@ export class UserService {
 
 
   initUser(id: any){
-    this.universitySubject = new Subject<any>();
+    this.userSubject = new Subject<any>();
     this.dataService.getUser(id).subscribe(value => {
       this.user = value;
       this.userSubject.next(value);

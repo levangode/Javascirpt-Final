@@ -34,6 +34,12 @@ public class UserController {
         return new ArrayList<>(repository.findAll());
     }
 
+    @PostMapping("/get-user")
+    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    public void getUser(@RequestBody UserData userData){
+
+    }
+
 
     @PostMapping("/save-user")
     @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
