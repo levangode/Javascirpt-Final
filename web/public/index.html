@@ -41,7 +41,6 @@
             </h2>
         </div>
     </script>
-    <!-- Currency Rates Template -->
 
     <script id="home-template" type="text/x-handlebars-template">
         <h1 class="ui header">საგანმანათლებლო სიახლეები</h1>
@@ -49,7 +48,6 @@
         <div class="ui loading basic segment">
             {{#each news}}
             <div class="news-item">
-
                 <div class="news-img">
                     <img src="http://mes.gov.ge/{{this.newsImgSrc}}"/>
                 </div>
@@ -62,13 +60,26 @@
                     <p class="newsDescription">{{this.newsText}}</p>
                 </div>
             </div>
-            {{/news}}
+            {{/each}}
         </div>
     </script>
     <script id="universities-template" type="text/x-handlebars-template">
-        <h1 class="ui header">Universities</h1>
+        <h1 class="ui header">უნივერსიტეტების სია</h1>
         <hr>
-
+        <div class="ui basic segment">
+            <div id="university-items">
+                <ul id="university-item-list">
+                    {{#each universities}}
+                    <li class="university-list-item grow">
+                        <h3>{{this.name}}</h3>
+                        <p>{{this.universityFaculties.length}} კურსი</p>
+                        <p>50 ადგილი</p>
+                        <p>რეიტინგით #2</p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
     </script>
     <script id="ratings-template" type="text/x-handlebars-template">
         <h1 class="ui header">რეიტინგები</h1>

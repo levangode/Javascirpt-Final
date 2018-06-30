@@ -33,20 +33,15 @@ window.addEventListener('load', () => {
         el.html(html);
     };
 
-// Display Latest Currency Rates
     router.add('/', async () => {
         // Display loader first
         let html = homeTemplate();
         el.html(html);
         try {
-            // Load Currency Rates
             const responseNews = await api.get('/news');
-            const responseUniversities = await api.get('/universities');
             const news = responseNews.data;
-            const universities = responseUniversities.data;
+
             console.log(news);
-            console.log(universities);
-            // Display Rates Table
             html = homeTemplate({news});
             el.html(html);
         } catch (error) {
@@ -62,10 +57,24 @@ window.addEventListener('load', () => {
         el.html(html);
     });
 
-    router.add('/universities', () => {
+    router.add('/universities', async () => {
+        // Display loader first
         let html = universitiesTemplate();
         el.html(html);
+        try {
+            const responseUniversities = await api.get('/universities');
+            const universities = responseUniversities.data;
+            console.log(universities);
+            html = universitiesTemplate({universities});
+            el.html(html);
+        } catch (error) {
+            showError(error);
+        } finally {
+            // Remove loader status
+            $('.loading').removeClass('loading');
+        }
     });
+
 
     // Navigate app to current url
     router.navigateTo(window.location.pathname);

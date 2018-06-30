@@ -39,6 +39,16 @@ app.get('/api/news', async (req, res) => {
     }
 });
 
+app.get('/api/universities', async (req, res) => {
+    try {
+        const data = await getUniversities();
+        res.setHeader('Content-Type', 'application/json');
+        res.send(data);
+    } catch (error) {
+        errorHandler(error, req, res);
+    }
+});
+
 // Redirect all traffic to index.html
 app.use((req, res) => res.sendFile(`${__dirname}/public/index.html`));
 app.listen(port, () => {
