@@ -24,12 +24,12 @@ public class HttpDataController extends WebMvcAutoConfiguration {
     private static final Logger log = LoggerFactory.getLogger(HttpDataController.class);
 
     @RequestMapping(value = "/mes-gov-ge", method = RequestMethod.GET)
-    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    @CrossOrigin(origins = {"http://localhost:3000", "https://localhost:3000"})
     @ResponseBody
-    public List<MesGovGeNewsPost> getContent(HttpServletResponse response) {
+    public List<MesGovGeNewsPost> getContent() {
         List<MesGovGeNewsPost> newsItems = new ArrayList<>();
         try {
-            String body = usingBufferedReader(System.getProperty("user.dir") + "/front-angular/src/assets/content.php_id=75&lang=geo");
+            String body = usingBufferedReader(System.getProperty("user.dir") + "/front-angular/src/assets/content.php@id=75&lang=geo");
             Document doc = Jsoup.parse(body);
             Elements posts = doc.getElementsByClass("news");
 
@@ -39,12 +39,13 @@ public class HttpDataController extends WebMvcAutoConfiguration {
                 String newsTitleRef = element.getElementsByClass("news-title").first().getElementsByTag("a").first().attr("href");
                 String newsDate = element.getElementsByClass("news-date").first().text();
                 String newsText = element.getElementsByClass("news-text").first().html();
+                newsText = newsText.substring(0, newsText.indexOf('<'));
                 newsItems.add(new MesGovGeNewsPost(newsTitleText, newsTitleRef, newsDate, newsText, newsImgSrc));
             }
         } catch (Exception e) {
             log.error("Couldn't parse html", e);
         }
-
+        System.out.println(newsItems);
         return newsItems;
     }
 

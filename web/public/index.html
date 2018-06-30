@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="scripts/semantic-ui-css/semantic.min.css">
+    <link rel="stylesheet" href="index.css">
     <meta charset="UTF-8">
     <title>University Chooser</title>
+
 </head>
 <body>
 <div class="ui container">
@@ -41,16 +44,36 @@
     <!-- Currency Rates Template -->
 
     <script id="home-template" type="text/x-handlebars-template">
-        <h1 class="ui header">Home</h1>
+        <h1 class="ui header">საგანმანათლებლო სიახლეები</h1>
         <hr>
+        <div class="ui loading basic segment">
+            {{#each news}}
+            <div class="news-item">
+
+                <div class="news-img">
+                    <img src="http://mes.gov.ge/{{this.newsImgSrc}}"/>
+                </div>
+                <div class="news-info">
+                    <p class="news-date">{{this.newsDate}}</p>
+                    <p class="news-title">{{this.newsTitle}}</p>
+                    <!--<a class="news-title" href="{{this.newsTitleRef}}">-->
+                    <!--{{this.newsTitle}}-->
+                    <!--</a>-->
+                    <p class="newsDescription">{{this.newsText}}</p>
+                </div>
+            </div>
+            {{/news}}
+        </div>
     </script>
     <script id="universities-template" type="text/x-handlebars-template">
         <h1 class="ui header">Universities</h1>
         <hr>
+
     </script>
     <script id="ratings-template" type="text/x-handlebars-template">
-        <h1 class="ui header">Ratings</h1>
+        <h1 class="ui header">რეიტინგები</h1>
         <hr>
+
     </script>
 
     <!-- Application Root -->
