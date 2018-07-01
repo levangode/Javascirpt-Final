@@ -1,3 +1,4 @@
+const router = undefined;
 window.addEventListener('load', () => {
     const el = $('#app');
 
@@ -6,9 +7,10 @@ window.addEventListener('load', () => {
     const universitiesTemplate = Handlebars.compile($('#universities-template').html());
     const ratingsTemplate = Handlebars.compile($('#ratings-template').html());
     const homeTemplate = Handlebars.compile($('#home-template').html());
+    const universityProfileTemplate = Handlebars.compile($('#university-profile-template').html());
 
     // Router Declaration
-    const router = new Router({
+    this.router = new Router({
         mode: 'history',
         page404: (path) => {
             const html = errorTemplate({
@@ -19,6 +21,7 @@ window.addEventListener('load', () => {
             el.html(html);
         },
     });
+
 
     // Instantiate api handler
     const api = axios.create({
@@ -33,7 +36,8 @@ window.addEventListener('load', () => {
         el.html(html);
     };
 
-    router.add('/', async () => {
+
+    this.router.add('/', async () => {
         // Display loader first
         let html = homeTemplate();
         el.html(html);
@@ -52,12 +56,17 @@ window.addEventListener('load', () => {
         }
     });
 
-    router.add('/ratings', () => {
+    this.router.add('/ratings', () => {
         let html = ratingsTemplate();
         el.html(html);
     });
 
-    router.add('/universities', async () => {
+    this.router.add('universitiy-profile', async () => {
+        let html = universityProfileTemplate();
+        el.html(html);
+    });
+
+    this.router.add('/universities', async () => {
         // Display loader first
         let html = universitiesTemplate();
         el.html(html);
@@ -77,7 +86,7 @@ window.addEventListener('load', () => {
 
 
     // Navigate app to current url
-    router.navigateTo(window.location.pathname);
+    this.router.navigateTo(window.location.pathname);
 
     // Highlight Active Menu on Refresh/Page Reload
     const link = $(`a[href$='${window.location.pathname}']`);
@@ -95,6 +104,15 @@ window.addEventListener('load', () => {
         // Navigate to clicked url
         const href = target.attr('href');
         const path = href.substr(href.lastIndexOf('/'));
-        router.navigateTo(path);
+        this.router.navigateTo(path);
     });
+
+
 });
+
+function navigate(any){
+
+    this.router.navigateTo('/universitiy-profile');
+}
+
+

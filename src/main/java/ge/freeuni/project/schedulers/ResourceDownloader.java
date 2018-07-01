@@ -28,7 +28,7 @@ public class ResourceDownloader {
             command.add("-p");
             command.add("-k");
             command.add("-nH");
-            command.add("--directory-prefix=front-angular/src/assets");
+            command.add("--directory-prefix=web/public/data");
             command.add("http://mes.gov.ge/content.php?id=75&lang=geo");
             ProcessBuilder builder = new ProcessBuilder(command);
             builder.directory(new File(System.getProperty("user.dir")));

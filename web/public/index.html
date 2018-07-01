@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="scripts/semantic-ui-css/semantic.min.css">
-    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="css/main.css">
     <meta charset="UTF-8">
     <title>University Chooser</title>
 
@@ -70,11 +70,12 @@
             <div id="university-items">
                 <ul id="university-item-list">
                     {{#each universities}}
-                    <li class="university-list-item grow">
+                    <li class="university-list-item grow" id="{{this.id}}" onclick="navigate(id)">
                         <h3>{{this.name}}</h3>
                         <p>{{this.universityFaculties.length}} კურსი</p>
                         <p>50 ადგილი</p>
-                        <p>რეიტინგით #2</p>
+                        <br>
+                        <a href="{{this.webAddress}}" target="_blank">{{this.webAddress}}</a>
                     </li>
                     {{/each}}
                 </ul>
@@ -88,6 +89,14 @@
             <iframe src="https://e.infogram.com/c4d451c4-78c8-4f88-b829-e428549550fc?src=embed"
                     title="უნივერსიტეტების რეიტინგები 2016" width="900" height="970" scrolling="no" frameborder="0"
                     style="border:none;" allowfullscreen="allowfullscreen"></iframe>
+        </div>
+    </script>
+
+    <script id="university-profile-template" type="text/x-handlebars-template">
+        <h1 class="ui header">პროფილი</h1>
+        <hr>
+        <div class="ui basic segment">
+
         </div>
     </script>
 
