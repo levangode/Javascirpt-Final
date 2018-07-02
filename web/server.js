@@ -1,4 +1,4 @@
-const {getUniversities, getNews} = require('./lib/backend-service');
+const {getUniversities, getNews, getUniversity} = require('./lib/backend-service');
 
 // Listen for HTTP requests on port 3000
 require('dotenv').config(); // read .env files
@@ -42,6 +42,16 @@ app.get('/api/news', async (req, res) => {
 app.get('/api/universities', async (req, res) => {
     try {
         const data = await getUniversities();
+        res.setHeader('Content-Type', 'application/json');
+        res.send(data);
+    } catch (error) {
+        errorHandler(error, req, res);
+    }
+});
+
+app.get('/api/university/:id', async (req, res) => {
+    try {
+        const data = await getUniversity(req.params.id);
         res.setHeader('Content-Type', 'application/json');
         res.send(data);
     } catch (error) {

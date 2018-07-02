@@ -61,9 +61,20 @@ window.addEventListener('load', () => {
         el.html(html);
     });
 
-    this.router.add('universitiy-profile', async () => {
+    this.router.add('/university/(:any)', async (id) => {
         let html = universityProfileTemplate();
         el.html(html);
+        try {
+            const responseUniversity = await api.get('/university/'+id);
+            const university = responseUniversity.data;
+            console.log(university);
+            html = universityProfileTemplate({university});
+            el.html(html)
+        }catch (error) {
+            showError(error)
+        } finally {
+            $('.loading').removeClass('loading');
+        }
     });
 
     this.router.add('/universities', async () => {
@@ -112,7 +123,7 @@ window.addEventListener('load', () => {
 
 function navigate(any){
 
-    this.router.navigateTo('/universitiy-profile');
+    this.router.navigateTo('/university/'+any);
 }
 
 
