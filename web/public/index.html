@@ -129,6 +129,27 @@
         </div>
     </script>
 
+    <script id="university-news-template" type="text/x-handlebars-template">
+        <h1 class="ui header">სიახლეები</h1>
+        <hr>
+        <div class="ui basic segment">
+            {{#each university.universityNews}}
+            <div class="news-item">
+                <div class="news-img">
+                    <img src="{{this.img}}">
+                </div>
+                <div class="news-info">
+                    <p class="news-date">{{this.date}}</p>
+                    <h3>
+                        {{this.title}}
+                    </h3>
+                    <p class="newsDescription">{{this.description}}</p>
+                </div>
+            </div>
+            {{/each}}
+        </div>
+    </script>
+
 
     <!-- Application Root -->
     <div id="app"></div>
