@@ -93,12 +93,42 @@
     </script>
 
     <script id="university-profile-template" type="text/x-handlebars-template">
-        <h1 class="ui header">პროფილი</h1>
+        <h1 class="ui header">აქტივობები</h1>
         <hr>
         <div class="ui basic segment">
-            {{this.name}}
+
         </div>
     </script>
+
+
+    <script id="university-events-template" type="text/x-handlebars-template">
+        <h1 class="ui header">აქტივობები</h1>
+        <hr>
+        <div class="ui basic segment">
+            {{#each university.universityEvents}}
+            <a href="{{this.link}}">
+                <div class="event-item">
+                    <div>
+                        <img class="event-image" src="{{this.img}}">
+                        <div>
+                            <table class="event-info-table">
+                                <tr>
+                                    <th class="event-date">{{this.date}}</th>
+                                    <th colspan="2">Title</th>
+                                </tr>
+                                <tr>
+                                    <td>{{this.description}}</td>
+                                    <td>{{this.address}}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </a>
+            {{/each}}
+        </div>
+    </script>
+
 
     <!-- Application Root -->
     <div id="app"></div>

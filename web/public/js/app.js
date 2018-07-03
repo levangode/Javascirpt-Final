@@ -8,6 +8,7 @@ window.addEventListener('load', () => {
     const ratingsTemplate = Handlebars.compile($('#ratings-template').html());
     const homeTemplate = Handlebars.compile($('#home-template').html());
     const universityProfileTemplate = Handlebars.compile($('#university-profile-template').html());
+    const universityEventsTemplate = Handlebars.compile($('#university-events-template').html());
 
     // Router Declaration
     this.router = new Router({
@@ -61,14 +62,14 @@ window.addEventListener('load', () => {
         el.html(html);
     });
 
-    this.router.add('/university/(:any)', async (id) => {
-        let html = universityProfileTemplate();
+    this.router.add('/university/(:any)/events', async (id) => {
+        let html = universityEventsTemplate();
         el.html(html);
         try {
             const responseUniversity = await api.get('/university/'+id);
             const university = responseUniversity.data;
             console.log(university);
-            html = universityProfileTemplate({university});
+            html = universityEventsTemplate({university});
             el.html(html)
         }catch (error) {
             showError(error)
@@ -123,7 +124,7 @@ window.addEventListener('load', () => {
 
 function navigate(any){
 
-    this.router.navigateTo('/university/'+any);
+    this.router.navigateTo('/university/'+any+'/events');
 }
 
 
