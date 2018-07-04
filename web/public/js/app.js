@@ -10,6 +10,7 @@ window.addEventListener('load', () => {
     const universityProfileTemplate = Handlebars.compile($('#university-profile-template').html());
     const universityEventsTemplate = Handlebars.compile($('#university-events-template').html());
     const universityNewsTemplate = Handlebars.compile($('#university-news-template').html());
+    const universityFacultiesTemplate = Handlebars.compile($('#university-faculties-template').html());
 
     // Router Declaration
     this.router = new Router({
@@ -71,6 +72,21 @@ window.addEventListener('load', () => {
             const university = responseUniversity.data;
             console.log(university);
             html = universityEventsTemplate({university});
+            el.html(html)
+        }catch (error) {
+            showError(error)
+        } finally {
+            $('.loading').removeClass('loading');
+        }
+    });
+    this.router.add('/university/(:any)/faculties', async (id) => {
+        let html = universityFacultiesTemplate();
+        el.html(html);
+        try {
+            const responseUniversity = await api.get('/university/'+id);
+            const university = responseUniversity.data;
+            console.log(university);
+            html = universityFacultiesTemplate({university});
             el.html(html)
         }catch (error) {
             showError(error)
@@ -140,7 +156,7 @@ window.addEventListener('load', () => {
 
 function navigate(any){
 
-    this.router.navigateTo('/university/'+any+'/news');
+    this.router.navigateTo('/university/'+any+'/faculties');
 }
 
 

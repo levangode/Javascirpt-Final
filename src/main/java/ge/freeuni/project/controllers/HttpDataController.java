@@ -29,7 +29,7 @@ public class HttpDataController extends WebMvcAutoConfiguration {
     public List<MesGovGeNewsPost> getContent() {
         List<MesGovGeNewsPost> newsItems = new ArrayList<>();
         try {
-            String body = usingBufferedReader(System.getProperty("user.dir") + "/front-angular/src/assets/content.php@id=75&lang=geo");
+            String body = usingBufferedReader(System.getProperty("user.dir") + "/web/public/data/content.php?id=75&lang=geo");
             Document doc = Jsoup.parse(body);
             Elements posts = doc.getElementsByClass("news");
 
@@ -39,7 +39,7 @@ public class HttpDataController extends WebMvcAutoConfiguration {
                 String newsTitleRef = element.getElementsByClass("news-title").first().getElementsByTag("a").first().attr("href");
                 String newsDate = element.getElementsByClass("news-date").first().text();
                 String newsText = element.getElementsByClass("news-text").first().html();
-                newsText = newsText.substring(0, newsText.indexOf('<'));
+                newsText = newsText.indexOf('<') != -1 ? newsText.substring(0, newsText.indexOf('<')) : newsText;
                 newsItems.add(new MesGovGeNewsPost(newsTitleText, newsTitleRef, newsDate, newsText, newsImgSrc));
             }
         } catch (Exception e) {
