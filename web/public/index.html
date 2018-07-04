@@ -149,6 +149,23 @@
             {{/each}}
         </div>
     </script>
+    <script id="university-faq-template" type="text/x-handlebars-template">
+        <h1 class="ui header">ხშირად დასმული კითხვები</h1>
+        <hr>
+        <div class="ui basic segment">
+            <div class="question-list">
+                <ul>
+                    {{#each university.universityFaq}}
+                    <li class="question-post">
+                        <b class="question">{{this.question}}</b>
+                        <p class="answer">{{this.answer}}</p>
+                    </li>
+                    {{/each}}
+                </ul>
+            </div>
+        </div>
+
+    </script>
 
     <script id="university-faculties-template" type="text/x-handlebars-template">
         <h1 class="ui header">ფაკულტეტები</h1>
