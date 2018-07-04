@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
     const universityNewsTemplate = Handlebars.compile($('#university-news-template').html());
     const universityFacultiesTemplate = Handlebars.compile($('#university-faculties-template').html());
     const universityFaqTemplate = Handlebars.compile($('#university-faq-template').html());
+    const universityAboutTemplate = Handlebars.compile($('#university-about-template').html());
 
     // Router Declaration
     this.router = new Router({
@@ -73,7 +74,7 @@ window.addEventListener('load', () => {
             const university = responseUniversity.data;
             console.log(university);
             html = universityEventsTemplate({university});
-            el.html(html)
+            el.html(html);
         }catch (error) {
             showError(error)
         } finally {
@@ -88,7 +89,7 @@ window.addEventListener('load', () => {
             const university = responseUniversity.data;
             console.log(university);
             html = universityFacultiesTemplate({university});
-            el.html(html)
+            el.html(html);
         }catch (error) {
             showError(error)
         } finally {
@@ -103,13 +104,32 @@ window.addEventListener('load', () => {
             const university = responseUniversity.data;
             console.log(university);
             html = universityFaqTemplate({university});
-            el.html(html)
+            el.html(html);
         }catch (error) {
             showError(error)
         } finally {
             $('.loading').removeClass('loading');
         }
     });
+
+    this.router.add('/university/(:any)/about', async (id) => {
+        let html = universityAboutTemplate();
+        el.html(html);
+        try {
+            const responseUniversity = await api.get('/university/'+id);
+            const university = responseUniversity.data;
+            console.log(university);
+            html = universityAboutTemplate({university});
+            el.html(html);
+            var about = document.getElementById("about-div");
+            about.innerHTML = university.about;
+        }catch (error) {
+            showError(error)
+        } finally {
+            $('.loading').removeClass('loading');
+        }
+    });
+
     this.router.add('/university/(:any)/news', async (id) => {
         let html = universityNewsTemplate();
         el.html(html);
@@ -118,7 +138,7 @@ window.addEventListener('load', () => {
             const university = responseUniversity.data;
             console.log(university);
             html = universityNewsTemplate({university});
-            el.html(html)
+            el.html(html);
         }catch (error) {
             showError(error)
         } finally {
@@ -171,8 +191,7 @@ window.addEventListener('load', () => {
 });
 
 function navigate(any){
-
-    this.router.navigateTo('/university/'+any+'/faq');
+    this.router.navigateTo('/university/'+any+'/about');
 }
 
 
