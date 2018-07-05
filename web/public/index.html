@@ -90,9 +90,12 @@
     </script>
 
     <script id="university-profile-template" type="text/x-handlebars-template">
-        <h1 class="ui header">პროფილი</h1>
-        <hr>
         {{#with university}}
+        <h1 class="ui header">{{this.name}}</h1>
+        <div id="logo-div">
+            <img id="logo" src="{{this.logo}}">
+        </div>
+        <hr>
         <div class="ui five item inverted orange menu">
             <a id="news-menu" class="item">
                 სიახლეები
