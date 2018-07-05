@@ -14,10 +14,7 @@
 <body>
 <div class="ui container">
     <!-- Navigation Menu -->
-    <div class="ui four item inverted orange menu">
-        <div class="header item">
-            Single Page App
-        </div>
+    <div class="ui three item inverted orange menu">
         <a class="item" href="/">
             მთავარი
         </a>
@@ -93,9 +90,28 @@
     </script>
 
     <script id="university-profile-template" type="text/x-handlebars-template">
-        <h1 class="ui header">აქტივობები</h1>
+        <h1 class="ui header">პროფილი</h1>
         <hr>
-        <div class="ui basic segment">
+        {{#with university}}
+        <div class="ui five item inverted orange menu">
+            <a class="item" href="/university/{{this.id}}/news" onclick="navigateToNews()">
+                სდიახლეები
+            </a>
+            <a class="item" href="/university/{{this.id}}/faculties">
+                ფაკულტეტები
+            </a>
+            <a class="item" href="/university/{{this.id}}/events">
+                აქტივობები
+            </a>
+            <a class="item" href="/university/{{this.id}}/about">
+                ჩვენს შესახებ
+            </a>
+            <a class="item" href="/university/{{this.id}}/faq">
+                ხშირად დასმული კითხვები
+            </a>
+        </div>
+        {{/with}}
+        <div id="university-profile" class="ui basic segment">
 
         </div>
     </script>
