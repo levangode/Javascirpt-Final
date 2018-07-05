@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="scripts/semantic-ui-css/semantic.min.css">
     <link rel="stylesheet" href="css/main.css">
 
     <link href="http://fonts.googleapis.com/css?family=Corben:bold" rel="stylesheet" type="text/css">
@@ -15,24 +14,29 @@
 
 </head>
 <body>
-<div class="ui container" id="main-div">
+<div class="" id="main-div">
     <!-- Navigation Menu -->
-    <div id="navigation-menu" class="ui three item inverted orange menu">
-        <a class="item" href="/">
-            მთავარი
-        </a>
-        <a class="item" href="/ratings">
-            რეიტინგები
-        </a>
-        <a class="item" href="/universities">
+    <ul class="menu-list">
+        <li class="menu-item">
+            <a href="/">
+                მთავარი
+            </a>
+        </li>
+        <li class="menu-item">
+            <a class="item" href="/ratings">
+                რეიტინგები
+            </a>
+        </li>
+        <li class="menu-item"><a class="item" href="/universities">
             უნივერსიტეტები
-        </a>
-    </div>
+        </a></li>
+    </ul>
+
 
     <script id="error-template" type="text/x-handlebars-template">
-        <div id="error-div" class="ui {{color}} inverted segment">
+        <div id="error-div" class="">
             <br>
-            <h2 class="ui center aligned icon header">
+            <h2 class="">
                 <i class="exclamation triangle icon"></i>
                 <div class="content">
                     {{title}}
@@ -43,7 +47,7 @@
     </script>
 
     <script id="home-template" type="text/x-handlebars-template">
-        <h1 class="ui header">საგანმანათლებლო სიახლეები</h1>
+        <h1 class="">საგანმანათლებლო სიახლეები</h1>
         <hr>
         <div id="news-list" class="ui loading basic segment">
             {{#each news}}
@@ -64,9 +68,9 @@
         </div>
     </script>
     <script id="universities-template" type="text/x-handlebars-template">
-        <h1 class="ui header">უნივერსიტეტების სია</h1>
+        <h1 class="">უნივერსიტეტების სია</h1>
         <hr>
-        <div class="ui basic segment">
+        <div class="">
             <div id="university-items">
                 <ul id="university-item-list">
                     {{#each universities}}
@@ -83,9 +87,9 @@
         </div>
     </script>
     <script id="ratings-template" type="text/x-handlebars-template">
-        <h1 class="ui header">რეიტინგები</h1>
+        <h1 class="">რეიტინგები</h1>
         <hr>
-        <div class="ui basic segment">
+        <div class="">
             <iframe id="ratings-frame" src="https://e.infogram.com/c4d451c4-78c8-4f88-b829-e428549550fc?src=embed"
                     title="უნივერსიტეტების რეიტინგები 2016" width="900" height="970" scrolling="no" frameborder="0"
                     allowfullscreen="allowfullscreen"></iframe>
@@ -94,39 +98,49 @@
 
     <script id="university-profile-template" type="text/x-handlebars-template">
         {{#with university}}
-        <h1 class="ui header">{{this.name}}</h1>
+        <h1 class="">{{this.name}}</h1>
         <div id="logo-div">
             <img id="logo" src="{{this.logo}}">
         </div>
         <hr>
-        <div class="ui five item inverted orange menu">
-            <a id="news-menu" class="item">
-                სიახლეები
-            </a>
-            <a id="faculties-menu" class="item">
-                ფაკულტეტები
-            </a>
-            <a id="events-menu" class="item">
-                აქტივობები
-            </a>
-            <a id="about-menu" class="item">
-                ჩვენს შესახებ
-            </a>
-            <a id="faq-menu" class="item">
-                ხშირად დასმული კითხვები
-            </a>
-        </div>
+        <ul class="menu-list">
+            <li class="menu-item">
+                <a id="news-menu" class="item">
+                    სიახლეები
+                </a>
+            </li>
+            <li class="menu-item">
+                <a id="faculties-menu" class="item">
+                    ფაკულტეტები
+                </a>
+            </li>
+            <li class="menu-item">
+                <a id="events-menu" class="item">
+                    აქტივობები
+                </a>
+            </li>
+            <li class="menu-item">
+                <a id="about-menu" class="item">
+                    ჩვენს შესახებ
+                </a>
+            </li>
+            <li class="menu-item">
+                <a id="faq-menu" class="item">
+                    ხშირად დასმული კითხვები
+                </a>
+            </li>
+        </ul>
         {{/with}}
-        <div id="university-profile" class="ui basic segment">
+        <div id="university-profile" class="">
 
         </div>
     </script>
 
 
     <script id="university-events-template" type="text/x-handlebars-template">
-        <h1 class="ui header">აქტივობები</h1>
+        <h1 class="">აქტივობები</h1>
         <hr>
-        <div class="ui basic segment">
+        <div class="">
             {{#each university.universityEvents}}
             <a href="{{this.link}}" target="_blank">
                 <div class="event-item">
@@ -152,9 +166,9 @@
     </script>
 
     <script id="university-news-template" type="text/x-handlebars-template">
-        <h1 class="ui header">სიახლეები</h1>
+        <h1 class="">სიახლეები</h1>
         <hr>
-        <div class="ui basic segment">
+        <div class="">
             {{#each university.universityNews}}
             <div class="news-item">
                 <div class="news-img">
@@ -172,9 +186,9 @@
         </div>
     </script>
     <script id="university-faq-template" type="text/x-handlebars-template">
-        <h1 class="ui header">ხშირად დასმული კითხვები</h1>
+        <h1 class="">ხშირად დასმული კითხვები</h1>
         <hr>
-        <div class="ui basic segment">
+        <div class="">
             <div class="question-list">
                 <ul>
                     {{#each university.universityFaq}}
@@ -189,9 +203,9 @@
 
     </script>
     <script id="university-about-template" type="text/x-handlebars-template">
-        <h1 class="ui header">ჩვენს შესახებ</h1>
+        <h1 class="">ჩვენს შესახებ</h1>
         <hr>
-        <div class="ui basic segment">
+        <div class="">
             <div id="about-div">
             </div>
         </div>
@@ -199,9 +213,9 @@
     </script>
 
     <script id="university-faculties-template" type="text/x-handlebars-template">
-        <h1 class="ui header">ფაკულტეტები</h1>
+        <h1 class="">ფაკულტეტები</h1>
         <hr>
-        <div class="ui basic segment">
+        <div class="">
             <div id="faculties-div">
                 {{#each university.universityFaculties}}
                 <div class="faculty-item grow">
@@ -279,8 +293,6 @@
 </div>
 
 <!-- JS Library Dependencies -->
-<script src="scripts/jquery/dist/jquery.min.js"></script>
-<script src="scripts/semantic-ui-css/semantic.min.js"></script>
 <script src="scripts/axios/dist/axios.min.js"></script>
 <script src="scripts/handlebars/dist/handlebars.min.js"></script>
 <script src="scripts/vanilla-router/dist/vanilla-router.min.js"></script>
