@@ -305,3 +305,12 @@ h1 {
 #navigation-menu{
     /*position: fixed;*/
 }
+
+#ratings-frame{
+ border:none;
+
+}
+
+#error-div{
+    height:250px;
+}
