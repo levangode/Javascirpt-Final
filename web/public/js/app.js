@@ -1,4 +1,3 @@
-const router = undefined;
 window.addEventListener('load', () => {
     const el = document.getElementById("app");
 
@@ -15,7 +14,7 @@ window.addEventListener('load', () => {
     const universityAboutTemplate = Handlebars.compile(document.getElementById('university-about-template').innerHTML);
 
     // Router Declaration
-    this.router = new Router({
+    const router = new Router({
         mode: 'history',
         page404: (path) => {
             const html = errorTemplate({
@@ -42,7 +41,7 @@ window.addEventListener('load', () => {
     };
 
 
-    this.router.add('/', async () => {
+    router.add('/', async () => {
         // Display loader first
         let html = homeTemplate();
         el.innerHTML = html;
@@ -60,28 +59,13 @@ window.addEventListener('load', () => {
         }
     });
 
-    this.router.add('/ratings', () => {
+    router.add('/ratings', () => {
         let html = ratingsTemplate();
         el.innerHTML = html;
     });
 
-    // this.router.add('/university/(:any)/events', async (id) => {
-    //     let html = universityEventsTemplate();
-    //     el.innerHTML = html;
-    //     try {
-    //         const responseUniversity = await api.get('/university/' + id);
-    //         const university = responseUniversity.data;
-    //         console.log(university);
-    //         html = universityEventsTemplate({university});
-    //         el.innerHTML = html;
-    //     } catch (error) {
-    //         showError(error)
-    //     } finally {
-    //         removeLoadingClass();
-    //     }
-    // });
 
-    this.router.add('/university/(:any)', async (id) => {
+    router.add('/university/(:any)', async (id) => {
         let html = universityProfileTemplate();
         el.innerHTML = html;
         try {
@@ -90,6 +74,7 @@ window.addEventListener('load', () => {
             console.log(university);
             html = universityProfileTemplate({university});
             el.innerHTML = html;
+
             document.getElementById('university-profile').innerHTML = universityNewsTemplate({university});
             document.getElementById('news-menu').addEventListener("click", async () => {
                     document.getElementById('university-profile').innerHTML = universityNewsTemplate({university});
@@ -122,74 +107,8 @@ window.addEventListener('load', () => {
         }
     });
 
-    // this.router.add('/university/(:any)/faculties', async (id) => {
-    //     let html = universityFacultiesTemplate();
-    //     el.innerHTML = html;
-    //     try {
-    //         const responseUniversity = await api.get('/university/' + id);
-    //         const university = responseUniversity.data;
-    //         console.log(university);
-    //         html = universityFacultiesTemplate({university});
-    //         el.innerHTML = html;
-    //     } catch (error) {
-    //         showError(error)
-    //     } finally {
-    //         removeLoadingClass();
-    //     }
-    // });
-    // this.router.add('/university/(:any)/faq', async (id) => {
-    //     let html = universityFaqTemplate();
-    //     el.innerHTML = html;
-    //     try {
-    //         const responseUniversity = await api.get('/university/' + id);
-    //         const university = responseUniversity.data;
-    //         console.log(university);
-    //         html = universityFaqTemplate({university});
-    //         el.innerHTML = html;
-    //     } catch (error) {
-    //         showError(error)
-    //     } finally {
-    //         removeLoadingClass();
-    //     }
-    // });
 
-    // this.router.add('/university/(:any)/about', async (id) => {
-    //     let html = universityAboutTemplate();
-    //     el.innerHTML = html;
-    //     try {
-    //
-    //         const responseUniversity = await api.get('/university/' + id);
-    //         const university = responseUniversity.data;
-    //         console.log(university);
-    //
-    //         html = universityAboutTemplate({university});
-    //         el.innerHTML = html;
-    //         var about = document.getElementById("about-div");
-    //         about.innerHTML = university.about;
-    //     } catch (error) {
-    //         showError(error)
-    //     } finally {
-    //         removeLoadingClass();
-    //     }
-    // });
-
-    // this.router.add('/university/(:any)/news', async (id) => {
-    //     let html = universityNewsTemplate();
-    //     el.innerHTML = html;
-    //     try {
-    //         const responseUniversity = await api.get('/university/' + id);
-    //         const university = responseUniversity.data;
-    //         console.log(university);
-    //         html = universityNewsTemplate({university});
-    //         el.innerHTML = html;
-    //     } catch (error) {
-    //         showError(error)
-    //     } finally {
-    //         removeLoadingClass();
-    //     }
-    // });
-
-    this.router.add('/universities', async () => {
+    router.add('/universities', async () => {
         // Display loader first
         let html = universitiesTemplate();
         el.innerHTML = html;
@@ -199,6 +118,14 @@ window.addEventListener('load', () => {
             console.log(universities);
             html = universitiesTemplate({universities});
             el.innerHTML = html;
+
+            let els = document.getElementsByClassName("university-list-item");
+
+            Array.prototype.forEach.call(els, function (el) {
+                el.addEventListener("click", () => {
+                    router.navigateTo('/university/' + el.id);
+                });
+            });
         } catch (error) {
             showError(error);
         } finally {
@@ -210,48 +137,21 @@ window.addEventListener('load', () => {
 
 
     // Navigate app to current url
-    this.router.navigateTo(window.location.pathname);
+    router.navigateTo(window.location.pathname);
 
-    // Highlight Active Menu on Refresh/Page Reload
-    // const link = $(`a[href$='${window.location.pathname}']`);
-    // link.addClass('active');
-    //
-    //
-    // $('a').on('click', (event) => {
-    //     // Block browser page load
-    //     event.preventDefault();
-    //
-    //     // Highlight Active Menu on Click
-    //     const target = $(event.target);
-    //     $('.item').removeClass('active');
-    //     target.addClass('active');
-    //
-    //     // Navigate to clicked url
-    //     const href = target.attr('href');
-    //     const path = href.substr(href.lastIndexOf('/'));
-    //     this.router.navigateTo(path);
-    // });
 
+    function removeLoadingClass() {
+        let els = document.getElementsByClassName("loading");
+
+        Array.prototype.forEach.call(els, function (el) {
+            el.classList.remove('loading');
+        });
+    }
 
 });
 
-function navigate(any) {
-    this.router.navigateTo('/university/' + any);
-}
 
-function removeLoadingClass() {
-    let els = document.getElementsByClassName("loading");
 
-    Array.prototype.forEach.call(els, function (el) {
-        el.classList.remove('loading');
-    });
-}
 
-function addMenuListeners() {
-    document.getElementById('news-menu').addEventListener("click", async () => {
-
-        }
-    );
-}
 
 
