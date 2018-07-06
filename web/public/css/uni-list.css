@@ -1,15 +1,21 @@
 
 .university-list-item {
+    padding: 8px;
     cursor: pointer;
-    margin: 2px;
-    display: inline-block;
+    margin: 4px;
+    display: inline-grid;
     height: 250px;
     width: 180px;
     border-radius: 10px;
     border: 1px solid green;
     text-align: center;
-
+    line-height: 20px;
     z-index: 3;
+
+}
+
+.university-list-item h3 {
+    margin: 2px;
 
 }
 
@@ -18,11 +24,16 @@
     color: blue;
 }
 
+.university-list-item p {
+    margin: 0;
+}
+
 #university-item-list {
     margin: auto;
     display: inline-block;
     padding: 0;
     text-align: center;
+    height: 100%;
 }
 
 #university-items {

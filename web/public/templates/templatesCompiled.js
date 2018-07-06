@@ -54,7 +54,7 @@ templates['main_page/uni_profile'] = template({"1":function(container,depth0,hel
     + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
     + "</h1>\r\n<div id=\"logo-div\">\r\n    <img id=\"logo\" src=\""
     + alias2(alias1((depth0 != null ? depth0.logo : depth0), depth0))
-    + "\">\r\n</div>\r\n<hr>\r\n<ul class=\"menu-list\">\r\n    <li class=\"menu-item\">\r\n        <a id=\"news-menu\">\r\n            სიახლეები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"faculties-menu\">\r\n            ფაკულტეტები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"events-menu\">\r\n            აქტივობები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"about-menu\">\r\n            ჩვენს შესახებ\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"reviews-menu\">\r\n            შეფასებები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"faq-menu\">\r\n            კითხვა-პასუხი\r\n        </a>\r\n    </li>\r\n</ul>\r\n";
+    + "\">\r\n</div>\r\n<hr>\r\n<ul class=\"menu-list\">\r\n    <li class=\"menu-item\">\r\n        <a id=\"news-menu\" class=\"item\">\r\n            სიახლეები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"faculties-menu\" class=\"item\">\r\n            ფაკულტეტები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"events-menu\" class=\"item\">\r\n            აქტივობები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"about-menu\" class=\"item\">\r\n            ჩვენს შესახებ\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"reviews-menu\" class=\"item\">\r\n            შეფასებები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"faq-menu\" class=\"item\">\r\n            კითხვა-პასუხი\r\n        </a>\r\n    </li>\r\n</ul>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
@@ -62,7 +62,7 @@ templates['main_page/uni_profile'] = template({"1":function(container,depth0,hel
     + "<div id=\"university-profile\" class=\"\"></div>";
 },"useData":true});
 templates['university_profile/uni_about'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    return "<h1>ჩვენს შესახებ</h1>\r\n<hr>\r\n<div>\r\n    <div id=\"about-div\">\r\n    </div>\r\n</div>";
+    return "<h3>ჩვენს შესახებ</h3>\r\n<hr>\r\n<div>\r\n    <div id=\"about-div\">\r\n    </div>\r\n</div>";
 },"useData":true});
 templates['university_profile/uni_events'] = template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.lambda, alias2=container.escapeExpression;
@@ -81,7 +81,7 @@ templates['university_profile/uni_events'] = template({"1":function(container,de
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<h1>აქტივობები</h1>\r\n<hr>\r\n<div>\r\n"
+  return "<h3>აქტივობები</h3>\r\n<hr>\r\n<div>\r\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = (depth0 != null ? depth0.university : depth0)) != null ? stack1.universityEvents : stack1),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</div>";
 },"useData":true});
@@ -140,7 +140,7 @@ templates['university_profile/uni_faculties'] = template({"1":function(container
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<h1 class=\"\">ფაკულტეტები</h1>\r\n<hr>\r\n<div class=\"\">\r\n    <div id=\"faculties-div\">\r\n"
+  return "<h3>ფაკულტეტები</h3>\r\n<hr>\r\n<div>\r\n    <div id=\"faculties-div\">\r\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = (depth0 != null ? depth0.university : depth0)) != null ? stack1.universityFaculties : stack1),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "    </div>\r\n</div>";
 },"useData":true});
@@ -155,7 +155,7 @@ templates['university_profile/uni_faq'] = template({"1":function(container,depth
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<h1 class=\"\">ხშირად დასმული კითხვები</h1>\r\n<hr>\r\n<div class=\"\">\r\n    <div class=\"question-list\">\r\n        <ul>\r\n"
+  return "<h3>ხშირად დასმული კითხვები</h3>\r\n<hr>\r\n<div>\r\n    <div class=\"question-list\">\r\n        <ul>\r\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = (depth0 != null ? depth0.university : depth0)) != null ? stack1.universityFaq : stack1),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "        </ul>\r\n    </div>\r\n</div>";
 },"useData":true});
@@ -174,7 +174,7 @@ templates['university_profile/uni_news'] = template({"1":function(container,dept
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<h1 class=\"\">სიახლეები</h1>\r\n<hr>\r\n<div class=\"\">\r\n"
+  return "<h3>სიახლეები</h3>\r\n<hr>\r\n<div>\r\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = (depth0 != null ? depth0.university : depth0)) != null ? stack1.universityNews : stack1),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</div>";
 },"useData":true});
@@ -185,7 +185,7 @@ templates['university_profile/uni_reviews'] = template({"1":function(container,d
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<h1>შეფასებები</h1>\r\n<hr>\r\n\r\n"
+  return "<h3>შეფასებები</h3>\r\n<hr>\r\n\r\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = (depth0 != null ? depth0.university : depth0)) != null ? stack1.universityReviews : stack1),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "\r\n<div>\r\n    <form id=\"add-comment-form\">\r\n        <label>\r\n            დატოვეთ კომენტარი\r\n            <input id=\"comment\" type=\"text\" name=\"review\">\r\n        </label>\r\n        <input id=\"form-submit\" type=\"button\" value=\"დამატება\">\r\n    </form>\r\n</div>\r\n\r\n";
 },"useData":true});
