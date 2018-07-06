@@ -1,0 +1,15 @@
+.user-icon{
+    height: 20px;
+}
+
+.comments-div{
+    text-align: left;
+    vertical-align: center;
+    display: table;
+}
+
+.comments-div div{
+    padding-left: 15px;
+    display: table-cell;
+    vertical-align: middle;
+}

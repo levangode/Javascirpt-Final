@@ -16,6 +16,7 @@ const get = async (url) => {
     return data;
 };
 
+
 module.exports = {
     getUniversities: () => get('/get-universities'),
     getNews: () => get('/mes-gov-ge'),

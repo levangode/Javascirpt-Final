@@ -29,38 +29,38 @@ public class UniversityController {
         this.repository = repository;
         this.eventRepository = eventRepository;
     }
+//
+//    @PostMapping("/uni-authenticate")
+//    @CrossOrigin(origins = {"http://localhost:3000", "https://localhost:3000"})
+//    public ResponseEntity saveUser(@RequestBody Credentials credentials){
+//        List<University> universities = repository.findUniversityByUsername(credentials.getUsername());
+//        if(universities.size() >= 1){
+//            University uni = universities.get(0);
+//            if(uni.getPassword().equals(credentials.getPassword())){
+//                Map<String, String> body = new HashMap<>();
+//                body.put("id", uni.getId().toString());
+//                body.put("username", uni.getUsername());
+//                body.put("name", uni.getName());
+//                body.put("token", uni.getId().toString());
+//                return ResponseEntity.ok(body);
+//            }
+//        }
+//        return new ResponseEntity(HttpStatus.BAD_REQUEST);
+//    }
 
-    @PostMapping("/uni-authenticate")
-    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
-    public ResponseEntity saveUser(@RequestBody Credentials credentials){
-        List<University> universities = repository.findUniversityByUsername(credentials.getUsername());
-        if(universities.size() >= 1){
-            University uni = universities.get(0);
-            if(uni.getPassword().equals(credentials.getPassword())){
-                Map<String, String> body = new HashMap<>();
-                body.put("id", uni.getId().toString());
-                body.put("username", uni.getUsername());
-                body.put("name", uni.getName());
-                body.put("token", uni.getId().toString());
-                return ResponseEntity.ok(body);
-            }
-        }
-        return new ResponseEntity(HttpStatus.BAD_REQUEST);
-    }
 
-
-    @PostMapping("/universities")
-    @CrossOrigin(origins = {"http://localhost:3000", "https://localhost:3000"})
-    public ResponseEntity saveUniversity(@RequestBody University university){
-        if(repository.findUniversityByUsername(university.getUsername()).size() > 0){
-            return new ResponseEntity(HttpStatus.BAD_REQUEST);
-        }
-        this.repository.save(university);
-        return new ResponseEntity(HttpStatus.OK);
-    }
+//    @PostMapping("/universities")
+//    @CrossOrigin(origins = {"http://localhost:3000", "https://localhost:3000"})
+//    public ResponseEntity saveUniversity(@RequestBody University university){
+//        if(repository.findUniversityByUsername(university.getUsername()).size() > 0){
+//            return new ResponseEntity(HttpStatus.BAD_REQUEST);
+//        }
+//        this.repository.save(university);
+//        return new ResponseEntity(HttpStatus.OK);
+//    }
 
     @PutMapping("/universities")
-    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    @CrossOrigin(origins = {"http://localhost:3000", "https://localhost:3000"})
     public void updateUniversity(@RequestBody University university){
         repository.save(university);
     }
@@ -73,20 +73,20 @@ public class UniversityController {
     }
 
     @GetMapping("/get-university/{id}")
-    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    @CrossOrigin(origins = {"http://localhost:3000", "https://localhost:3000"})
     public University getUniversityById(@PathVariable("id") Long id){
         Optional<University> universityOptional = this.repository.findById(id);
         return universityOptional.orElse(null);
     }
 
     @GetMapping("/get-events")
-    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    @CrossOrigin(origins = {"http://localhost:3000", "https://localhost:3000"})
     public List<UniversityEvent> getAllEvents(){
         return new ArrayList<>(eventRepository.findAll());
     }
 
     @GetMapping("/places-count/{id}")
-    @CrossOrigin(origins = {"http://localhost:4200", "https://localhost:4200"})
+    @CrossOrigin(origins = {"http://localhost:3000", "https://localhost:3000"})
     public University getUniversityPlaces(@PathVariable("id") Long id){
         Optional<University> universityOptional = this.repository.findById(id);
         return universityOptional.orElse(null);

@@ -128,6 +128,10 @@ public class ProjectApplication implements CommandLineRunner {
         event.setLink("https://google.com");
         uni.addEvent(event);
 
+        UniversityReview review = new UniversityReview();
+        review.setReview("ჩემი მეორე სახლია");
+        uni.addReview(review);
+
         universityRepository.save(uni);
     }
 }

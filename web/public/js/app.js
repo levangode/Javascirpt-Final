@@ -12,6 +12,7 @@ window.addEventListener('load', () => {
     const universityFacultiesTemplate = Handlebars.templates['university_profile/uni_faculties'];
     const universityFaqTemplate = Handlebars.templates['university_profile/uni_faq'];
     const universityAboutTemplate = Handlebars.templates['university_profile/uni_about'];
+    const universityReviewsTemplate = Handlebars.templates['university_profile/uni_reviews'];
 
     // Router Declaration
     const router = new Router({
@@ -80,6 +81,10 @@ window.addEventListener('load', () => {
                     document.getElementById('university-profile').innerHTML = universityNewsTemplate({university});
                 }
             );
+            document.getElementById('reviews-menu').addEventListener("click", async () => {
+                    loadReviewsTemplate(university);
+                }
+            );
             document.getElementById('faculties-menu').addEventListener("click", async () => {
                     document.getElementById('university-profile').innerHTML = universityFacultiesTemplate({university});
                 }
@@ -146,6 +151,17 @@ window.addEventListener('load', () => {
         Array.prototype.forEach.call(els, function (el) {
             el.classList.remove('loading');
         });
+    }
+
+    function loadReviewsTemplate(university){
+        document.getElementById('university-profile').innerHTML = universityReviewsTemplate({university});
+        document.getElementById('form-submit').addEventListener("click", () => {
+            let value = document.getElementById('comment').value;
+            university.universityReviews.push({"review":value});
+            console.log(university.universityReviews);
+            axios.put('http://localhost:8080/universities', university);
+            loadReviewsTemplate(university);
+        })
     }
 
 });

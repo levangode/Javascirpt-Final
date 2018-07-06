@@ -9,8 +9,6 @@ import java.util.HashSet;
 import java.util.Set;
 
 @Entity
-@ToString
-@EqualsAndHashCode
 public class UniversityFaculty {
 
     @Id
@@ -129,5 +127,23 @@ public class UniversityFaculty {
 
     public void setFacultySubjects(Set<FacultySubject> facultySubjects) {
         this.facultySubjects = facultySubjects;
+    }
+
+    @Override
+    public String toString() {
+        return "UniversityFaculty{" +
+                "id=" + id +
+                ", facultyNumber=" + facultyNumber +
+                ", programName='" + programName + '\'' +
+                ", qualification='" + qualification + '\'' +
+                ", accredited='" + accredited + '\'' +
+                ", language='" + language + '\'' +
+                ", financing='" + financing + '\'' +
+                ", credits=" + credits +
+                ", annualFee=" + annualFee +
+                ", numPlaces=" + numPlaces +
+                ", facultySubjects=" + facultySubjects +
+                ", priorities='" + priorities + '\'' +
+                '}';
     }
 }
