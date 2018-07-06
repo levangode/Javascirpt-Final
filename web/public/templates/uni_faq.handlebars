@@ -1,0 +1,14 @@
+<h1 class="">ხშირად დასმული კითხვები</h1>
+<hr>
+<div class="">
+    <div class="question-list">
+        <ul>
+            {{#each university.universityFaq}}
+            <li class="question-post">
+                <b class="question">{{this.question}}</b>
+                <p class="answer">{{this.answer}}</p>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

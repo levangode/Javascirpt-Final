@@ -1,0 +1,19 @@
+<h1 class="">საგანმანათლებლო სიახლეები</h1>
+<hr>
+<div id="news-list" class="ui loading basic segment">
+    {{#each news}}
+    <div class="news-item">
+        <div class="news-img">
+            <img src="http://mes.gov.ge/{{this.newsImgSrc}}"/>
+        </div>
+        <div class="news-info">
+            <p class="news-date">{{this.newsDate}}</p>
+            <p class="news-title">{{this.newsTitle}}</p>
+            <!--<a class="news-title" href="{{this.newsTitleRef}}">-->
+            <!--{{this.newsTitle}}-->
+            <!--</a>-->
+            <p class="newsDescription">{{this.newsText}}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>

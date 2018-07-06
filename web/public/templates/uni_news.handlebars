@@ -1,0 +1,18 @@
+<h1 class="">სიახლეები</h1>
+<hr>
+<div class="">
+    {{#each university.universityNews}}
+    <div class="news-item">
+        <div class="news-img">
+            <img src="{{this.img}}">
+        </div>
+        <div class="news-info">
+            <p class="news-date">{{this.date}}</p>
+            <h3>
+                {{this.title}}
+            </h3>
+            <p class="newsDescription">{{this.description}}</p>
+        </div>
+    </div>
+    {{/each}}
+</div>

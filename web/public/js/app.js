@@ -2,16 +2,16 @@ window.addEventListener('load', () => {
     const el = document.getElementById("app");
 
     // Compile Handlebar Templates
-    const errorTemplate = Handlebars.compile(document.getElementById('error-template').innerHTML);
-    const universitiesTemplate = Handlebars.compile(document.getElementById('universities-template').innerHTML);
-    const ratingsTemplate = Handlebars.compile(document.getElementById('ratings-template').innerHTML);
-    const homeTemplate = Handlebars.compile(document.getElementById('home-template').innerHTML);
-    const universityProfileTemplate = Handlebars.compile(document.getElementById('university-profile-template').innerHTML);
-    const universityEventsTemplate = Handlebars.compile(document.getElementById('university-events-template').innerHTML);
-    const universityNewsTemplate = Handlebars.compile(document.getElementById('university-news-template').innerHTML);
-    const universityFacultiesTemplate = Handlebars.compile(document.getElementById('university-faculties-template').innerHTML);
-    const universityFaqTemplate = Handlebars.compile(document.getElementById('university-faq-template').innerHTML);
-    const universityAboutTemplate = Handlebars.compile(document.getElementById('university-about-template').innerHTML);
+    const errorTemplate = Handlebars.templates.error;
+    const universitiesTemplate = Handlebars.templates.uni_list;
+    const ratingsTemplate = Handlebars.templates.ratings;
+    const homeTemplate = Handlebars.templates.news;
+    const universityProfileTemplate = Handlebars.templates.uni_profile;
+    const universityEventsTemplate = Handlebars.templates.uni_events;
+    const universityNewsTemplate = Handlebars.templates.uni_news;
+    const universityFacultiesTemplate = Handlebars.templates.uni_faculties;
+    const universityFaqTemplate = Handlebars.templates.uni_faq;
+    const universityAboutTemplate = Handlebars.templates.uni_about;
 
     // Router Declaration
     const router = new Router({
