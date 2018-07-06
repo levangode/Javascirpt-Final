@@ -1,15 +1,6 @@
 (function() {
   var template = Handlebars.template, templates = Handlebars.templates = Handlebars.templates || {};
-templates['error'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
-
-  return "<div id=\"error-div\" class=\"\">\n    <br>\n    <h2 class=\"\">\n        <i class=\"exclamation triangle icon\"></i>\n        <div class=\"content\">\n            "
-    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
-    + "\n            <div class=\"sub header\">"
-    + alias4(((helper = (helper = helpers.message || (depth0 != null ? depth0.message : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"message","hash":{},"data":data}) : helper)))
-    + "</div>\n        </div>\n    </h2>\n</div>";
-},"useData":true});
-templates['news'] = template({"1":function(container,depth0,helpers,partials,data) {
+templates['main_page/news'] = template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.lambda, alias2=container.escapeExpression;
 
   return "    <div class=\"news-item\">\n        <div class=\"news-img\">\n            <img src=\"http://mes.gov.ge/"
@@ -32,13 +23,48 @@ templates['news'] = template({"1":function(container,depth0,helpers,partials,dat
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.news : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</div>";
 },"useData":true});
-templates['ratings'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+templates['main_page/ratings'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<h1 class=\"\">რეიტინგები</h1>\n<hr>\n<div class=\"\">\n    <iframe id=\"ratings-frame\" src=\"https://e.infogram.com/c4d451c4-78c8-4f88-b829-e428549550fc?src=embed\"\n            title=\"უნივერსიტეტების რეიტინგები 2016\" width=\"900\" height=\"970\" scrolling=\"no\" frameborder=\"0\"\n            allowfullscreen=\"allowfullscreen\"></iframe>\n</div>";
 },"useData":true});
-templates['uni_about'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+templates['main_page/uni_list'] = template({"1":function(container,depth0,helpers,partials,data) {
+    var stack1, alias1=container.lambda, alias2=container.escapeExpression;
+
+  return "            <li class=\"university-list-item grow\" id=\""
+    + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
+    + "\">\n                <h3>"
+    + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
+    + "</h3>\n                <p>"
+    + alias2(alias1(((stack1 = (depth0 != null ? depth0.universityFaculties : depth0)) != null ? stack1.length : stack1), depth0))
+    + " კურსი</p>\n                <p>50 ადგილი</p>\n                <br>\n                <a href=\""
+    + alias2(alias1((depth0 != null ? depth0.webAddress : depth0), depth0))
+    + "\" target=\"_blank\">"
+    + alias2(alias1((depth0 != null ? depth0.webAddress : depth0), depth0))
+    + "</a>\n            </li>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return "<h1 class=\"\">უნივერსიტეტების სია</h1>\n<hr>\n<div class=\"\">\n    <div id=\"university-items\">\n        <ul id=\"university-item-list\">\n"
+    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.universities : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "        </ul>\n    </div>\n</div>";
+},"useData":true});
+templates['main_page/uni_profile'] = template({"1":function(container,depth0,helpers,partials,data) {
+    var alias1=container.lambda, alias2=container.escapeExpression;
+
+  return "<h1 class=\"\">"
+    + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
+    + "</h1>\n<div id=\"logo-div\">\n    <img id=\"logo\" src=\""
+    + alias2(alias1((depth0 != null ? depth0.logo : depth0), depth0))
+    + "\">\n</div>\n<hr>\n<ul class=\"menu-list\">\n    <li class=\"menu-item\">\n        <a id=\"news-menu\" class=\"item\">\n            სიახლეები\n        </a>\n    </li>\n    <li class=\"menu-item\">\n        <a id=\"faculties-menu\" class=\"item\">\n            ფაკულტეტები\n        </a>\n    </li>\n    <li class=\"menu-item\">\n        <a id=\"events-menu\" class=\"item\">\n            აქტივობები\n        </a>\n    </li>\n    <li class=\"menu-item\">\n        <a id=\"about-menu\" class=\"item\">\n            ჩვენს შესახებ\n        </a>\n    </li>\n    <li class=\"menu-item\">\n        <a id=\"faq-menu\" class=\"item\">\n            კითხვა-პასუხი\n        </a>\n    </li>\n</ul>\n";
+},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var stack1;
+
+  return ((stack1 = helpers["with"].call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.university : depth0),{"name":"with","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
+    + "<div id=\"university-profile\" class=\"\"></div>";
+},"useData":true});
+templates['university_profile/uni_about'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<h1 class=\"\">ჩვენს შესახებ</h1>\n<hr>\n<div class=\"\">\n    <div id=\"about-div\">\n    </div>\n</div>";
 },"useData":true});
-templates['uni_events'] = template({"1":function(container,depth0,helpers,partials,data) {
+templates['university_profile/uni_events'] = template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.lambda, alias2=container.escapeExpression;
 
   return "    <a href=\""
@@ -59,7 +85,7 @@ templates['uni_events'] = template({"1":function(container,depth0,helpers,partia
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = (depth0 != null ? depth0.university : depth0)) != null ? stack1.universityEvents : stack1),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</div>";
 },"useData":true});
-templates['uni_faculties'] = template({"1":function(container,depth0,helpers,partials,data) {
+templates['university_profile/uni_faculties'] = template({"1":function(container,depth0,helpers,partials,data) {
     var stack1, alias1=container.lambda, alias2=container.escapeExpression, alias3=depth0 != null ? depth0 : (container.nullContext || {});
 
   return "        <div class=\"faculty-item grow\">\n            <table class=\"faculty-general\">\n                <caption>\n                    <table class=\"caption-table\">\n                        <tr>\n                            <th>პროგრამა:</th>\n                            <th>"
@@ -118,7 +144,7 @@ templates['uni_faculties'] = template({"1":function(container,depth0,helpers,par
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = (depth0 != null ? depth0.university : depth0)) != null ? stack1.universityFaculties : stack1),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "    </div>\n</div>";
 },"useData":true});
-templates['uni_faq'] = template({"1":function(container,depth0,helpers,partials,data) {
+templates['university_profile/uni_faq'] = template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.lambda, alias2=container.escapeExpression;
 
   return "            <li class=\"question-post\">\n                <b class=\"question\">"
@@ -133,28 +159,7 @@ templates['uni_faq'] = template({"1":function(container,depth0,helpers,partials,
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = (depth0 != null ? depth0.university : depth0)) != null ? stack1.universityFaq : stack1),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "        </ul>\n    </div>\n</div>";
 },"useData":true});
-templates['uni_list'] = template({"1":function(container,depth0,helpers,partials,data) {
-    var stack1, alias1=container.lambda, alias2=container.escapeExpression;
-
-  return "            <li class=\"university-list-item grow\" id=\""
-    + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
-    + "\">\n                <h3>"
-    + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
-    + "</h3>\n                <p>"
-    + alias2(alias1(((stack1 = (depth0 != null ? depth0.universityFaculties : depth0)) != null ? stack1.length : stack1), depth0))
-    + " კურსი</p>\n                <p>50 ადგილი</p>\n                <br>\n                <a href=\""
-    + alias2(alias1((depth0 != null ? depth0.webAddress : depth0), depth0))
-    + "\" target=\"_blank\">"
-    + alias2(alias1((depth0 != null ? depth0.webAddress : depth0), depth0))
-    + "</a>\n            </li>\n";
-},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1;
-
-  return "<h1 class=\"\">უნივერსიტეტების სია</h1>\n<hr>\n<div class=\"\">\n    <div id=\"university-items\">\n        <ul id=\"university-item-list\">\n"
-    + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.universities : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "        </ul>\n    </div>\n</div>";
-},"useData":true});
-templates['uni_news'] = template({"1":function(container,depth0,helpers,partials,data) {
+templates['university_profile/uni_news'] = template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.lambda, alias2=container.escapeExpression;
 
   return "    <div class=\"news-item\">\n        <div class=\"news-img\">\n            <img src=\""
@@ -173,18 +178,13 @@ templates['uni_news'] = template({"1":function(container,depth0,helpers,partials
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),((stack1 = (depth0 != null ? depth0.university : depth0)) != null ? stack1.universityNews : stack1),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
     + "</div>";
 },"useData":true});
-templates['uni_profile'] = template({"1":function(container,depth0,helpers,partials,data) {
-    var alias1=container.lambda, alias2=container.escapeExpression;
+templates['widgets/error'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
+    var helper, alias1=depth0 != null ? depth0 : (container.nullContext || {}), alias2=helpers.helperMissing, alias3="function", alias4=container.escapeExpression;
 
-  return "<h1 class=\"\">"
-    + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
-    + "</h1>\n<div id=\"logo-div\">\n    <img id=\"logo\" src=\""
-    + alias2(alias1((depth0 != null ? depth0.logo : depth0), depth0))
-    + "\">\n</div>\n<hr>\n<ul class=\"menu-list\">\n    <li class=\"menu-item\">\n        <a id=\"news-menu\" class=\"item\">\n            სიახლეები\n        </a>\n    </li>\n    <li class=\"menu-item\">\n        <a id=\"faculties-menu\" class=\"item\">\n            ფაკულტეტები\n        </a>\n    </li>\n    <li class=\"menu-item\">\n        <a id=\"events-menu\" class=\"item\">\n            აქტივობები\n        </a>\n    </li>\n    <li class=\"menu-item\">\n        <a id=\"about-menu\" class=\"item\">\n            ჩვენს შესახებ\n        </a>\n    </li>\n    <li class=\"menu-item\">\n        <a id=\"faq-menu\" class=\"item\">\n            ხშირად დასმული კითხვები\n        </a>\n    </li>\n</ul>\n";
-},"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
-    var stack1;
-
-  return ((stack1 = helpers["with"].call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.university : depth0),{"name":"with","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "<div id=\"university-profile\" class=\"\">\n\n</div>";
+  return "<div id=\"error-div\" class=\"\">\n    <br>\n    <h2 class=\"\">\n        <i class=\"exclamation triangle icon\"></i>\n        <div class=\"content\">\n            "
+    + alias4(((helper = (helper = helpers.title || (depth0 != null ? depth0.title : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"title","hash":{},"data":data}) : helper)))
+    + "\n            <div class=\"sub header\">"
+    + alias4(((helper = (helper = helpers.message || (depth0 != null ? depth0.message : depth0)) != null ? helper : alias2),(typeof helper === alias3 ? helper.call(alias1,{"name":"message","hash":{},"data":data}) : helper)))
+    + "</div>\n        </div>\n    </h2>\n</div>";
 },"useData":true});
 })();

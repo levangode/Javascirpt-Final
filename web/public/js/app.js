@@ -2,16 +2,16 @@ window.addEventListener('load', () => {
     const el = document.getElementById("app");
 
     // Compile Handlebar Templates
-    const errorTemplate = Handlebars.templates.error;
-    const universitiesTemplate = Handlebars.templates.uni_list;
-    const ratingsTemplate = Handlebars.templates.ratings;
-    const homeTemplate = Handlebars.templates.news;
-    const universityProfileTemplate = Handlebars.templates.uni_profile;
-    const universityEventsTemplate = Handlebars.templates.uni_events;
-    const universityNewsTemplate = Handlebars.templates.uni_news;
-    const universityFacultiesTemplate = Handlebars.templates.uni_faculties;
-    const universityFaqTemplate = Handlebars.templates.uni_faq;
-    const universityAboutTemplate = Handlebars.templates.uni_about;
+    const errorTemplate = Handlebars.templates['widgets/error'];
+    const universitiesTemplate = Handlebars.templates['main_page/uni_list'];
+    const ratingsTemplate = Handlebars.templates['main_page/ratings'];
+    const homeTemplate = Handlebars.templates['main_page/news'];
+    const universityProfileTemplate = Handlebars.templates['main_page/uni_profile'];
+    const universityEventsTemplate = Handlebars.templates['university_profile/uni_events'];
+    const universityNewsTemplate = Handlebars.templates['university_profile/uni_news'];
+    const universityFacultiesTemplate = Handlebars.templates['university_profile/uni_faculties'];
+    const universityFaqTemplate = Handlebars.templates['university_profile/uni_faq'];
+    const universityAboutTemplate = Handlebars.templates['university_profile/uni_about'];
 
     // Router Declaration
     const router = new Router({
