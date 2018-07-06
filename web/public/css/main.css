@@ -1,4 +1,102 @@
+@import "menu.css";
+@import "events.css";
+@import "faculties.css";
+@import "faq.css";
+@import "uni-list.css";
+@import "news.css";
 
+
+/*fonts*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Corben', Georgia, Times, serif;
+}
+p, div {
+    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: url(/web/public/resources/cream_dust.png) repeat 0 0;
+}
+
+h1 {
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+body {
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+}
+
+/*loading*/
+.ui.loading.segment {
+    position: relative;
+    cursor: default;
+    pointer-events: none;
+    text-shadow: none !important;
+    color: transparent !important;
+    -webkit-transition: all 0s linear;
+    transition: all 0s linear;
+}
+
+.ui.loading.segment:before {
+    position: absolute;
+    content: '';
+    top: 0%;
+    left: 0%;
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+    border-radius: 0.28571429rem;
+    z-index: 100;
+}
+
+.ui.loading.segment:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    margin: -1.5em 0em 0em -1.5em;
+    width: 3em;
+    height: 3em;
+    -webkit-animation: segment-spin 0.6s linear;
+    animation: segment-spin 0.6s linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    border-radius: 500rem;
+    border: 0.2em solid rgba(0, 0, 0, 0.1);
+    border-top-color: #767676;
+    -webkit-box-shadow: 0px 0px 0px 1px transparent;
+    box-shadow: 0px 0px 0px 1px transparent;
+    visibility: visible;
+    z-index: 101;
+}
+
+@-webkit-keyframes segment-spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes segment-spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
 
 #quick-links-div{
     margin: 5px;
@@ -21,14 +119,6 @@
 .rating-item{
     text-align: left;
     margin-bottom: 5px;
-}
-/* You can add global styles to this file, and also import other style files */
-body {
-    text-align: center;
-}
-
-h2 {
-    margin: 0;
 }
 
 
@@ -68,53 +158,6 @@ h2 {
 }
 
 
-.news-img{
-    display: table-cell;
-    vertical-align: middle;
-}
-
-.news-img img{
-    border-radius: 10px;
-    height: 150px;
-    max-width: 225px;
-}
-
-.news-info{
-    padding-left: 10px;
-    text-align: left;
-    width: 60%;
-    display: table-cell;
-    vertical-align: middle;
-}
-.newsDescription{
-    margin: 0;
-    font-size: 14px;
-}
-.news-title{
-    text-decoration: none;
-    font-size: 18px;
-    color: blue;
-}
-.news-date{
-    font-size: 12px;
-    margin-top:5px;
-    margin-bottom: 0;
-}
-
-.news-item{
-    display: table;
-    height: 160px;
-    border: 1px solid green;
-    border-radius: 10px;
-    margin:1%;
-    width: 98%;
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-    transition: 0.3s;
-}
-.news-item:hover{
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-}
-
 .readMore{
     text-decoration: none;
 }
@@ -128,183 +171,13 @@ h2 {
 }
 
 
-.university-list-item {
-    cursor: pointer;
-    margin: 2px;
-    display: inline-block;
-    height: 250px;
-    width: 180px;
-    border-radius: 10px;
-    border: 1px solid green;
-    text-align: center;
-
-    z-index: 3;
-
-}
-
-.university-list-item a {
-    text-decoration: none;
-    color: blue;
-}
-
-#university-item-list {
-    margin: auto;
-    display: inline-block;
-    padding: 0;
-    text-align: center;
-}
-
-#university-items {
-    margin-top: 20px;
-}
 
 #university-profile{
     text-decoration: none;
     color: black;
 }
 
-/*events*/
-.event-image{
-    width: 100%;
-}
 
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-.event-info-table{
-    width: 100%;
-}
-
-.event-date{
-    word-wrap: break-spaces;
-}
-
-.event-item{
-    border: 1px solid green;
-    border-radius: 10px;
-    padding: 10px;
-    width: 700px;
-    margin: auto;
-}
-
-a{
-    text-decoration: none;
-    color: black;
-}
-
-/*faculties*/
-#faculties-div{
-    padding-top: 10px;
-    margin: auto auto auto auto;
-    width: 800px;
-}
-.caption-table{
-    margin: 5px 0 5px 0;
-    width: 100%;
-}
-.subjects-table{
-    table-layout: fixed;
-    width: 100%;
-}
-
-.subjects-table th{
-    word-wrap: break-word;
-    font-size: 13px;
-}
-
-.subjects-table tr{
-    height: 20px;
-}
-
-.subjects-table td{
-    word-wrap: break-word;
-    font-size: 12px;
-}
-
-.faculty-general{
-    table-layout: fixed;
-    width: 100%;
-}
-
-.faculty-general th{
-    word-wrap: break-word;
-    font-size: 14px;
-}
-.faculty-general td{
-    word-wrap: break-word;
-    font-size: 13px;
-}
-
-.faculty-item{
-    margin-top: 15px;
-    padding: 0 10px 10px 10px;
-    border: 1px solid green;
-    border-radius: 10px;
-}
-
-table, th, td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-/*faq*/
-.question-list ul{
-    list-style-type: none;
-    float: left;
-    text-align: justify;
-}
-
-.question-list li{
-    padding-top: 20px;
-    display: block;
-}
-
-.question-post p{
-    margin: 3px 0px 0px 0px;
-}
-
-
-/*university pagew*/
-#logo-div{
-
-}
-
-#logo{
-    height: 100px;
-}
-
-
-/*fonts*/
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Corben', Georgia, Times, serif;
-}
-p, div {
-    font-family: 'Nobile', Helvetica, Arial, sans-serif;
-}
-
-body {
-    background: url(/web/public/resources/cream_dust.png) repeat 0 0;
-}
-
-h1 {
-    text-shadow: 1px 1px 1px #ccc;
-}
-
-#news-list {
-    box-shadow: 0 0 0 2em #f3702e;
-    border-radius: 10px;
-}
-
-.university-list-item{
-    box-shadow: 0 0 1em 4px #ccc;
-    border-radius: 10px;
-}
-
-#navigation-menu{
-    /*position: fixed;*/
-}
 
 #ratings-frame{
  border:none;
@@ -315,90 +188,3 @@ h1 {
     height:250px;
 }
 
-/*loading*/
-.ui.loading.segment {
-    position: relative;
-    cursor: default;
-    pointer-events: none;
-    text-shadow: none !important;
-    color: transparent !important;
-    -webkit-transition: all 0s linear;
-    transition: all 0s linear;
-}
-
-.ui.loading.segment:before {
-    position: absolute;
-    content: '';
-    top: 0%;
-    left: 0%;
-    background: rgba(255, 255, 255, 0.8);
-    width: 100%;
-    height: 100%;
-    border-radius: 0.28571429rem;
-    z-index: 100;
-}
-
-.ui.loading.segment:after {
-    position: absolute;
-    content: '';
-    top: 50%;
-    left: 50%;
-    margin: -1.5em 0em 0em -1.5em;
-    width: 3em;
-    height: 3em;
-    -webkit-animation: segment-spin 0.6s linear;
-    animation: segment-spin 0.6s linear;
-    -webkit-animation-iteration-count: infinite;
-    animation-iteration-count: infinite;
-    border-radius: 500rem;
-    border-color: #767676 rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1);
-    border-style: solid;
-    border-width: 0.2em;
-    -webkit-box-shadow: 0px 0px 0px 1px transparent;
-    box-shadow: 0px 0px 0px 1px transparent;
-    visibility: visible;
-    z-index: 101;
-}
-
-@-webkit-keyframes segment-spin {
-    from {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    to {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-@keyframes segment-spin {
-    from {
-        -webkit-transform: rotate(0deg);
-        transform: rotate(0deg);
-    }
-
-    to {
-        -webkit-transform: rotate(360deg);
-        transform: rotate(360deg);
-    }
-}
-
-/*menu*/
-.menu-list{
-    margin: 5px 0 0 0;
-}
-
-.menu-item{
-    margin: 0 5px 0 5px;
-    cursor: pointer;
-    display: inline;
-    padding: 2px;
-    border: 1px solid green;
-    border-radius: 10px;
-    border-top: 2px solid grey;
-}
-
-.menu-item:hover{
-    background: gray;
-}
