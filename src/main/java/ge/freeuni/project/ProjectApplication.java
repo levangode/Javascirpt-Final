@@ -43,7 +43,10 @@ public class ProjectApplication implements CommandLineRunner {
         interestRepository.save(new UserInterest("მენეჯმენტი"));
 
         University uni = new University();
-        uni.setAbout("იყო და არა იყო რა <br> ღვთის უკეთესი რა იქნებოდა, იყო ერთ მელა");
+        String freeuniAbout = "თავისუფალი უნივერსიტეტი - უპირობო ლიდერი ქართულ საგანმანათლებლო სივრცეში.";
+        System.out.print(freeuniAbout.length());
+        //uni.setAbout("იყო და არა იყო რა <br> ღვთ1ის უკეთესი რა იქნებოდა, იყო ერთ მელა");
+        uni.setAbout(freeuniAbout);
         uni.setAddress("აღმაშენებლის ხეივანი #13");
         uni.setEmail("lgode@freeuni.edu.ge");
         uni.setName("თბილისის თავისუფალი უნივერსიტეტი");
@@ -52,11 +55,21 @@ public class ProjectApplication implements CommandLineRunner {
         uni.setLogo("https://upload.wikimedia.org/wikipedia/en/thumb/1/1b/FreeUniLogo.png/220px-FreeUniLogo.png");
 
         //add FAQ for university
-        FaqElement faqElement1 = new FaqElement("Question 1?", "Answer 1");
-        FaqElement faqElement2 = new FaqElement("Question 2?", "Answer 2");
-        FaqElement faqElement3 = new FaqElement("Question 3?", "Answer 3");
-        FaqElement faqElement4 = new FaqElement("Question 4?", "Answer 4");
-        FaqElement faqElement5 = new FaqElement("Question 5?", "Answer 5");
+        String question1 = "1. მომიწევს თუ არა რაიმე დამატებითი თანხის გადახდა გამოცდის გადაბარებისთვის?";
+        String answer1 = "არა, გამოცდის გადაბარებისთვის არ მოგიწევს რაიმე დამატებითი თანხის გადახდა. ";
+        String question2 = "2. მას შემდეგ, რაც ვისარგებლებ გარდამავალი დაფინანსებით, რა ვალდებულება მექნება ცოდნის ფონდთან?";
+        String answer2 = "ვალდებული იქნები, სწავლის დასრულების შემდეგ დააბრუნო იმავე ოდენობის თანხა, რისი გადახდაც გარდამავალი დაფინანსების გარეშე მოგიწევდა.";
+        String question3 = "3. თუკი ვისარგებლებ თავისუფალი უნივერსიტეტის თანადაფინანსების სისტემით, ანუ მივიღებ 9 000 ლარიან სასწავლო გრანტს, მომიწევს ამ თანხის უკან დაბრუნება როდესმე? ";
+        String answer3 = "არ მოგიწევს. ბაკალავრიატზე სწავლისას, 4 წლის განმავლობაში მოცემული 9 000 ლარი ცოდნის ფონდის საჩუქარია და არა ვალი.";
+        String question4 = "4. გაქვთ თუ არა მოსამზადებელი პროგრამები არაქართულენოვანთათვის?";
+        String answer4 = "თავისუფალ უნივერსიტეტს მოსამზადებელი პროგრამები არაქართულენოვანთათვის არ აქვს. ";
+        String question5 = "5. მომიწევს თუ არა რაიმე სახის ქონების ჩადება ბანკში ცოდნის ფონდის გარდამავალი დაფინანასების აღებისას?";
+        String answer5 = "არა. არანაირი ქონების ჩადება არ მოგიწევს";
+        FaqElement faqElement1 = new FaqElement(question1, answer1);
+        FaqElement faqElement2 = new FaqElement(question2, answer2);
+        FaqElement faqElement3 = new FaqElement(question3, answer3);
+        FaqElement faqElement4 = new FaqElement(question4, answer4);
+        FaqElement faqElement5 = new FaqElement(question5, answer5);
         uni.addFaqElement(faqElement1);
         uni.addFaqElement(faqElement2);
         uni.addFaqElement(faqElement3);
@@ -100,9 +113,9 @@ public class ProjectApplication implements CommandLineRunner {
 
         UniversityNews news = new UniversityNews();
         news.setDate(new Date());
-        news.setDescription("სიახლის აღწერილობა");
-        news.setTitle("პირველი სიახლე");
-        news.setImg("https://i.ytimg.com/vi/HcZhSsj_8ds/maxresdefault.jpg");
+        news.setDescription("ცოდნის ფონდის თანადაფინანსების (საგრანტო) სისტემა - შენ მიერ ყოველწლიურად გადასახდელი თანხა 2 250 ლარით მცირდება (სიახლე!)\n");
+        news.setTitle("დაფინანსების სისტემები თავისუფალ უნივერსიტეტში\n");
+        news.setImg("http://freeuni.edu.ge/sites/default/files/Farda%20Baneri.jpg");
         uni.addNews(news);
 
         UniversityEvent event = new UniversityEvent();
