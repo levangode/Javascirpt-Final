@@ -20,3 +20,11 @@ In development mode:
 
 When launched
 Access the embedded database at http://localhost:8080/h2-console
+
+
+
+
+
+Compiling instructions:
+1) npm install handlebars -g
+2) handlebars public/templates > public/templates/templatesCompiled.js
