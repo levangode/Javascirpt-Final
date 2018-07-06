@@ -5,15 +5,25 @@
 
 .menu-item{
     width: 130px;
+    height: 30px;
     margin:  0;
     cursor: pointer;
     display: inline-block;
-    padding: 2px;
-    border: 1px solid green;
-    border-radius: 10px;
-    border-top: 2px solid grey;
+    border-style : solid;
+    border-width : 1px;
+    border-radius : 50px;
+
+    box-shadow : 0 1px 4px rgba(0,0,0,.6);
+    font-size : 9.5pt;
+    font-weight : bold;
+    color : #ffc100;
+    text-shadow : 0 1px 3px rgba(0,0,0,.4);
+    font-family : sans-serif;
+    text-decoration : none;
+    transition: background-color 2s ease-out;
 }
 
 .menu-item:hover{
-    background: gray;
+    background: #bdff00;
 }
+

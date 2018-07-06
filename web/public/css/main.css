@@ -104,7 +104,7 @@ h2 {
 
 #quick-links-div{
     margin: 5px;
-    border: 1px solid green;
+    border: 1px solid #ffc100;
     border-radius: 10px;
 }
 
@@ -112,7 +112,7 @@ h2 {
     padding: 5px;
     margin: 5px auto 5px auto;
     display: block;
-    border: 1px solid green;
+    border: 1px solid #ffc100;
     border-radius: 10px;
 }
 
@@ -142,14 +142,14 @@ h2 {
     float: left;
     display: inline-block;
     width: 200px;
-    border: 1px solid green;
+    border: 1px solid #ffc100;
     border-radius: 10px;
 }
 #middle-div{
     margin: 1px;
     display: inline-block;
     width: 580px;
-    border: 1px solid green;
+    border: 1px solid #ffc100;
     border-radius: 10px;
 }
 #right-div{
@@ -157,7 +157,7 @@ h2 {
     float: right;
     display: inline-block;
     width: 200px;
-    border: 1px solid green;
+    border: 1px solid #ffc100;
     border-radius: 10px;
 }
 
@@ -196,5 +196,15 @@ h2 {
     display: inline-block;
     width: 100%;
     height: 100%;
+}
+
+.item p{
+    margin: 0;
+    display:block;
+    position:relative;
+    top:50%;
+    -webkit-transform:translate(0,-50%);
+    -moz-transform:translate(0,-50%);
+    transform:translate(0,-50%);
 }
 

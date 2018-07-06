@@ -7,7 +7,7 @@
     height: 250px;
     width: 180px;
     border-radius: 10px;
-    border: 1px solid green;
+    border: 1px solid #ffc100;
     text-align: center;
     line-height: 20px;
     z-index: 3;
@@ -43,4 +43,9 @@
 .university-list-item{
     box-shadow: 0 0 1em 4px #ccc;
     border-radius: 10px;
+}
+
+.university-list-item img{
+    height: 50px;
+    margin: auto;
 }

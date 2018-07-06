@@ -31,6 +31,8 @@ templates['main_page/uni_list'] = template({"1":function(container,depth0,helper
 
   return "            <li class=\"university-list-item grow\" id=\""
     + alias2(alias1((depth0 != null ? depth0.id : depth0), depth0))
+    + "\">\r\n                <img src=\""
+    + alias2(alias1((depth0 != null ? depth0.logo : depth0), depth0))
     + "\">\r\n                <h3>"
     + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
     + "</h3>\r\n                <p>"
@@ -54,7 +56,7 @@ templates['main_page/uni_profile'] = template({"1":function(container,depth0,hel
     + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
     + "</h1>\r\n<div id=\"logo-div\">\r\n    <img id=\"logo\" src=\""
     + alias2(alias1((depth0 != null ? depth0.logo : depth0), depth0))
-    + "\">\r\n</div>\r\n<hr>\r\n<ul class=\"menu-list\">\r\n    <li class=\"menu-item\">\r\n        <a id=\"news-menu\" class=\"item\">\r\n            სიახლეები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"faculties-menu\" class=\"item\">\r\n            ფაკულტეტები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"events-menu\" class=\"item\">\r\n            აქტივობები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"about-menu\" class=\"item\">\r\n            ჩვენს შესახებ\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"reviews-menu\" class=\"item\">\r\n            შეფასებები\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"faq-menu\" class=\"item\">\r\n            კითხვა-პასუხი\r\n        </a>\r\n    </li>\r\n</ul>\r\n";
+    + "\">\r\n</div>\r\n<hr>\r\n<ul class=\"menu-list\">\r\n    <li class=\"menu-item\">\r\n        <a id=\"news-menu\" class=\"item\">\r\n            <p>სიახლეები</p>\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"faculties-menu\" class=\"item\">\r\n            <p>ფაკულტეტები</p>\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"events-menu\" class=\"item\">\r\n            <p>აქტივობები</p>\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"about-menu\" class=\"item\">\r\n            <p>ჩვენს შესახებ</p>\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"reviews-menu\" class=\"item\">\r\n            <p>შეფასებები</p>\r\n        </a>\r\n    </li>\r\n    <li class=\"menu-item\">\r\n        <a id=\"faq-menu\" class=\"item\">\r\n            <p>კითხვა-პასუხი</p>\r\n        </a>\r\n    </li>\r\n</ul>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
