@@ -1,19 +1,37 @@
 <h1>საგანმანათლებლო სიახლეები</h1>
 <hr>
-<div id="news-list" class="ui loading basic segment">
-    {{#each news}}
-    <div class="news-item">
-        <div class="news-img">
-            <img src="http://mes.gov.ge/{{this.newsImgSrc}}"/>
+<div id="left-div">
+    <h2>Top</h2>
+    <ol id="rating-list">
+        <li class="rating-item">თავისუფალი უნივერსიტეტი</li>
+        <li class="rating-item">აგრარული უნივერსიტეტი</li>
+    </ol>
+</div>
+<div id="middle-div">
+    <div id="news-list" class="ui loading basic segment">
+        {{#each news}}
+        <div class="news-item">
+            <div class="news-img">
+                <img src="http://mes.gov.ge/{{this.newsImgSrc}}"/>
+            </div>
+            <div class="news-info">
+                <p class="news-date">{{this.newsDate}}</p>
+                <p class="news-title">{{this.newsTitle}}</p>
+                <!--<a class="news-title" href="{{this.newsTitleRef}}">-->
+                <!--{{this.newsTitle}}-->
+                <!--</a>-->
+                <p class="newsDescription">{{this.newsText}}</p>
+            </div>
         </div>
-        <div class="news-info">
-            <p class="news-date">{{this.newsDate}}</p>
-            <p class="news-title">{{this.newsTitle}}</p>
-            <!--<a class="news-title" href="{{this.newsTitleRef}}">-->
-            <!--{{this.newsTitle}}-->
-            <!--</a>-->
-            <p class="newsDescription">{{this.newsText}}</p>
-        </div>
+        {{/each}}
     </div>
-    {{/each}}
+</div>
+<div id="right-div">
+    <div id="quick-links-div">
+        <h2>სწრაფი ბმულები</h2>
+        <ul>
+            <li>სად ვისწავლო?</li>
+            <li>რა ვისწავლო?</li>
+        </ul>
+    </div>
 </div>

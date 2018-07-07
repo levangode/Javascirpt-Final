@@ -3,25 +3,25 @@
 templates['main_page/news'] = template({"1":function(container,depth0,helpers,partials,data) {
     var alias1=container.lambda, alias2=container.escapeExpression;
 
-  return "    <div class=\"news-item\">\r\n        <div class=\"news-img\">\r\n            <img src=\"http://mes.gov.ge/"
+  return "        <div class=\"news-item\">\r\n            <div class=\"news-img\">\r\n                <img src=\"http://mes.gov.ge/"
     + alias2(alias1((depth0 != null ? depth0.newsImgSrc : depth0), depth0))
-    + "\"/>\r\n        </div>\r\n        <div class=\"news-info\">\r\n            <p class=\"news-date\">"
+    + "\"/>\r\n            </div>\r\n            <div class=\"news-info\">\r\n                <p class=\"news-date\">"
     + alias2(alias1((depth0 != null ? depth0.newsDate : depth0), depth0))
-    + "</p>\r\n            <p class=\"news-title\">"
+    + "</p>\r\n                <p class=\"news-title\">"
     + alias2(alias1((depth0 != null ? depth0.newsTitle : depth0), depth0))
-    + "</p>\r\n            <!--<a class=\"news-title\" href=\""
+    + "</p>\r\n                <!--<a class=\"news-title\" href=\""
     + alias2(alias1((depth0 != null ? depth0.newsTitleRef : depth0), depth0))
-    + "\">-->\r\n            <!--"
+    + "\">-->\r\n                <!--"
     + alias2(alias1((depth0 != null ? depth0.newsTitle : depth0), depth0))
-    + "-->\r\n            <!--</a>-->\r\n            <p class=\"newsDescription\">"
+    + "-->\r\n                <!--</a>-->\r\n                <p class=\"newsDescription\">"
     + alias2(alias1((depth0 != null ? depth0.newsText : depth0), depth0))
-    + "</p>\r\n        </div>\r\n    </div>\r\n";
+    + "</p>\r\n            </div>\r\n        </div>\r\n";
 },"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     var stack1;
 
-  return "<h1>საგანმანათლებლო სიახლეები</h1>\r\n<hr>\r\n<div id=\"news-list\" class=\"ui loading basic segment\">\r\n"
+  return "<h1>საგანმანათლებლო სიახლეები</h1>\r\n<hr>\r\n<div id=\"left-div\">\r\n    <h2>Top</h2>\r\n    <ol id=\"rating-list\">\r\n        <li class=\"rating-item\">თავისუფალი უნივერსიტეტი</li>\r\n        <li class=\"rating-item\">აგრარული უნივერსიტეტი</li>\r\n    </ol>\r\n</div>\r\n<div id=\"middle-div\">\r\n    <div id=\"news-list\" class=\"ui loading basic segment\">\r\n"
     + ((stack1 = helpers.each.call(depth0 != null ? depth0 : (container.nullContext || {}),(depth0 != null ? depth0.news : depth0),{"name":"each","hash":{},"fn":container.program(1, data, 0),"inverse":container.noop,"data":data})) != null ? stack1 : "")
-    + "</div>";
+    + "    </div>\r\n</div>\r\n<div id=\"right-div\">\r\n    <div id=\"quick-links-div\">\r\n        <h2>სწრაფი ბმულები</h2>\r\n        <ul>\r\n            <li>სად ვისწავლო?</li>\r\n            <li>რა ვისწავლო?</li>\r\n        </ul>\r\n    </div>\r\n</div>";
 },"useData":true});
 templates['main_page/ratings'] = template({"compiler":[7,">= 4.0.0"],"main":function(container,depth0,helpers,partials,data) {
     return "<h1>რეიტინგები</h1>\r\n<hr>\r\n<div>\r\n    <iframe id=\"ratings-frame\" src=\"https://e.infogram.com/c4d451c4-78c8-4f88-b829-e428549550fc?src=embed\"\r\n            title=\"უნივერსიტეტების რეიტინგები 2016\" width=\"900\" height=\"970\" scrolling=\"no\" frameborder=\"0\"\r\n            allowfullscreen=\"allowfullscreen\"></iframe>\r\n</div>";
@@ -37,7 +37,9 @@ templates['main_page/uni_list'] = template({"1":function(container,depth0,helper
     + alias2(alias1((depth0 != null ? depth0.name : depth0), depth0))
     + "</h3>\r\n                <p>"
     + alias2(alias1(((stack1 = (depth0 != null ? depth0.universityFaculties : depth0)) != null ? stack1.length : stack1), depth0))
-    + " კურსი</p>\r\n                <p>50 ადგილი</p>\r\n                <br>\r\n                <a href=\""
+    + " კურსი</p>\r\n                <p>"
+    + alias2(alias1((depth0 != null ? depth0.numPlaces : depth0), depth0))
+    + "</p>\r\n                <br>\r\n                <a href=\""
     + alias2(alias1((depth0 != null ? depth0.webAddress : depth0), depth0))
     + "\" target=\"_blank\">"
     + alias2(alias1((depth0 != null ? depth0.webAddress : depth0), depth0))

@@ -21,6 +21,8 @@ public class University {
     private String webAddress;
     private String logo;
     private String email;
+    private Long numPlaces;
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "UNI_FACULTY")
     @JoinColumn(name = "id")
@@ -53,6 +55,14 @@ public class University {
         universityEvents = new ArrayList<>();
         universityFaq = new ArrayList<>();
         universityReviews = new ArrayList<>();
+    }
+
+    public Long getNumPlaces() {
+        return universityFaculties.stream().mapToLong(UniversityFaculty::getNumPlaces).sum();
+    }
+
+    public void setNumPlaces(Long numPlaces) {
+        this.numPlaces = numPlaces;
     }
 
     public List<FaqElement> getUniversityFaq() { return universityFaq; }
