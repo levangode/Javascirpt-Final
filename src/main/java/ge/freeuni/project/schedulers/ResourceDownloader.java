@@ -20,7 +20,7 @@ public class ResourceDownloader {
     private static final Logger log = LoggerFactory.getLogger(ResourceDownloader.class);
 
     @Async
-    //@Scheduled(fixedDelay = 600000)
+    @Scheduled(fixedDelay = 600000)
     public void MesGovGeDownloader() {
         try {
             List<String> command = new ArrayList<>();
@@ -46,7 +46,7 @@ public class ResourceDownloader {
             while ((line = br.readLine()) != null) {
                 //System.out.println(line);
             }
-            System.out.println("Program terminated!");
+            System.out.println("Download Finished!");
         } catch (IOException e) {
             log.error("wget failed", e);
         }
