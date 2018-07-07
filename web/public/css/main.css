@@ -104,8 +104,6 @@ h2 {
 
 #quick-links-div{
     margin: 5px;
-    border: 1px solid #ffc100;
-    border-radius: 10px;
 }
 
 #search-div{
@@ -141,11 +139,12 @@ h2 {
     margin: 1px;
     float: left;
     display: inline-block;
-    width: 200px;
+    width: 195px;
     border: 1px solid #ffc100;
     border-radius: 10px;
 }
 #middle-div{
+    padding: 5px;
     margin: 1px;
     display: inline-block;
     width: 580px;
@@ -156,7 +155,7 @@ h2 {
     margin: 1px;
     float: right;
     display: inline-block;
-    width: 200px;
+    width: 195px;
     border: 1px solid #ffc100;
     border-radius: 10px;
 }
