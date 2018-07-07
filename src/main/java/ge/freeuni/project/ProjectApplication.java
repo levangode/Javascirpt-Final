@@ -44,7 +44,6 @@ public class ProjectApplication implements CommandLineRunner {
 
         University freeUniversity = new University();
         String freeuniAbout = "თავისუფალი უნივერსიტეტი - უპირობო ლიდერი ქართულ საგანმანათლებლო სივრცეში.";
-        System.out.print(freeuniAbout.length());
         //uni.setAbout("იყო და არა იყო რა <br> ღვთ1ის უკეთესი რა იქნებოდა, იყო ერთ მელა");
         freeUniversity.setAbout(freeuniAbout);
         freeUniversity.setAddress("აღმაშენებლის ხეივანი #13");
@@ -132,7 +131,6 @@ public class ProjectApplication implements CommandLineRunner {
         //add TSU
         University tsuUniversity = new University();
         String tsuAbout = "1918 წელს  გაიხსნა კავკასიაში პირველი ეროვნული უნივერსიტეტი, რომელმაც, ქართული საგანმანათლებლო ტრადიციების გათვალისწინებით, საფუძველი ჩაუყარა საქართველოში ევროპული ტიპის უმაღლეს სკოლას.";
-        System.out.print(tsuAbout.length());
         //uni.setAbout("იყო და არა იყო რა <br> ღვთ1ის უკეთესი რა იქნებოდა, იყო ერთ მელა");
         tsuUniversity.setAbout(tsuAbout);
         tsuUniversity.setAddress("ი.ჭავჭავაძის გამზ. 1, თსუ I კორპუსი");
@@ -226,7 +224,6 @@ public class ProjectApplication implements CommandLineRunner {
         //add Ilia University
         University iliaUniversity = new University();
         String iliaAbout = "ილიას სახელმწიფო უნივერსიტეტი დაფუძნდა 2006 წელს განსხვავებული და ხანგრძლივი ისტორიის მქონე 6 ინსტიტუტის გაერთიანების შედეგად.";
-        System.out.print(iliaAbout.length());
         //uni.setAbout("იყო და არა იყო რა <br> ღვთ1ის უკეთესი რა იქნებოდა, იყო ერთ მელა");
         iliaUniversity.setAbout(iliaAbout);
         iliaUniversity.setAddress("ქაქუცა ჩოლოყაშვილის გამზირი 3/5");

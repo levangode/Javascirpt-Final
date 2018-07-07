@@ -40,6 +40,7 @@ public class University {
     @JoinTable(name = "UNI_REVIEWS")
     @JoinColumn(name = "id")
     private List<UniversityReview> universityReviews;
+    @Lob
     private String about;
 
 
