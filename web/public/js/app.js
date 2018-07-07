@@ -50,7 +50,6 @@ window.addEventListener('load', () => {
             const responseNews = await api.get('/news');
             const news = responseNews.data;
 
-            console.log(news);
             html = homeTemplate({news});
             el.innerHTML = html;
         } catch (error) {
@@ -72,7 +71,6 @@ window.addEventListener('load', () => {
         try {
             const responseUniversity = await api.get('/university/' + id);
             const university = responseUniversity.data;
-            console.log(university);
             html = universityProfileTemplate({university});
             el.innerHTML = html;
 
@@ -120,7 +118,6 @@ window.addEventListener('load', () => {
         try {
             const responseUniversities = await api.get('/universities');
             const universities = responseUniversities.data;
-            console.log(universities);
             html = universitiesTemplate({universities});
             el.innerHTML = html;
 
@@ -158,7 +155,6 @@ window.addEventListener('load', () => {
         document.getElementById('form-submit').addEventListener("click", () => {
             let value = document.getElementById('comment').value;
             university.universityReviews.push({"review":value});
-            console.log(university.universityReviews);
             axios.put('http://localhost:8080/universities', university);
             loadReviewsTemplate(university);
         })

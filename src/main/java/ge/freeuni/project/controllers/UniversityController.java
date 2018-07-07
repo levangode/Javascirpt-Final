@@ -68,7 +68,6 @@ public class UniversityController {
     @GetMapping("/get-universities")
     @CrossOrigin(origins = {"http://localhost:3000", "https://localhost:3000"})
     public List<University> getUniversities(){
-        System.out.println("Sent universities");
         return new ArrayList<>(this.repository.findAll());
     }
 

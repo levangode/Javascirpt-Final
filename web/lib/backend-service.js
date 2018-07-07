@@ -10,7 +10,6 @@ const api = axios.create({
 
 // Generic GET request function
 const get = async (url) => {
-    console.log(url);
     const response = await api.get(url);
     const {data} = response;
     return data;

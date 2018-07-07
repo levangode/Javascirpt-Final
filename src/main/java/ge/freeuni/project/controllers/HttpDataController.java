@@ -45,7 +45,6 @@ public class HttpDataController extends WebMvcAutoConfiguration {
         } catch (Exception e) {
             log.error("Couldn't parse html", e);
         }
-        System.out.println(newsItems);
         return newsItems;
     }
 
