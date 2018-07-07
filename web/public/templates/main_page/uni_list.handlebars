@@ -1,0 +1,18 @@
+<h1>უნივერსიტეტების სია</h1>
+<hr>
+<div>
+    <div id="university-items">
+        <ul id="university-item-list">
+            {{#each universities}}
+            <li class="university-list-item grow" id="{{this.id}}">
+                <img src="{{this.logo}}">
+                <h3>{{this.name}}</h3>
+                <p>{{this.universityFaculties.length}} კურსი</p>
+                <p>{{this.numPlaces}}</p>
+                <br>
+                <a href="{{this.webAddress}}" target="_blank">{{this.webAddress}}</a>
+            </li>
+            {{/each}}
+        </ul>
+    </div>
+</div>

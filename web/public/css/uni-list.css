@@ -1,0 +1,51 @@
+
+.university-list-item {
+    padding: 8px;
+    cursor: pointer;
+    margin: 4px;
+    display: inline-grid;
+    height: 250px;
+    width: 180px;
+    border-radius: 10px;
+    border: 1px solid #ffc100;
+    text-align: center;
+    line-height: 20px;
+    z-index: 3;
+
+}
+
+.university-list-item h3 {
+    margin: 2px;
+
+}
+
+.university-list-item a {
+    text-decoration: none;
+    color: blue;
+}
+
+.university-list-item p {
+    margin: 0;
+}
+
+#university-item-list {
+    margin: auto;
+    display: inline-block;
+    padding: 0;
+    text-align: center;
+    height: 100%;
+}
+
+#university-items {
+    margin-top: 20px;
+}
+
+.university-list-item{
+    box-shadow: 0 0 1em 4px #ccc;
+    border-radius: 10px;
+}
+
+.university-list-item img{
+    height: 50px;
+    margin: auto;
+}

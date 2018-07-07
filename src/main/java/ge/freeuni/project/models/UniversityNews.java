@@ -7,8 +7,6 @@ import javax.persistence.*;
 import java.util.Date;
 
 @Entity
-@ToString
-@EqualsAndHashCode
 public class UniversityNews {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -59,6 +57,17 @@ public class UniversityNews {
 
     public void setImg(String img) {
         this.img = img;
+    }
+
+    @Override
+    public String toString() {
+        return "UniversityNews{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", date=" + date +
+                ", img='" + img + '\'' +
+                '}';
     }
 }
 

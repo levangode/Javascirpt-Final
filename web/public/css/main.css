@@ -1,0 +1,213 @@
+@import "menu.css";
+@import "events.css";
+@import "faculties.css";
+@import "faq.css";
+@import "uni-list.css";
+@import "news.css";
+@import "reviews.css";
+
+
+/*fonts*/
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Corben', Georgia, Times, serif;
+}
+h1{
+    margin: 4px;
+}
+p, div {
+    font-family: 'Nobile', Helvetica, Arial, sans-serif;
+}
+
+body {
+    background: url(/web/public/resources/cream_dust.png) repeat 0 0;
+}
+
+h1 {
+    text-shadow: 1px 1px 1px #ccc;
+}
+
+body {
+    text-align: center;
+}
+
+h2 {
+    margin: 0;
+}
+
+/*loading*/
+.ui.loading.segment {
+    position: relative;
+    cursor: default;
+    pointer-events: none;
+    text-shadow: none !important;
+    color: transparent !important;
+    -webkit-transition: all 0s linear;
+    transition: all 0s linear;
+}
+
+.ui.loading.segment:before {
+    position: absolute;
+    content: '';
+    top: 0%;
+    left: 0%;
+    background: rgba(255, 255, 255, 0.8);
+    width: 100%;
+    height: 100%;
+    border-radius: 0.28571429rem;
+    z-index: 100;
+}
+
+.ui.loading.segment:after {
+    position: absolute;
+    content: '';
+    top: 50%;
+    left: 50%;
+    margin: -1.5em 0em 0em -1.5em;
+    width: 3em;
+    height: 3em;
+    -webkit-animation: segment-spin 0.6s linear;
+    animation: segment-spin 0.6s linear;
+    -webkit-animation-iteration-count: infinite;
+    animation-iteration-count: infinite;
+    border-radius: 500rem;
+    border: 0.2em solid rgba(0, 0, 0, 0.1);
+    border-top-color: #767676;
+    -webkit-box-shadow: 0px 0px 0px 1px transparent;
+    box-shadow: 0px 0px 0px 1px transparent;
+    visibility: visible;
+    z-index: 101;
+}
+
+@-webkit-keyframes segment-spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes segment-spin {
+    from {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+#quick-links-div{
+    margin: 5px;
+    border: 1px solid #ffc100;
+    border-radius: 10px;
+}
+
+#search-div{
+    padding: 5px;
+    margin: 5px auto 5px auto;
+    display: block;
+    border: 1px solid #ffc100;
+    border-radius: 10px;
+}
+
+#news-header{
+    margin: 10px;
+}
+
+.rating-item{
+    text-align: left;
+    margin-bottom: 5px;
+}
+
+
+#main-div {
+    position: relative;
+    width: 1000px;
+    margin: auto;
+}
+
+#content-div{
+    margin: 10px 0 0 0;
+    position: relative;
+}
+
+#left-div{
+    margin: 1px;
+    float: left;
+    display: inline-block;
+    width: 200px;
+    border: 1px solid #ffc100;
+    border-radius: 10px;
+}
+#middle-div{
+    margin: 1px;
+    display: inline-block;
+    width: 580px;
+    border: 1px solid #ffc100;
+    border-radius: 10px;
+}
+#right-div{
+    margin: 1px;
+    float: right;
+    display: inline-block;
+    width: 200px;
+    border: 1px solid #ffc100;
+    border-radius: 10px;
+}
+
+
+.readMore{
+    text-decoration: none;
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+}
+
+.grow:hover {
+    transform: scale(1.1);
+}
+
+
+
+#university-profile{
+    text-decoration: none;
+    color: black;
+}
+
+
+
+#ratings-frame{
+ border:none;
+
+}
+
+#error-div{
+    height:250px;
+}
+
+.item{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+}
+
+.item p{
+    margin: 0;
+    display:block;
+    position:relative;
+    top:50%;
+    -webkit-transform:translate(0,-50%);
+    -moz-transform:translate(0,-50%);
+    transform:translate(0,-50%);
+}
+
+#app{
+    position: relative;
+}

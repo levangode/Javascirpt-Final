@@ -1,0 +1,25 @@
+<h3>აქტივობები</h3>
+<hr>
+<div>
+    {{#each university.universityEvents}}
+    <a href="{{this.link}}" target="_blank">
+        <div class="event-item">
+            <div>
+                <img class="event-image" src="{{this.img}}">
+                <div>
+                    <table class="event-info-table">
+                        <tr>
+                            <th class="event-date">{{this.date}}</th>
+                            <th colspan="2">Title</th>
+                        </tr>
+                        <tr>
+                            <td>{{this.description}}</td>
+                            <td>{{this.address}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </a>
+    {{/each}}
+</div>

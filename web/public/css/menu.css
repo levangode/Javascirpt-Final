@@ -1,0 +1,29 @@
+.menu-list{
+    margin: 5px 0 0 0;
+    padding: 0;
+}
+
+.menu-item{
+    width: 140px;
+    height: 35px;
+    margin:  0;
+    cursor: pointer;
+    display: inline-block;
+    border-style : solid;
+    border-width : 1px;
+    border-radius : 50px;
+
+    box-shadow : 0 1px 4px rgba(0,0,0,.6);
+    font-size : 9.5pt;
+    font-weight : bold;
+    color : #ffc100;
+    text-shadow : 0 1px 3px rgba(0,0,0,.4);
+    font-family : sans-serif;
+    text-decoration : none;
+    transition: background-color 2s ease-out;
+}
+
+.menu-item:hover{
+    background: #bdff00;
+}
+

@@ -9,8 +9,6 @@ import java.util.List;
 
 
 @Entity
-@ToString
-@EqualsAndHashCode
 public class University {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,6 +21,8 @@ public class University {
     private String webAddress;
     private String logo;
     private String email;
+    private Long numPlaces;
+
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinTable(name = "UNI_FACULTY")
     @JoinColumn(name = "id")
@@ -35,10 +35,14 @@ public class University {
     @JoinTable(name = "UNI_EVENTS")
     @JoinColumn(name = "id")
     private List<UniversityEvent> universityEvents;
+
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    @JoinTable(name = "UNI_REVIEWS")
+    @JoinColumn(name = "id")
+    private List<UniversityReview> universityReviews;
+    @Lob
     private String about;
 
-    private String username;
-    private String password;
 
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
@@ -51,6 +55,15 @@ public class University {
         universityNews = new ArrayList<>();
         universityEvents = new ArrayList<>();
         universityFaq = new ArrayList<>();
+        universityReviews = new ArrayList<>();
+    }
+
+    public Long getNumPlaces() {
+        return universityFaculties.stream().mapToLong(UniversityFaculty::getNumPlaces).sum();
+    }
+
+    public void setNumPlaces(Long numPlaces) {
+        this.numPlaces = numPlaces;
     }
 
     public List<FaqElement> getUniversityFaq() { return universityFaq; }
@@ -58,20 +71,17 @@ public class University {
         this.universityFaq.add(faqElement);
     }
 
-    public String getUsername() {
-        return username;
+
+    public List<UniversityReview> getUniversityReviews() {
+        return universityReviews;
     }
 
-    public String getPassword() {
-        return password;
+    public void setUniversityReviews(List<UniversityReview> universityReviews) {
+        this.universityReviews = universityReviews;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUniversityFaq(List<FaqElement> universityFaq) {
+        this.universityFaq = universityFaq;
     }
 
     public Long getId() {
@@ -173,11 +183,35 @@ public class University {
         this.universityEvents.add(event);
     }
 
+    public void addReview(UniversityReview review){
+        this.universityReviews.add(review);
+    }
+
     public String getLogo() {
         return logo;
     }
 
     public void setLogo(String logo) {
         this.logo = logo;
+    }
+
+    @Override
+    public String toString() {
+        return "University{" +
+                "id=" + id +
+                ", universityNumber=" + universityNumber +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", phone='" + phone + '\'' +
+                ", webAddress='" + webAddress + '\'' +
+                ", logo='" + logo + '\'' +
+                ", email='" + email + '\'' +
+                ", universityFaculties=" + universityFaculties +
+                ", universityNews=" + universityNews +
+                ", universityEvents=" + universityEvents +
+                ", universityReviews=" + universityReviews +
+                ", about='" + about + '\'' +
+                ", universityFaq=" + universityFaq +
+                '}';
     }
 }

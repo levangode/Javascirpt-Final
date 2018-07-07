@@ -1,0 +1,22 @@
+<h3>შეფასებები</h3>
+<hr>
+
+{{#each university.universityReviews}}
+<div class="comments-div">
+    <span><img class="user-icon"
+               src="https://www.bsn.eu/wp-content/uploads/2016/12/user-icon-image-placeholder.jpg"></span>
+    <div>{{this.review}}</div>
+</div>
+<hr>
+{{/each}}
+
+<div>
+    <form id="add-comment-form">
+        <label>
+            დატოვეთ კომენტარი
+            <input id="comment" type="text" name="review">
+        </label>
+        <input id="form-submit" type="button" value="დამატება">
+    </form>
+</div>
+

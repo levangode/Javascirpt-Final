@@ -1,0 +1,71 @@
+<h3>ფაკულტეტები</h3>
+<hr>
+<div>
+    <div id="faculties-div">
+        {{#each university.universityFaculties}}
+        <div class="faculty-item grow">
+            <table class="faculty-general">
+                <caption>
+                    <table class="caption-table">
+                        <tr>
+                            <th>პროგრამა:</th>
+                            <th>{{this.facultyNumber}}</th>
+                            <th>{{this.programName}}</th>
+                            <th>კვალიფიკაცია: {{this.qualification}}</th>
+                        </tr>
+                    </table>
+                </caption>
+                <tr>
+                    <th>აკრედიტებული</th>
+                    <th>სწავლების ენა</th>
+                    <th>დაფინანსება</th>
+                    <th>კრედიტების რაოდენობა</th>
+                    <th>წლიური გადასახადი</th>
+                    <th>ადგილების რაოდენობა</th>
+                </tr>
+                <tr>
+                    <td>{{this.accredited}}</td>
+                    <td>{{this.language}}</td>
+                    <td>{{this.financing}}</td>
+                    <td>{{this.credits}}</td>
+                    <td>{{this.annualFee}}</td>
+                    <td>{{this.numPlaces}}</td>
+                </tr>
+            </table>
+            <table class="subjects-table">
+                <caption>საგნები</caption>
+                <tr>
+                    <th colspan="2"></th>
+                    {{#each this.facultySubjects}}
+                    <th>{{this.name}}</th>
+                    {{/each}}
+                </tr>
+                <tr>
+                    <td colspan="2">კოეფიციენტები</td>
+                    {{#each this.facultySubjects}}
+                    <td>{{this.quotient}}</td>
+                    {{/each}}
+                </tr>
+                <tr>
+                    <td colspan="2">ადგილების ქვოტა</td>
+                    {{#each this.facultySubjects}}
+                    <td>{{this.numPlaces}}</td>
+                    {{/each}}
+                </tr>
+                <tr>
+                    <td colspan="2">ზღვარი</td>
+                    {{#each this.facultySubjects}}
+                    <td>{{this.barrier}}</td>
+                    {{/each}}
+                </tr>
+                <tr>
+                    <td colspan="2">შეზღუდვები</td>
+                    {{#each this.facultySubjects}}
+                    <td>{{this.restriction}}</td>
+                    {{/each}}
+                </tr>
+            </table>
+        </div>
+        {{/each}}
+    </div>
+</div>
